@@ -1,0 +1,63 @@
+Title: Geschichte
+
+----
+
+Intro: Das Metropol-Theater blickt auf eine lange und bewegte Geschichte zurück. Von seinen Anfängen bis zur Gegenwart hat sich vieles verändert, aber die Leidenschaft für das Kino ist geblieben.
+
+----
+
+Milestones:
+
+- 
+  year: 2025
+  title: 'Heute: Ein kulturelles Zentrum'
+  description: >
+    Heute sind die Kinos in Brunsbüttel
+    nicht nur Orte der Unterhaltung, sondern
+    auch kulturelle Treffpunkte, die die
+    Geschichte und die Gemeinschaft der
+    Stadt widerspiegeln. Wir laden Sie ein,
+    Teil unserer Geschichte zu werden und
+    unvergessliche Momente bei uns zu
+    erleben.
+  image:
+    - file://AxrqUPbZ9uxXaoMr
+- 
+  year: 1976
+  title: Verzehrkino und Modernisierung
+  description: >
+    Nach einem umfassenden Umbau wurde das
+    Metropol-Theater 1976 als modernes
+    Verzehrkino wiedereröffnet. Die
+    Sitzplatzkapazität wurde reduziert
+    zugunsten von mehr Komfort, und erstmals
+    konnten Gäste während der
+    Filmvorführung Speisen und Getränke
+    genießen.
+  image:
+    - file://ahnc3h4ISBsroITA
+- 
+  year: 1930
+  title: Die Fernsicht Lichtspiele
+  description: >
+    1930 wurde das Kino neu eröffnet und in
+    "Fernsicht Lichtspiele" umbenannt. Mit
+    der Einführung des Tonfilms begann eine
+    neue Ära für das Kino in Brunsbüttel.
+  image:
+    - file://DDkiuqauyE0xi2q2
+- 
+  year: 1909
+  title: Die Anfänge im Metropol-Theater
+  description: >
+    Das Gebäude in Brunsbüttel wurde im
+    Jahr 1909 errichtet und diente zunächst
+    als kleines Theater mit
+    Stummfilmvorführungen. Der erste
+    Kinobetreiber war Otto Leopold.
+  image:
+    - file://Qf2jGhO6kvOHHbAy
+
+----
+
+Uuid: geschi73kf72n398

@@ -1,0 +1,29 @@
+title: Startseite
+
+icon: 🏠
+
+options:
+  changeSlug: false
+  changeStatus: false
+  delete: false
+
+sections:
+  content:
+    type: fields
+    fields:
+      title:
+        label: Titel
+        type: text
+        required: true
+
+      description:
+        label: Beschreibung
+        type: textarea
+        buttons: true
+        size: large
+
+      theater_image:
+        label: Theater Bild
+        type: files
+        max: 1
+        query: page.images

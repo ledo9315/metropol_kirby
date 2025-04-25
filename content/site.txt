@@ -1,0 +1,47 @@
+Title: Metropol Theather
+
+----
+
+Hint-title: Reservierungen
+
+----
+
+Hint-text:
+
+<p>
+  Kartenvorbestellungen täglich ab 19:00 Uhr telefonisch unter der Nummer:
+  <a class="text-primary underline hover:no-underline font-[300] transition-all duration-300"
+  href="tel:+4948529344">+49 4852 9344</a>
+</p>
+
+----
+
+Phone: +49 4852 9344
+
+----
+
+Email: info@metropol-theater.de
+
+----
+
+Socialmedia:
+
+- 
+  platform: ""
+  url: ""
+
+----
+
+Reservation-title: Reservierungen
+
+----
+
+Reservation-text: srwjelr wejorwe ewri ewri wepoirwe
+
+----
+
+Intro: 
+
+----
+
+Address: 

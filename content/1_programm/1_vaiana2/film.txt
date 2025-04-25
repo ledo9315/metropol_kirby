@@ -1,0 +1,118 @@
+Title: Vaiana 2
+
+----
+
+Programm-status: current
+
+----
+
+Cover: - file://GyvzASmcs8Al9JzN
+
+----
+
+Action: false
+
+----
+
+Abenteuer: false
+
+----
+
+Familienfilm: true
+
+----
+
+Animation: true
+
+----
+
+Fantasy: true
+
+----
+
+Liebesfilm: false
+
+----
+
+Maerchenfilm: false
+
+----
+
+Musical: false
+
+----
+
+Kinderfilm: true
+
+----
+
+Drama: false
+
+----
+
+Komoedie: false
+
+----
+
+Horror: false
+
+----
+
+Year: 2024
+
+----
+
+Runtime: 100
+
+----
+
+Fsk: 0
+
+----
+
+Description: Die Tochter des Stammesoberhaupts einer polynesischen Insel ist davon überzeugt, dass es in der Weite des Ozeans noch andere Völker geben muss. Deshalb macht sie sich mit einer illustren Schar auf den Weg, unterstützt vom Halbgott Maui und geleitet von einem Stern, um der Legende einer geheimnisvollen Insel auf den Grund zu gehen, die einst eine Verbindung zu anderen Völkern ermöglichte. Der visuell extrem beeindruckende, technisch perfekte Animationsfilm erzählt mit großer Fabulierfreude von Mut und Zusammenhalt, Herkunft und Entdeckerlust.
+
+----
+
+Video: 
+
+----
+
+Trailer: https://www.youtube.com/embed/XztvMO5SRR0?si=H4g8hIEQyfirGRPo
+
+----
+
+Regisseur: David G. Derrick Jr.
+
+----
+
+Produktionsland: USA
+
+----
+
+Spielzeiten:
+
+- 
+  date: 2025-04-25
+  time: 10:00:00
+  format: 2D
+- 
+  date: 2025-04-26
+  time: 16:00:00
+  format: 2D
+- 
+  date: 2025-04-27
+  time: 20:00:00
+  format: 2D
+
+----
+
+Meta: 
+
+----
+
+Status: current
+
+----
+
+Uuid: vEsXpZP7GtlzmYQJ

@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Benutzerdefinierte Konfiguration */
+:root {
+  --color-primary: #891819;
+  --color-secondary: #373737;
+  --color-light: #f8f8f8;
+  --color-dark: #222222;
+}
+
+@layer base {
+  /* Futura Std Schriftart */
+  @font-face {
+    font-family: "Futura Std";
+    src: url("/assets/fonts/FuturaStdBook.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Futura Std";
+    src: url("/assets/fonts/FuturaStdMedium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Futura Std";
+    src: url("/assets/fonts/FuturaStdBold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Futura Std";
+    src: url("/assets/fonts/FuturaStdLight.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Futura Std";
+    src: url("/assets/fonts/FuturaStdLightOblique.woff2") format("woff2");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+}
+
+@layer components {
+  .skip-link {
+    @apply absolute top-[-40px] left-0 p-2 z-50 bg-primary text-white transition-[top] duration-200;
+  }
+
+  .skip-link:focus {
+    @apply top-0;
+  }
+}
+
+@layer utilities {
+  .text-primary {
+    color: var(--color-primary) !important;
+  }
+
+  .bg-primary {
+    background-color: var(--color-primary) !important;
+  }
+
+  .border-primary {
+    border-color: var(--color-primary) !important;
+  }
+
+  .hover\:bg-primary:hover {
+    background-color: var(--color-primary) !important;
+  }
+
+  .hover\:text-primary:hover {
+    color: var(--color-primary) !important;
+  }
+
+  .focus\:ring-primary:focus {
+    --tw-ring-color: var(--color-primary) !important;
+  }
+}

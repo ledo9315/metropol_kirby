@@ -1,0 +1,83 @@
+Title: Impressum
+
+----
+
+Headline: Impressum
+
+----
+
+Tmg-headline: Angaben gemäß § 5 TMG
+
+----
+
+Theater-name: Metropol-Theater
+
+----
+
+Address:
+
+Posadowsky Straße 2a
+25541 Brunsbüttel
+
+----
+
+Represented-headline: Vertreten durch
+
+----
+
+Represented-by: Vertreten durch den Inhaber Gerard Sievers
+
+----
+
+Contact-info:
+
+Telefon: + 49 4852 9344
+E-Mail: info@metropol-theater.sh
+
+----
+
+Tax-headline: Umsatzsteuer
+
+----
+
+Tax-id: Die Umsatzsteuer-Identifikationsnummer gemäß §27a Umsatzsteuergesetz lautet
+
+----
+
+Responsible-headline: Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
+
+----
+
+Responsible-person: Gerard Sievers
+
+----
+
+Responsible-address:
+
+Posadowsky Straße 2a
+25541 Brunsbüttel
+
+----
+
+Dispute-resolution-headline: Streitschlichtung
+
+----
+
+Dispute-resolution-text:
+
+Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+(link: https://ec.europa.eu/consumers/odr text: https://ec.europa.eu/consumers/odr). Unsere E-Mail-Adresse finden Sie oben im Impressum.
+
+Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+
+----
+
+Image-source-headline: Gesonderter Quellenvermerk zu Bildern des Metropol-Theaters auf der Webseite
+
+----
+
+Copyright: © Torsten Jürgens
+
+----
+
+Uuid: vwAqN9ib1GdvuNyO

@@ -1,0 +1,47 @@
+title: Datenschutz
+
+icon: 🔒
+
+columns:
+  - width: 1/1
+    sections:
+      fields:
+        type: fields
+        fields:
+          headline:
+            label: Überschrift
+            type: text
+            width: 1/1
+
+          content1_headline:
+            label: Abschnitt 1 Überschrift
+            type: text
+            width: 1/1
+
+          content1_text:
+            label: Abschnitt 1 Text
+            type: textarea
+            buttons: true
+            width: 1/1
+
+          content2_headline:
+            label: Abschnitt 2 Überschrift
+            type: text
+            width: 1/1
+
+          content2_text:
+            label: Abschnitt 2 Text
+            type: textarea
+            buttons: true
+            width: 1/1
+
+          content3_headline:
+            label: Abschnitt 3 Überschrift
+            type: text
+            width: 1/1
+
+          content3_text:
+            label: Abschnitt 3 Text
+            type: textarea
+            buttons: true
+            width: 1/1

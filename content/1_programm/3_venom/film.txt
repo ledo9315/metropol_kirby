@@ -1,0 +1,94 @@
+Title: Venom
+
+----
+
+Programm-status: upcoming
+
+----
+
+Cover: - file://qtuWuyE2kER88VhH
+
+----
+
+Action: true
+
+----
+
+Abenteuer: true
+
+----
+
+Familienfilm: false
+
+----
+
+Animation: false
+
+----
+
+Fantasy: false
+
+----
+
+Liebesfilm: false
+
+----
+
+Maerchenfilm: false
+
+----
+
+Musical: false
+
+----
+
+Kinderfilm: false
+
+----
+
+Drama: false
+
+----
+
+Komoedie: true
+
+----
+
+Horror: true
+
+----
+
+Year: 2024
+
+----
+
+Runtime: 110
+
+----
+
+Fsk: 12
+
+----
+
+Description: In VENOM: THE LAST DANCE kehrt Tom Hardy als Venom, einer der bedeutendsten und komplexesten Charaktere aus dem MARVEL-Universum, für das große Finale der Trilogie zurück. Eddie und Venom sind auf der Flucht. Gejagt von ihren beiden Welten, wird das Netz immer enger und zwingt das Duo zu einer verheerenden Entscheidung, die den Vorhang für Venoms und Eddies letzten Tanz fallen lassen wird.
+
+----
+
+Regisseur: Kelly Marcel
+
+----
+
+Produktionsland: USA
+
+----
+
+Spielzeiten:
+
+- 
+  date: 2025-05-31
+  time: 15:00:00
+  format: 3D
+
+----
+
+Uuid: 2U7zhkBT1DAF3H4y

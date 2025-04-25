@@ -1,0 +1,65 @@
+title: Ausstattung
+
+icon: 🎞️
+
+sections:
+  content:
+    type: fields
+    fields:
+      title:
+        label: Titel
+        type: text
+        required: true
+
+      hall_description:
+        label: Beschreibung Kinosaal
+        type: textarea
+        size: medium
+        buttons: true
+
+      tech_description:
+        label: Beschreibung Kinotechnik
+        type: textarea
+        size: medium
+        buttons: true
+
+      tech_specs:
+        type: headline
+        label: Technische Ausstattung
+
+      sound_general:
+        label: Tontechnik allgemein
+        type: textarea
+        size: medium
+        buttons: true
+
+      projection_special:
+        label: Projektionstechnik
+        type: textarea
+        size: medium
+        buttons: true
+
+      projection_3d:
+        label: 3D
+        type: textarea
+        size: medium
+        buttons: true
+
+      sound_special:
+        label: Tontechnik spezieller
+        type: textarea
+        size: medium
+        buttons: true
+
+      speakers:
+        label: Die Lautsprecheranlage
+        type: textarea
+        size: medium
+        buttons: true
+
+  images:
+    type: files
+    headline: Bilder
+    layout: cards
+    template: image
+    info: "{{ file.dimensions }}"

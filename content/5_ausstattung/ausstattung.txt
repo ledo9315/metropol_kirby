@@ -1,0 +1,139 @@
+Title: Ausstattung
+
+----
+
+Hall-description:
+
+110 Sitzplätze und 8 Plätze direkt an der Bar stehen Ihnen für Ihren Besuch in unserem Hause zur Verfügung. Die Leinwandhöhe beträgt 20 m² und sorgt für ein optimales Seherlebnis. Die moderne 7.4 Digital Tonanlage liefert Ihnen den Raum zum guten Ton.
+
+Unsere Sitzplätze sind mit einem Tisch ausgestattet, der eine Kinogleichlage vereinfacht. Sie brauchen sich auch während der Vorstellung nicht auf Getränke zu verzichten. Unser Servicepersonal erfüllt Ihre Getränkewünsche umgehend.
+
+Genießen Sie in der perfekten Abstimmung die Mischung aus traditionell familiär geführtem Kino und modernster Technik. Sehen Sie sich das laufende Programm hier an und freuen Sie sich auf Ihren Besuch in unserem Haus.
+
+----
+
+Tech-description:
+
+Unsere Installation geht über den DCI-Standard hinaus. Als Bildwand kommt eine verbesserte Version von Screen Research mit einem Reflexionsgrad von 0.8 zum Einsatz.
+
+Der Film wird über einen Dolby IMS3000 Server abgespielt und von einem Christie CP4420 RealRGB Laser Projektor in 4K-Auflösung auf die Bildwand projiziert.
+
+Unser CP4420 ist jetzt ein CP4420. Der Projektor wurde von einem autorisierten Christie-Techniker vor Ort mit der Software und Kalibrierung des gesamten optischen Systems installiert. Das Ergebnis ist die wohl zur Zeit beste Bildqualität eines Christie Laser RGB Projektors in einem kommerziellen Kino, so der Techniker.
+
+----
+
+Sound-general:
+
+Unser Kino ist mit einer digitalen 17.4-Kanal Tonanlage ausgestattet. Für die Tonverarbeitung ist ein Trinnov Ovation2 verantwortlich.
+
+Unser gesamtes Lautsprechersystem besteht aus 24 Lautsprechern und ist nicht kommerziell erhältlich, da von uns entwickelt und gebaut.
+
+Die alten Surround Lautsprecher wurden mit neuen Chassis und digitalen Verstärkern bestückt und sind in Kombination mit den Surround-Subwoofern perfekt auf das neue Frontsystem abgestimmt.
+
+Die gesamte Anlage darf den Saal in voller Dynamik zum Klingen bringen. Es werden keine Limiter (Begrenzer) benötigt.
+
+Zitat aus dem Bericht des Christie Technikers: „… the quality is outstanding. My personal impression was, that it sounds like a sound studio.“
+
+----
+
+Projection-special:
+
+Unser Christie CP4420 RealRGB Laser Projektor erzeugt das Bild mit Hilfe der 1.38" Enhanced 4K 3-chip DMD DLP Cinema® Technologie in 4K (4096 x 2160) Auflösung.
+
+Der Kontrastumfang beträgt 6000:1 voll an/aus dank des verwendeten Ultra-Hoch-Kontrast-Objektives. Durch seinen erweiterten Farbraum (über 95% des Rec. 2020 Farbraums) in Verbindung mit den HFR-Möglichkeiten (4K 120fps oder 4K 60fps/eye in 3D) ist er für zukünftige Standards gerüstet.
+
+Der Projektor befindet sich jetzt exakt in der Bildmitte in der gegenüberliegenden Wand. Das projizierte Bild wird somit völlig frei von geometrischen Verzerrungen in voller Auflösung und Schärfe dargestellt.
+
+Unsere Bildwand von Screen Research besteht aus einem weißen Gewebe, welches in einem Stück ohne störende Übergänge für uns gefertigt wurde.
+
+Dahinter befindet sich ein "Screen Research Stoplight blackbacking layer", der rückseitiges Streulicht der Bildwand reduziert und somit zum maximalen möglichen Bildkontrast beiträgt.
+
+----
+
+Projection-3d:
+
+Jeder Kinobesucher, der keine Einschränkungen bezüglich seines räumlichen Sehens hat und dessen Sehschärfe mindestens im normalen Bereich liegt, hat die Voraussetzungen, 3D im Kino optimal zu erleben. Deshalb muss eine eventuell vorhandene Sehhilfe auch mit 3D-Brille getragen werden!
+
+Zur Erzeugung der 3D-Darstellung verwenden wir das aktive Shutter System von Xpand. Unsere Bildwand ist weiß und keine grau schimmernde Silberleinwand, wie es bei den Polarisationstechniken der meisten Kinos Pflicht ist. Davon profitiert unsere optimale Farbwiedergabe und homogene Ausleuchtung.
+
+Grund ist der Verstärkungsfaktor unserer Bildwand von nur 0.8. Üblich beträgt dieser sonst ca. 1.8 bis 3 um den enormen Helligkeitsverlust der 3D-Wiedergabe zu kompensieren.
+
+Das führt jedoch zu einer ungleichmäßigen Helligkeitsverteilung (Hot Spot), auch bei 2D, sowie Speckle in Kombination mit Laser-Projektoren. Besucher, die außerhalb der Achse des projizierten Lichtkegels sitzen, haben hier weitere deutliche Nachteile.
+
+Auch übliche Kopfbewegungen haben keinen negativen Einfluss auf die 3D-Wahrnehmung. Unsere Konfiguration bietet allen Besuchern ein perfektes Kinoerlebnis.
+
+----
+
+Sound-special:
+
+Den Ton gibt der neue Ovation2 an. Der zur Zeit klanglich beste Kino-Tonprozessor der Firma Trinnov. Unser Modell verwendet 24 identische Kanäle und wurde in Zusammenarbeit mit dem Hersteller Trinnov Audio, thanks Mike, exakt auf jeden einzelnen Lautsprecher eingemessen.
+
+Bei einem persönlichen Besuch von Herrn Christian Lerch, Dolby Sound Consultant, bescheinigte dieser unserem Saal einen sehr präzisen, direkten Klang und gab uns noch ein paar Tipps zur weiteren Optimierung. Diese wurden mittlerweile beim letzten Umbau der Bühne umgesetzt.
+
+Der Optimizer des Ovation2 verwendet modernste Zeit-Frequenz-Algorithmen zur Analyse von direktem Schall, frühen sowie späten Reflexionen mit Hilfe der zuvor erfolgten Kalibrierungsmessung und verwendet spezielle Methoden, um Nachhall und Rauschen zu kompensieren und das auf allen 21 Kanälen in voller Bandbreite für jeden einzelnen Lautsprecher gleichzeitig.
+
+Die ganze Subtilität des Optimizers besteht darin, zu „wissen“, welche Fehler behoben werden sollen, ohne neue zusätzliche Probleme zu schaffen. Kein anderer Prozessor bietet dieses neutrale Klangverhältnis.
+
+Der Optimizer korrigiert den Frequenzgang aller Lautsprecher gleichzeitig in Amplitude und Phase. Dies bedeutet, dass er sowohl die Tonbalance korrigiert, um ein neutrales Timbre für jeden Lautsprecher sicherzustellen, als auch den Zeitbereich, um ein hoch auflösendes fokussiertes Klangbild zu erreichen.
+
+Zielkurven: Der Optimizer definiert automatisch die Filter, mit denen die erforderlichen Korrekturen anhand einer zuvor definierten Zielkurve für den Frequenzgang erreicht werden.
+
+----
+
+Speakers:
+
+Jeder Kinobesucher, der keine Einschränkungen bezüglich seines räumlichen Sehens hat und dessen Sehschärfe mindestens im normalen Bereich liegt, hat die Voraussetzungen, 3D im Kino optimal zu erleben. Deshalb muss eine eventuell vorhandene Sehhilfe auch mit 3D-Brille getragen werden!
+
+Zur Erzeugung der 3D-Darstellung verwenden wir das aktive Shutter System von Xpand. Unsere Bildwand ist weiß und keine grau schimmernde Silberleinwand, wie es bei den Polarisationstechniken der meisten Kinos Pflicht ist. Davon profitiert unsere optimale Farbwiedergabe und homogene Ausleuchtung.
+
+Grund ist der Verstärkungsfaktor unserer Bildwand von nur 0.8. Üblich beträgt dieser sonst ca. 1.8 bis 3, um den enormen Helligkeitsverlust der 3D-Wiedergabe zu kompensieren.
+
+Das führt jedoch zu einer ungleichmäßigen Helligkeitsverteilung (Hot Spot), auch bei 2D, sowie Speckle in Kombination mit Laser-Projektoren. Besucher, die außerhalb der Achse des projizierten Lichtkegels sitzen, haben hier weitere deutliche Nachteile.
+
+Auch übliche Kopfbewegungen haben keinen negativen Einfluss auf die 3D-Wahrnehmung. Unsere Konfiguration bietet allen Besuchern ein perfektes Kinoerlebnis.
+
+----
+
+Sound-tech:
+
+Unser Kino ist mit einer digitalen 17.4-Kanal Tonanlage ausgestattet. Für die Tonverarbeitung ist ein Trinnov Ovation2 verantwortlich.
+
+Unser gesamtes Lautsprechersystem besteht aus 24 Lautsprechern und ist nicht kommerziell erhältlich, da von uns entwickelt und gebaut.
+
+Die alten Surround Lautsprecher wurden mit neuen Chassis und digitalen Verstärkern bestückt und sind in Kombination mit den Surround-Subwoofern perfekt auf das neue Frontsystem abgestimmt.
+
+Die gesamte Anlage darf den Saal in voller Dynamik zum Klingen bringen. Es werden keine Limiter (Begrenzer) benötigt.
+
+Zitat aus dem Bericht des Christie Technikers: „… the quality is outstanding. My personal impression was, that it sounds like a sound studio.“
+
+----
+
+Projection-screen:
+
+- 8 Meter breite Leinwand
+- Speziell beschichtete Oberfläche für optimale Lichtreflexion
+- Hochauflösende Bildwiedergabe
+- Perfekt für 2D und 3D Projektionen
+
+----
+
+Projection-system:
+
+- Modernster 4K Digitalprojektor
+- Hochleistungs-Xenon-Lampe für brillante Farben
+- 3D-fähige Projektionstechnik
+- Automatisiertes Beleuchtungssystem
+
+----
+
+Seating:
+
+- 186 bequeme Kinosessel mit ergonomischer Polsterung
+- Optimierte Sitzreihenanordnung für beste Sicht
+- Behindertengerechte Plätze verfügbar
+- Getränkehalter an jedem Sitz
+- Klimaanlage für angenehme Temperatur
+
+----
+
+Uuid: ausx73kdl2934

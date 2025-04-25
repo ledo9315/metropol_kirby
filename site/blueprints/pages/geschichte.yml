@@ -1,0 +1,54 @@
+title: Geschichte
+
+icon: 📜
+
+sections:
+  content:
+    type: fields
+    fields:
+      title:
+        label: Titel
+        type: text
+        required: true
+
+      milestones:
+        label: Historische Meilensteine
+        type: structure
+        sortBy: year asc
+        columns:
+          year:
+            width: 1/5
+          title:
+            width: 4/5
+        fields:
+          year:
+            label: Jahr
+            type: number
+            required: true
+            width: 1/4
+
+          title:
+            label: Titel
+            type: text
+            required: true
+            width: 3/4
+
+          description:
+            label: Beschreibung
+            type: textarea
+            size: medium
+            buttons: true
+
+          image:
+            label: Bild
+            type: files
+            query: page.images
+            multiple: false
+            layout: cards
+
+  images:
+    type: files
+    headline: Bilder
+    template: image
+    layout: cards
+    info: "{{ file.dimensions }}"

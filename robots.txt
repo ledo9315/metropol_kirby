@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow crawling of admin and panel URLs
+Disallow: /panel/
+Disallow: /kirby/
+
+# Sitemap URL
+Sitemap: https://metropol-theater-brunsbuettel.de/sitemap.xml 

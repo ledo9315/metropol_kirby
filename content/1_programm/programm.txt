@@ -1,0 +1,13 @@
+Title: Programm
+
+----
+
+Text: Unser aktuelles Kinoprogramm
+
+----
+
+Status: listed
+
+----
+
+Uuid: KXkj0xr1oaT6flNi

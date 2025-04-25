@@ -1,0 +1,13 @@
+{
+  "name": "metropol-theater",
+  "version": "1.0.0",
+  "description": "Metropol-Theater Brunsbüttel Website",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/tailwind.css -o ./assets/css/tailwind.min.css --minify",
+    "dev": "tailwindcss -i ./src/tailwind.css -o ./assets/css/tailwind.min.css --watch",
+    "build": "npm run build:css"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}

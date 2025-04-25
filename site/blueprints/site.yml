@@ -1,0 +1,38 @@
+title: Metropol-Theater
+
+sections:
+  information:
+    type: fields
+    fields:
+      hint_info:
+        label: Hinweis
+        type: headline
+
+      hint_title:
+        label: Hinweis Titel
+        type: text
+        width: 1/1
+
+      hint_text:
+        label: Hinweis Text
+        type: textarea
+        buttons: true
+        width: 1/1
+
+      phone:
+        label: Telefonnummer
+        type: tel
+      email:
+        label: E-Mail
+        type: email
+
+  pages:
+    type: pages
+    templates:
+      - home
+      - programm
+      - kartenpreise
+      - ausstattung
+      - geschichte
+      - impressum
+      - datenschutz

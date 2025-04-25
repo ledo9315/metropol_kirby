@@ -1,0 +1,23 @@
+title: Programm
+preset: page
+icon: 🎬
+
+pages:
+  template: film
+  num: date
+  sort: date desc
+  drafts:
+    create: true
+    template: film
+
+sections:
+  pages:
+    type: pages
+    headline: Filme
+    create: film
+    layout: cards
+    image:
+      cover: true
+      ratio: 2/3
+    info: "{{ page.meta }}"
+    empty: Keine Filme im Programm

@@ -1,0 +1,110 @@
+Title: Captain America
+
+----
+
+Programm-status: upcoming
+
+----
+
+Cover: - file://Y5N84tWlgvXmSyvt
+
+----
+
+Action: true
+
+----
+
+Abenteuer: false
+
+----
+
+Familienfilm: false
+
+----
+
+Animation: false
+
+----
+
+Fantasy: false
+
+----
+
+Liebesfilm: false
+
+----
+
+Maerchenfilm: false
+
+----
+
+Musical: false
+
+----
+
+Kinderfilm: false
+
+----
+
+Drama: false
+
+----
+
+Komoedie: false
+
+----
+
+Horror: false
+
+----
+
+Year: 2025
+
+----
+
+Runtime: 119
+
+----
+
+Fsk: 12
+
+----
+
+Description: Nach einem Treffen mit dem neu gewählten US-Präsidenten Thaddeus Ross, gespielt von Harrison Ford, der in diesem Film sein MCU-Debüt gibt, findet sich Sam Wilson plötzlich inmitten eines internationalen Konflikts wieder. Er muss die Hintergründe eines skrupellosen, globalen Komplotts aufdecken, bevor der wahre Strippenzieher die gesamte Welt ins Chaos stürzen kann. Ein atemloser Wettlauf gegen die Zeit beginnt... (Quelle: Verleih)
+
+----
+
+Video: 
+
+----
+
+Trailer: https://www.youtube.com/embed/a0JMSj5xdFk?si=kXVzoo_rcNmJNuiK
+
+----
+
+Regisseur: Julius Onah
+
+----
+
+Produktionsland: USA
+
+----
+
+Spielzeiten:
+
+- 
+  date: 2025-05-08
+  time: 14:00:00
+  format: 2D
+
+----
+
+Meta: 
+
+----
+
+Status: current
+
+----
+
+Uuid: Ps93Rm6AmKctFIIZ

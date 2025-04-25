@@ -1,0 +1,30 @@
+Title: Metropol-Theater
+
+----
+
+Description:
+
+Hier erleben Sie Kino auf eine besondere Art: Genießen Sie
+aktuelle Filme und Klassiker in einer unvergleichlichen
+Atmosphäre. Das Metropol-Theater vereint Kinovergnügen
+mit erstklassigem Service und einer gemütlichen Umgebung.
+Lehnen Sie sich zurück, entspannen Sie und lassen Sie sich
+von unserem Angebot verzaubern. Entdecken Sie das
+Besondere an unserem Verzehrkino und erleben Sie
+unvergessliche Filmabende in Brunsbüttel!
+
+----
+
+Theater-image: - file://bKKLYjU2NAaJHOiC
+
+----
+
+Phone: +49 4852 9344
+
+----
+
+Reservations-note: Kartenvorbestellungen täglich ab 19:00 Uhr telefonisch unter: (link: tel:+4948529344 text: +49 4852 9344)
+
+----
+
+Uuid: tEP6dfICKWBjJw8Z
