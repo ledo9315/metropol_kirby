@@ -2,7 +2,7 @@ Title: Vaiana 2
 
 ----
 
-Programm-status: current
+Programm-status: 
 
 ----
 
@@ -26,7 +26,7 @@ Animation: true
 
 ----
 
-Fantasy: true
+Fantasy: false
 
 ----
 
@@ -90,20 +90,44 @@ Produktionsland: USA
 
 ----
 
+Produktionsfirma: Disney
+
+----
+
+Hauptbesetzung: Auli'i Cravalho / Dwayne Johnson / Hualalai Chung
+
+----
+
 Spielzeiten:
 
 - 
-  date: 2025-04-25
-  time: 10:00:00
-  format: 2D
+  date: 2025-05-06
+  time: 14:00:00
+  format: 3D
 - 
-  date: 2025-04-26
+  date: 2025-05-06
   time: 16:00:00
   format: 2D
 - 
-  date: 2025-04-27
-  time: 20:00:00
+  date: 2025-05-07
+  time: 14:00:00
   format: 2D
+- 
+  date: 2025-05-07
+  time: 16:00:00
+  format: 2D
+- 
+  date: 2025-05-08
+  time: 14:00:00
+  format: 2D
+- 
+  date: 2025-05-09
+  time: 16:00:00
+  format: OV
+
+----
+
+Schauspieler: Gürkan
 
 ----
 

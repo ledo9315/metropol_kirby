@@ -2,9 +2,9 @@
 
 <footer class="bg-primary text-white py-12" role="contentinfo">
   <div class="container mx-auto px-4 flex flex-col justify-center">
-    <!-- Strukturiertes Markup mit Schema.org -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 grid" itemscope
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" itemscope
       itemtype="http://schema.org/LocalBusiness">
+
       <!-- Theater-Informationen & Kontakt -->
       <div class="justify-self-start lg:justify-self-center">
         <h2 class="text-sm font-bold tracking-wider mb-4 uppercase">Metropol-Theater</h2>
@@ -62,32 +62,30 @@
         <nav aria-label="Footer-Navigation">
           <ul class="space-y-2">
             <li>
-              <a href="<?= url('kartenpreise') ?>"
+              <a href="<?= url('/') ?>"
                 class="hover:text-white hover:underline transition-colors text-white flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2" fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-                Eintrittspreise
+                &rarr;
+                Startseite
+              </a>
+            </li>
+            <li>
+              <a href="<?= url('preise') ?>"
+                class="hover:text-white hover:underline transition-colors text-white flex items-center">
+                &rarr;
+                Preise
               </a>
             </li>
             <li>
               <a href="<?= url('ausstattung') ?>"
                 class="hover:text-white hover:underline transition-colors text-white flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2" fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
+                &rarr;
                 Ausstattung
               </a>
             </li>
             <li>
               <a href="<?= url('geschichte') ?>"
                 class="hover:text-white hover:underline transition-colors text-white flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2" fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
+                &rarr;
                 Geschichte
               </a>
             </li>
@@ -103,20 +101,14 @@
             <li>
               <a href="<?= url('impressum') ?>"
                 class="hover:text-white hover:underline transition-colors text-white flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2" fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
+                &rarr;
                 Impressum
               </a>
             </li>
             <li>
               <a href="<?= url('datenschutz') ?>"
                 class="hover:text-white hover:underline transition-colors text-white flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2" fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
+                &rarr;
                 Datenschutz
               </a>
             </li>
@@ -132,5 +124,6 @@
     </div>
   </div>
 </footer>
+</body>
 
 </html>

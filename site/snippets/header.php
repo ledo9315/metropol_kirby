@@ -19,9 +19,9 @@
   <a href="#main-content" class="skip-link focus:outline-none focus:ring-2 focus:ring-primary">Zum Hauptinhalt
     springen</a>
 
-  <header class="bg-white z-50" role="banner">
+  <header class="bg-white z-10 relative" role="banner">
     <div class="container mx-auto px-4 py-4">
-      <div class="flex items-center">
+      <div class="flex justify-between items-center">
         <a href="<?= $site->url() ?>" class="mb-4 md:mb-0" aria-label="<?= $site->title() ?> - Zur Startseite">
           <img src="/assets/images/metropol-logo.svg" alt="Logo <?= $site->title() ?>" class="h-12" width="150"
             height="48" role="img">
@@ -47,8 +47,6 @@
               </a>
             </li>
 
-
-
             <li role="none">
               <a href="<?= url('home#programm') ?>" class="text-primary px-3 py-2 text-[1.2rem] scroll-smooth"
                 role="menuitem">
@@ -64,10 +62,10 @@
             </li>
 
             <li role="none">
-              <a href="<?= url('kartenpreise') ?>"
-                class="text-primary px-3 py-2 text-[1.2rem] <?= $page->is('kartenpreise') ? 'border-b-2 border-primary font-medium' : '' ?>"
-                <?= $page->is('kartenpreise') ? 'aria-current="page"' : '' ?> role="menuitem">
-                Kartenpreise
+              <a href="<?= url('preise') ?>"
+                class="text-primary px-3 py-2 text-[1.2rem] <?= $page->is('preise') ? 'border-b-2 border-primary font-medium' : '' ?>"
+                <?= $page->is('preise') ? 'aria-current="page"' : '' ?> role="menuitem">
+                Preise
               </a>
             </li>
 
@@ -117,21 +115,82 @@
             </li>
           </ul>
         </nav>
-        <a href="tel:<?= $site->phone() ?>"
-          class="flex items-center text-primary px-3 py-2 text-[1.2rem] hover:text-secondary transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-0 sm:mr-2" fill="none" viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.684l.95 2.85a1 1 0 01-.27.99l-2.17 2.17a11.042 11.042 0 005.19 5.19l2.17-2.17a1 1 0 01.99-.27l2.85.95a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C9.393 21 3 14.607 3 6V5z" />
-          </svg>
-          <span class="hidden sm:inline-block ml-2 md:ml-0">Kartenvorbestellung</span>
-        </a>
-        <button id="menu-button" class="xl:hidden text-primary p-2 rounded focus:outline-none" aria-label="Menü öffnen">
+        <div class="relative ml-auto xl:ml-0 z-[400]" id="search-container">
+          <div class="flex items-center">
+            <button id="search-toggle" type="button"
+              class="text-primary p-2 rounded-full hover:bg-primary/10 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/30"
+              aria-label="Suchfunktion anzeigen/ausblenden" aria-expanded="false" aria-controls="search-form">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </button>
+            <div id="search-form" class="hidden z-[200]">
+              <form action="javascript:void(0);" class="flex items-center" role="search">
+                <div class="relative">
+                  <input type="search" name="q" id="search-input"
+                    class="text-primary bg-white border-2 border-primary/20 focus:border-primary rounded-full py-2 px-4 pr-10 text-sm w-[200px] md:w-[240px] transition-all duration-300 focus:outline-none focus:shadow-md placeholder-primary/50 appearance-none"
+                    placeholder="Film suchen..." aria-label="Film suchen" autocomplete="off" spellcheck="false">
+                  <button type="submit" id="search-submit"
+                    class="absolute right-1 top-1/2 -translate-y-1/2 text-primary p-1.5 rounded-full hover:bg-primary/10 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/30"
+                    aria-label="Suchen">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                  </button>
+                </div>
+                <button type="button" id="search-close"
+                  class="text-primary p-1.5 ml-1 rounded-full hover:bg-primary/10 transition-colors md:hidden focus:outline-none focus:ring-2 focus:ring-primary/30"
+                  aria-label="Suche schließen">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </div>
+          <div id="search-results-dropdown"
+            class="hidden fixed top-40 md:right-4 right-[50%] z-[999999] w-[800px] max-w-[85vw] translate-x-[50%] md:translate-x-0 bg-white border-2 border-primary rounded-lg shadow-2xl overflow-y-auto max-h-[70vh]"
+            role="region" aria-live="polite" aria-label="Suchergebnisse">
+            <div
+              class="search-results-header sticky top-0 z-[200] px-5 py-4 text-sm text-gray-600 border-b border-gray-200 flex justify-between items-center bg-white">
+              <span id="search-results-count" class="font-medium text-gray-700">
+                <!-- Anzahl der Ergebnisse wird dynamisch eingefügt -->
+              </span>
+            </div>
+            <div id="search-results-content" class="overflow-y-visible">
+              <!-- Hier werden die Suchergebnisse dynamisch eingefügt -->
+              <div class="search-empty-state hidden flex-col items-center justify-center p-8 text-gray-500">
+              </div>
+              <div class="search-loading-state hidden flex-col items-center justify-center p-8 text-gray-500">
+              </div>
+              <div class="search-error-state hidden flex-col items-center justify-center p-8 text-red-500">
+                <div class="flex flex-col items-center">
+                  <svg class="w-6 h-6 text-red-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                      d="M12 9v2m0 4h.01M12 3a9 9 0 100 18 9 9 0 000-18z"></path>
+                  </svg>
+                  <p class="text-center font-light">Ein Fehler ist aufgetreten</p>
+                  <p id="search-error-message" class="text-center text-xs mt-1 text-gray-500"><!-- Fehlermeldung --></p>
+                </div>
+              </div>
+              <ul id="search-results-list" class="search-results-list px-4 py-4" role="listbox">
+                <!-- Hier werden dynamisch die Ergebnisse als Liste eingefügt -->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <button id="menu-button"
+          class="xl:hidden text-primary p-2 rounded-full hover:bg-primary/10 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/30 ml-1"
+          aria-label="Menü öffnen">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
-
       </div>
     </div>
   </header>

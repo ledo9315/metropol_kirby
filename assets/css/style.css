@@ -43,6 +43,7 @@
   --color-secondary: #373737;
   --color-light: #f8f8f8;
   --color-dark: #222222;
+  isolation: isolate;
 }
 
 body {
@@ -50,6 +51,7 @@ body {
   overflow-x: hidden;
   background-color: #fff;
   font-family: "Futura Std", Arial, Helvetica, sans-serif !important;
+  isolation: isolate;
 }
 
 p,
@@ -101,4 +103,203 @@ th {
 
 .focus\:ring-primary:focus {
   --tw-ring-color: #891819 !important;
+}
+
+/* Benutzerdefinierte Scrollbar für Suchergebnisse */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(137, 24, 25, 0.2);
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(137, 24, 25, 0.4);
+}
+
+/* Anpassungen für die Suchergebnisse */
+.search-results-list li a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.search-results-list li a {
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+/* Trennlinien zwischen den Filmen */
+.search-results-list li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 0 8px;
+  margin-bottom: 0;
+  padding-bottom: 16px;
+}
+
+.search-results-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 8px;
+}
+
+/* Abstand zwischen den Elementen */
+.search-results-list {
+  padding: 8px 8px;
+  height: auto;
+}
+
+.search-results-list li + li {
+  margin-top: 16px;
+}
+
+/* Ausrichtung der Elemente */
+.search-results-list li a .flex {
+  align-items: flex-start;
+}
+
+.search-results-list li a {
+  padding: 12px 0;
+}
+
+.search-results-list li a .flex-grow {
+  margin-left: 24px;
+  padding-right: 24px;
+}
+
+.search-results-list li a h4 {
+  word-break: break-word;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.search-results-list li a .flex-col > div {
+  margin-bottom: 8px;
+}
+
+/* Der Header soll immer oben bleiben */
+.search-results-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 200 !important;
+  background-color: white !important;
+  transform: translateZ(0) !important;
+}
+
+@media (max-width: 640px) {
+  .search-results-list li a .flex {
+    align-items: center;
+  }
+
+  .search-results-list li a .flex-grow {
+    margin-left: 12px;
+  }
+
+  .search-results-list li a .w-32 {
+    width: 5rem;
+  }
+
+  .search-results-list li a .h-44 {
+    height: 7rem;
+  }
+}
+
+.search-results-list .object-fix {
+  display: none !important;
+}
+
+/* Mittlere Desktop-Auflösungen */
+@media (min-width: 769px) and (max-width: 1700px) {
+  /* Sticky Header auch auf mobilen Geräten */
+  .search-results-header {
+    position: sticky !important;
+    top: 0 !important;
+    background-color: white !important;
+    z-index: 10 !important;
+  }
+
+  /* Scrollbares Inneres der Suchbox */
+  #search-results-content {
+    max-height: 60vh !important;
+  }
+
+  /* Zusätzliche Anpassungen für Statuszustände */
+  .search-empty-state,
+  .search-loading-state,
+  .search-error-state {
+    padding: 12px 8px !important;
+    text-align: center !important;
+  }
+
+  .search-empty-state svg,
+  .search-loading-state svg,
+  .search-error-state svg {
+    width: 24px !important;
+    height: 24px !important;
+    margin-bottom: 4px !important;
+    display: inline-block !important;
+  }
+
+  .search-empty-state p,
+  .search-loading-state p,
+  .search-error-state p {
+    font-size: 0.875rem !important;
+    margin: 0 auto !important;
+  }
+
+  /* Zentrierung der inneren Container */
+  .search-empty-state > div,
+  .search-loading-state > div,
+  .search-error-state > div {
+    margin: 0 auto !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* Kleinere Bildschirme */
+@media (max-width: 480px) {
+  /* Verkleinern der Header-Leiste für Such-Ergebnisse */
+  .search-results-header {
+    padding: 8px 12px !important;
+  }
+
+  /* Verkleinern der Listeneinträge */
+  .search-results-list {
+    padding: 8px 4px !important;
+  }
+}
+
+/* Scrollbares Suchergebnis-Dropdown */
+#search-results-dropdown {
+  max-height: 80vh !important;
+  overflow-y: auto !important;
+  z-index: 999999 !important;
+  position: fixed !important; /* Position fixed statt absolute */
+  left: 10vw !important; /* Linksseitig 10% Abstand */
+  right: 10vw !important; /* Rechtsseitig 10% Abstand */
+  width: auto !important; /* Automatische Breite zwischen left und right */
+  margin-left: 0 !important; /* Kein Margin links */
+  margin-right: 0 !important; /* Kein Margin rechts */
+  transform: none !important; /* Keine Transformation nötig */
+  backface-visibility: hidden !important;
+  will-change: transform !important;
+  isolation: isolate;
+  top: 80px !important;
+}
+
+@media (max-width: 640px) {
+  #search-results-dropdown {
+    left: 5vw !important; /* Auf kleineren Bildschirmen nur 5% Abstand links */
+    right: 5vw !important; /* Auf kleineren Bildschirmen nur 5% Abstand rechts */
+  }
 }

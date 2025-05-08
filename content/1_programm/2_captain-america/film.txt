@@ -14,7 +14,7 @@ Action: true
 
 ----
 
-Abenteuer: false
+Abenteuer: true
 
 ----
 
@@ -90,12 +90,15 @@ Produktionsland: USA
 
 ----
 
-Spielzeiten:
+Produktionsfirma: 
 
-- 
-  date: 2025-05-08
-  time: 14:00:00
-  format: 2D
+----
+
+Hauptbesetzung: 
+
+----
+
+Spielzeiten: 
 
 ----
 

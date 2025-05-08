@@ -1,0 +1,216 @@
+Title: Preise
+
+----
+
+Intro: Hier finden Sie unsere Preise.
+
+----
+
+Prices:
+
+- 
+  category: Standard
+  amount: 10
+- 
+  category: 'Ermäßigt*'
+  amount: 8
+- 
+  category: 3D-Kino
+  amount: 13
+- 
+  category: Überlänge
+  amount: 11.5
+
+----
+
+Note: *Kinder bis 14 Jahre
+
+----
+
+Non-alcoholic:
+
+- 
+  name: Coca-Cola
+  type: Glas
+  size: 0,2l
+  price: 1.5
+- 
+  name: Fanta
+  type: Glas
+  size: 0,2l
+  price: 1.5
+- 
+  name: Spezi
+  type: Glas
+  size: 0,2l
+  price: 1.5
+- 
+  name: O-Saft
+  type: Glas
+  size: 0,2l
+  price: 2.2
+- 
+  name: O-Saft
+  type: Glas
+  size: 0,4l
+  price: 3.9
+- 
+  name: Apfelsaft
+  type: Glas
+  size: 0,2l
+  price: 2.2
+- 
+  name: Apfelschorle
+  type: Glas
+  size: 0,4l
+  price: 3
+- 
+  name: Mineralwasser
+  type: Glas
+  size: 0,4l
+  price: 2
+- 
+  name: Bitter Lemon
+  type: Flasche
+  size: 0,2l
+  price: 2.2
+- 
+  name: Tonic Water
+  type: Flasche
+  size: 0,2l
+  price: 2.2
+- 
+  name: Coca-Cola
+  type: Flasche
+  size: 0,2l
+  price: 3
+- 
+  name: Kaffe
+  type: Tasse
+  size: -
+  price: 1.5
+
+----
+
+Beers:
+
+- 
+  name: Holsten Edel
+  price: 2.2
+- 
+  name: Flensburger
+  price: 2.5
+- 
+  name: "Beck's"
+  price: 2.5
+- 
+  name: "Beck's Gold"
+  price: 2.5
+- 
+  name: "Beck's Green Lemon"
+  price: 2.5
+- 
+  name: Erdinger Weißbier 0,5l
+  price: 3.5
+- 
+  name: Alster (Holsten) 0,4l
+  price: 3
+- 
+  name: Clasthaler Alkoholfrei
+  price: 2.5
+
+----
+
+Longdrinks:
+
+- 
+  name: Wodka Lemon
+  price: 3.5
+- 
+  name: Wodka O-Saft
+  price: 3.5
+- 
+  name: Gin Tonic
+  price: 3.5
+- 
+  name: Gin O-Saft
+  price: 3.5
+- 
+  name: Bacardi Cola
+  price: 3.5
+- 
+  name: Bacardi Club Cola
+  price: 3.5
+- 
+  name: Ballantine’s Cola
+  price: 3.5
+- 
+  name: Jim Beam Cola
+  price: 3.5
+- 
+  name: Pernod Cola, Wasser
+  price: 3.5
+- 
+  name: Campari O-Saft 4 cl
+  price: 4
+
+----
+
+Misc:
+
+- 
+  name: Jägermeister
+  price: 1.5
+- 
+  name: Jim Beam Kentucky Bourbon
+  price: 2
+- 
+  name: Ballantine’s
+  price: 2
+- 
+  name: Sambuca
+  price: 2
+- 
+  name: Martini weiß, rot
+  price: 2.5
+- 
+  name: Wein weiß, rot Schoppen
+  price: 3
+- 
+  name: Piccolo „Mumm“
+  price: 5
+- 
+  name: Rumgrog
+  price: 2
+
+----
+
+Rental-title: Unser Kino, Eure Leinwand
+
+----
+
+Rental-text: Sie sind eine Bildungseinrichtung, Verein oder Unternehmen und möchten Ihre Ideen auf unserer Leinwand präsentieren? Dann kontaktieren Sie uns, um den Kinosaal zu mieten.
+
+----
+
+Menu-title: Speisekarte
+
+----
+
+Non-alcoholic-title: Alkoholfreie Getränke
+
+----
+
+Beer-title: Biere
+
+----
+
+Longdrinks-title: 
+
+----
+
+Misc-title: 
+
+----
+
+Uuid: preise28nfdl3497

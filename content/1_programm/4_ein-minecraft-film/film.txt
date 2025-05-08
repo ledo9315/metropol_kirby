@@ -1,0 +1,110 @@
+Title: Ein Minecraft Film
+
+----
+
+Programm-status: upcoming
+
+----
+
+Cover: - file://MfmgVWnXWX2F9qNh
+
+----
+
+Action: false
+
+----
+
+Abenteuer: false
+
+----
+
+Familienfilm: true
+
+----
+
+Animation: true
+
+----
+
+Fantasy: false
+
+----
+
+Liebesfilm: false
+
+----
+
+Maerchenfilm: false
+
+----
+
+Musical: false
+
+----
+
+Kinderfilm: false
+
+----
+
+Drama: false
+
+----
+
+Komoedie: true
+
+----
+
+Horror: false
+
+----
+
+Year: 2025
+
+----
+
+Runtime: 101
+
+----
+
+Fsk: 12
+
+----
+
+Description: Vier Außenseiter – Garrett „The Garbage Man“ Garrison (Jason Momoa), Henry (Sebastian Eugene Hansen), Natalie (Emma Myers) und Dawn (Danielle Brooks) – werden aus ihrem Alltag gerissen, als sie durch ein mysteriöses Portal in eine fremde Welt gezogen werden: Die Oberwelt, ein seltsames, kubisches Land, das von schier grenzenloser Fantasie beherrscht wird. Um den Weg zurück in ihre Realität zu finden, müssen sie diese ungewöhnliche Welt meistern und sich gegen Bedrohungen wie etwa Zombies und wild gewordene Schweine verteidigen. Unterstützung erhalten sie dabei von Steve (Jack Black), einem erfahrenen Crafter, der die vier Abenteurer auf ihrer nicht ganz freiwilligen Reise begleitet. Während sie gemeinsam die vielen Herausforderungen meistern, entdecken sie, dass genau die kreativen Fähigkeiten, die sie auszeichnen, der Schlüssel zum Erfolg sind – sowohl in der Oberwelt als auch in ihrer eigenen.
+
+----
+
+Video: 
+
+----
+
+Trailer: https://www.youtube.com/embed/p1zgHz_GhhA?si=wPb6k6FRwr3uyYAR&amp;start=7
+
+----
+
+Regisseur: Jared Hess
+
+----
+
+Produktionsland: USA
+
+----
+
+Produktionsfirma: Warner Bros. Pic./Legendary Pic./Mojang Studios/Vertigo Ent./On the Roam
+
+----
+
+Hauptbesetzung: Jason Momoa / Jack Black / Danielle Brooks / Sebastian Eugene Hansen / Emma Myers / Jennifer Coolidge / Kate McKinnon
+
+----
+
+Spielzeiten:
+
+- 
+  date: ""
+  time: ""
+  format: 2D
+
+----
+
+Uuid: J9JIWL78TBvMO6Fj

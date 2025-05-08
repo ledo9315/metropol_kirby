@@ -1,0 +1,11 @@
+title: API
+options:
+  delete: false
+  changeTemplate: false
+  changeTitle: false
+
+sections:
+  info:
+    type: info
+    headline: API Endpunkt
+    text: Diese Seite dient als API-Endpunkt und sollte nicht bearbeitet werden.

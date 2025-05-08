@@ -1,4 +1,6 @@
-<?php snippet('header') ?>
+<?php
+snippet('header');
+?>
 
 <main class="main-content">
   <div class="container">

@@ -14,7 +14,7 @@ Action: true
 
 ----
 
-Abenteuer: true
+Abenteuer: false
 
 ----
 
@@ -74,11 +74,27 @@ Description: In VENOM: THE LAST DANCE kehrt Tom Hardy als Venom, einer der bedeu
 
 ----
 
+Video: 
+
+----
+
+Trailer: 
+
+----
+
 Regisseur: Kelly Marcel
 
 ----
 
 Produktionsland: USA
+
+----
+
+Produktionsfirma: 
+
+----
+
+Hauptbesetzung: 
 
 ----
 

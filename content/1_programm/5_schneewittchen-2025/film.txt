@@ -1,0 +1,105 @@
+Title: Schneewittchen (2025)
+
+----
+
+Programm-status: upcoming
+
+----
+
+Cover: - file://x6T5qxsfA15TDGII
+
+----
+
+Action: false
+
+----
+
+Abenteuer: false
+
+----
+
+Familienfilm: true
+
+----
+
+Animation: false
+
+----
+
+Fantasy: false
+
+----
+
+Liebesfilm: false
+
+----
+
+Maerchenfilm: true
+
+----
+
+Musical: true
+
+----
+
+Kinderfilm: false
+
+----
+
+Drama: false
+
+----
+
+Komoedie: false
+
+----
+
+Horror: false
+
+----
+
+Year: 2025
+
+----
+
+Runtime: 109
+
+----
+
+Fsk: 0
+
+----
+
+Description: Realfilm-Adaption des berühmten Grimm’schen Märchens von der Königstochter, die nach dem Verlust von Mutter und Vater ihre bösartige Stiefmutter in Sachen Schönheit aussticht. Während ein magischer Spiegel den mörderischen Neid der Königin anstachelt, findet das Mädchen Unterschlupf bei den sieben Zwergen und die Unterstützung einer Diebesbande, um das unterjochte Königreich zurückzugewinnen. Im Vergleich zum Disney-Zeichentrickklassiker von 1937 sticht vor allem die Emanzipation der Titelfigur und die Umkodierung der Prinzenfigur heraus, während die gelungenen Musikeinlagen dank der trefflichen Besetzung einen märchenhaften Charme entfalten. Empathie, Mitmenschlichkeit und die Erinnerung an bessere Zeiten werden zur treibenden Kraft des Aufstands gegen das auf Reichtum und Selbstbespiegelung fixierte Böse.
+
+----
+
+Video: 
+
+----
+
+Trailer: https://www.youtube.com/embed/o5v8sUeAau4?si=s4jXeBGzW7QXnqDr&amp;start=5
+
+----
+
+Regisseur: Marc Webb
+
+----
+
+Produktionsland: USA
+
+----
+
+Produktionsfirma: Marc Platt Prod./The Walt Disney Company
+
+----
+
+Hauptbesetzung: Rachel Zegler / Gal Gadot / Andrew Burnap / Martin Klebba / Ansu Kabia / Colin Michael Carmichael / Dujonna Gift / Marc Menchaca
+
+----
+
+Spielzeiten: 
+
+----
+
+Uuid: P7uHlH4UX0zAqLsk

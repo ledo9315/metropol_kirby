@@ -132,6 +132,14 @@ fields:
     type: text
     label: Produktionsland
 
+  produktionsfirma:
+    type: text
+    label: Produktionsfirma
+
+  hauptbesetzung:
+    type: text
+    label: Hauptbesetzung
+
   spielzeiten:
     type: structure
     label: Spielzeiten
@@ -153,3 +161,4 @@ fields:
           3D: 3D
           OV: OV
           OmU: OmU
+        default: 2D

@@ -1,0 +1,134 @@
+Title: Until Dawn
+
+----
+
+Programm-status: current
+
+----
+
+Cover: - file://LKGlvtg1xZ6FHoV2
+
+----
+
+Action: false
+
+----
+
+Abenteuer: false
+
+----
+
+Familienfilm: false
+
+----
+
+Animation: false
+
+----
+
+Fantasy: false
+
+----
+
+Liebesfilm: false
+
+----
+
+Maerchenfilm: false
+
+----
+
+Musical: false
+
+----
+
+Kinderfilm: false
+
+----
+
+Drama: false
+
+----
+
+Komoedie: false
+
+----
+
+Horror: true
+
+----
+
+Year: 2025
+
+----
+
+Runtime: 104
+
+----
+
+Fsk: 16
+
+----
+
+Description: Ein Jahr nach dem rätselhaften Verschwinden eines Mädchens kehren ihre Schwester und einige Freunde in das abgelegene Tal zurück, in dem die junge Frau zuletzt gesehen wurde. Die Suche nach Antworten führt aber mitten in einen Albtraum, denn ein maskierter Killer jagt und tötet sie auf grausame Weise. Allerdings sterben die Protagonisten nicht, sondern erwachen am selben Abend immer wieder. Allerdings wird jede weitere Schleife immer unerträglicher, denn der Killer greift zu beständig brutaleren Methoden. Zudem bringt jeder Tod die Teenager einem endgültigen Ende immer näher. Ihre einzige Chance besteht darin, den Mörder bis zum Morgengrauen zu überlisten und den Albtraum zu durchbrechen. Der Horrorthriller fußt auf einem gleichnamigen Survival-Videospiel.
+
+----
+
+Video: 
+
+----
+
+Trailer: https://www.youtube.com/embed/HWC1y_VS8ZI?si=AAix5s1DljD4otfH
+
+----
+
+Regisseur: David F. Sandberg
+
+----
+
+Produktionsland: USA
+
+----
+
+Produktionsfirma: Coin Operated/Mångata Prod./PlayStation Prod./Screen Gems/Sony Pictures Releasing/Vertigo Ent.
+
+----
+
+Hauptbesetzung: 
+
+----
+
+Spielzeiten:
+
+- 
+  date: 2025-05-08
+  time: 20:00:00
+  format: 2D
+- 
+  date: 2025-05-09
+  time: 20:00:00
+  format: 2D
+- 
+  date: 2025-05-10
+  time: 20:00:00
+  format: 2D
+- 
+  date: 2025-05-11
+  time: 20:00:00
+  format: 2D
+- 
+  date: 2025-05-12
+  time: 20:00:00
+  format: 2D
+- 
+  date: 2025-05-13
+  time: 20:00:00
+  format: 2D
+- 
+  date: 2025-05-14
+  time: 20:00:00
+  format: 2D
+
+----
+
+Uuid: 3DManLa3891WXygd
