@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "Metropol-Theater Brunsbüttel Website",
   "scripts": {
-    "build:css": "tailwindcss -i ./src/tailwind.css -o ./assets/css/tailwind.min.css --minify",
-    "dev": "tailwindcss -i ./src/tailwind.css -o ./assets/css/tailwind.min.css --watch",
-    "build": "npm run build:css"
+    "dev": "tailwindcss -i ./src/css/main.css -o ./assets/css/tailwind.css --watch",
+    "build": "tailwindcss -i ./src/css/main.css -o ./assets/css/tailwind.css --minify",
+    "lint": "prettier --write 'src/**/*.{css,js}'"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.5.14",
     "tailwindcss": "^3.3.3"
   }
 }

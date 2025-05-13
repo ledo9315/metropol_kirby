@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./site/**/*.php", "./assets/js/**/*.js", "./index.php"],
+  content: [
+    "./site/**/*.{php,js}",
+    "./assets/js/**/*.js",
+    "./index.php"
+  ],
   safelist: [
     "rounded-2xl",
     "border-gray-500",
@@ -37,5 +41,11 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms")
+  ],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
 };

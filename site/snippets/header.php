@@ -5,7 +5,7 @@
   <?php snippet('layouts/meta') ?>
 
   <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/css/tailwind.css">
   <link rel="preload" href="/assets/fonts/FuturaStdBook.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/FuturaStdMedium.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/FuturaStdBold.woff2" as="font" type="font/woff2" crossorigin>
