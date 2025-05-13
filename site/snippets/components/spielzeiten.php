@@ -14,7 +14,7 @@ ksort($spielzeitenByDate);
 $spielzeitenId = "spielzeiten-" . uniqid();
 ?>
 
-<div class="lg:max-w-xl 2xl:max-w-2xl" role="region" aria-labelledby="<?= $spielzeitenId ?>">
+<div class="w-full" role="region" aria-labelledby="<?= $spielzeitenId ?>">
     <?php if (isset($showHeading) && $showHeading): ?>
         <h2 id="<?= $spielzeitenId ?>" class="text-5xl font-[300] text-primary mb-6">Spielzeiten</h2>
     <?php else: ?>
@@ -27,30 +27,39 @@ $spielzeitenId = "spielzeiten-" . uniqid();
             return strtotime($a->time()) - strtotime($b->time());
         });
 
-        $dateInfo = getDateDisplay($dateKey);
-        $subtitleDisplay = $dateInfo['isToday'] ? '<div class="text-sm text-gray-500">HEUTE</div>' : '';
+        // Angepasstes Datumsformat für die Anzeige
+        $today = date('Y-m-d');
+        $tomorrow = date('Y-m-d', strtotime('+1 day'));
+
+        if ($dateKey == $today) {
+            $displayDate = 'Heute';
+        } elseif ($dateKey == $tomorrow) {
+            $displayDate = 'Morgen';
+        } else {
+            $displayDate = date('d.m.', strtotime($dateKey));
+        }
+
         $dateId = "date-" . md5($dateKey);
-        ?>
-        <div class="flex justify-between items-center py-3 border-b border-primary pt-[1em] pb-[4em]" role="group"
-            aria-labelledby="<?= $dateId ?>">
-            <div class="w-max">
-                <div id="<?= $dateId ?>" class="text-xl text-secondary"><?= $dateInfo['display'] ?></div>
-                <?= $subtitleDisplay ?>
+
+        foreach ($dateTimes as $spielzeit):
+            $spielzeitId = "spielzeit-" . md5($dateKey . $spielzeit->time());
+            ?>
+            <div class="flex justify-between items-center py-3 border-b border-primary" role="group"
+                aria-labelledby="<?= $dateId ?>">
+                <div>
+                    <span class="text-xl text-secondary">
+                        <span id="<?= $dateId ?>" class="text-xl"><?= $displayDate ?></span> um
+                        <?= $spielzeit->time()->toDate('H.i') ?>
+                        Uhr
+                    </span>
+                </div>
+                <div>
+                    <span class="px-3 rounded-2xl py-0.5 mr-2 border border-gray-500 text-secondary text-sm font-medium"
+                        aria-labelledby="<?= $spielzeitId ?>">
+                        <?= $spielzeit->format() ?>
+                    </span>
+                </div>
             </div>
-            <div class="flex flex-wrap" role="list">
-                <?php foreach ($dateTimes as $spielzeit):
-                    $spielzeitId = "spielzeit-" . md5($dateKey . $spielzeit->time());
-                    ?>
-                    <div class="flex items-center mr-8 gap-1" role="listitem">
-                        <span id="<?= $spielzeitId ?>" class="text-xl text-secondary"><?= $spielzeit->time()->toDate('H:i') ?>
-                        </span>
-                        <span class="px-3 rounded-2xl py-0.5 border border-gray-500 text-secondary text-sm font-medium"
-                            aria-labelledby="<?= $spielzeitId ?>">
-                            <?= $spielzeit->format() ?>
-                        </span>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
+        <?php endforeach; ?>
     <?php endforeach; ?>
 </div>

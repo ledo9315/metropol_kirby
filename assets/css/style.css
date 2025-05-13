@@ -89,10 +89,6 @@ th {
   color: #891819 !important;
 }
 
-.border-primary {
-  border-color: #891819 !important;
-}
-
 .hover\:text-primary:hover {
   color: #891819 !important;
 }
@@ -119,6 +115,10 @@ th {
   background-color: rgba(137, 24, 25, 0.2);
   border-radius: 10px;
   border: 2px solid white;
+}
+
+.border-secondary {
+  border-color: #8e8e8e !important;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {

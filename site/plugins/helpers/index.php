@@ -60,36 +60,41 @@ function getDateDisplay($dateKey)
     $tomorrow = date('d.m.Y', strtotime('+1 day'));
 
     $months = [
-        '01' => 'JAN',
-        '02' => 'FEB',
-        '03' => 'MÄR',
-        '04' => 'APR',
-        '05' => 'MAI',
-        '06' => 'JUN',
-        '07' => 'JUL',
-        '08' => 'AUG',
-        '09' => 'SEP',
-        '10' => 'OKT',
-        '11' => 'NOV',
-        '12' => 'DEZ'
+        '01' => 'Januar',
+        '02' => 'Februar',
+        '03' => 'März',
+        '04' => 'April',
+        '05' => 'Mai',
+        '06' => 'Juni',
+        '07' => 'Juli',
+        '08' => 'August',
+        '09' => 'September',
+        '10' => 'Oktober',
+        '11' => 'November',
+        '12' => 'Dezember'
     ];
 
     $weekdays = [
-        'Mon' => 'MO',
-        'Tue' => 'DI',
-        'Wed' => 'MI',
-        'Thu' => 'DO',
-        'Fri' => 'FR',
-        'Sat' => 'SA',
-        'Sun' => 'SO'
+        'Mon' => 'Montag',
+        'Tue' => 'Dienstag',
+        'Wed' => 'Mittwoch',
+        'Thu' => 'Donnerstag',
+        'Fri' => 'Freitag',
+        'Sat' => 'Samstag',
+        'Sun' => 'Sonntag'
     ];
-
-    $weekday = $weekdays[date('D', strtotime($dateKey))];
-    $monthKey = date('m', strtotime($dateKey));
-    $dateDisplay = $weekday . '. (' . date('d', strtotime($dateKey)) . ' ' . $months[$monthKey] . '.)';
 
     $isToday = $date == $today;
     $isTomorrow = $date == $tomorrow;
+
+    if ($isToday) {
+        $dateDisplay = 'Heute';
+    } else if ($isTomorrow) {
+        $dateDisplay = 'Morgen';
+    } else {
+        $weekday = $weekdays[date('D', strtotime($dateKey))];
+        $dateDisplay = $weekday;
+    }
 
     return [
         'display' => $dateDisplay,

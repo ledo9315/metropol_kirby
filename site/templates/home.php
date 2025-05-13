@@ -4,7 +4,7 @@
   <div class="container mx-auto px-4">
     <section class="pt-20 pb-20" aria-labelledby="main-heading">
       <div class="relative overflow-hidden">
-        <div class="container mx-auto py-12">
+        <div class="py-12">
           <div class="flex flex-col xl:flex-row items-start mx-4 gap-6 lg:gap-10">
             <?php if ($image = $page->image()): ?>
               <div class="w-full xl:w-7/12 mb-6 xl:mb-0">
@@ -23,8 +23,8 @@
                   class="text-3xl sm:text-5xl md:text-[4rem] lg:text-[5rem] leading-none font-[300] text-primary mb-6 sm:mb-8">
                   <?= $page->title() ?>
                 </h1>
-                <div class="prose prose-base sm:prose-lg mb-6 sm:mb-8 max-w-none text-secondary leading-[1.7]">
-                  <?= $page->description()->kirbytext() ?>
+                <div class="prose prose-base sm:prose-lg mb-6 sm:mb-8 max-w-none text-secondary">
+                  <?= str_replace("\n", " ", $page->description()->value()) ?>
                 </div>
                 <div class="mt-8">
                   <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-none font-[300] text-primary mb-4">
@@ -63,8 +63,8 @@
                   ]); ?>
                 </div>
 
-                <div class="w-full md:w-2/3 md:pl-10 mt-6 md:mt-0">
-                  <h3 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[300] leading-none text-primary mb-4"
+                <div class="w-full md:w-2/3 xl:w-1/3 md:pl-10 mt-6 md:mt-0">
+                  <h3 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[300] leading-none text-primary mb-4 mt-8"
                     itemprop="name">
                     <?= $movie->title() ?>
                   </h3>
@@ -72,7 +72,7 @@
                     'film' => $movie,
                     'className' => 'text-secondary text-base font-medium'
                   ]); ?>
-                  <div class="text-lg text-gray-500 mb-6 sm:mb-8 md:mb-12">
+                  <div class="text-lg text-gray-500 mb-6 sm:mb-8 md:mb-10">
                     <?= snippet('components/film-details', [
                       'film' => $movie,
                       'showProductionCountry' => true
@@ -130,11 +130,11 @@
                   <article itemscope itemtype="http://schema.org/Movie">
                     <a href="<?= $movie->url() ?>" class="block group" aria-label="Details zu <?= $movie->title() ?>">
                       <?php if ($movieImage = $movie->cover()->toFile()): ?>
-                        <div class="overflow-hidden mb-2 sm:mb-4 border rounded">
+                        <div class="overflow-hidden mb-2 sm:mb-4 border border-secondary rounded">
                           <img src="<?= $movieImage->thumb(['width' => 400, 'height' => 600, 'crop' => true])->url() ?>"
                             alt="<?= $movie->title() ?>"
-                            class="w-full h-[460px] shadow group-hover:scale-105 transition-transform duration-300" loading="lazy"
-                            role="img">
+                            class="w-full aspect-[2/3] object-cover shadow group-hover:scale-105 transition-transform duration-300"
+                            loading="lazy" role="img">
                         </div>
                       <?php else: ?>
                         <div
@@ -144,12 +144,12 @@
                         </div>
                       <?php endif ?>
 
-                      <h3 class="text-xl sm:text-2xl md:text-3xl text-center font-[300] text-primary mb-1 sm:mb-2"
+                      <h3 class="text-xl sm:text-2xl md:text-3xl text-center font-[300] text-primary mb-2 sm:mb-2"
                         itemprop="name">
                         <?= $movie->title() ?>
                       </h3>
 
-                      <div class="text-base text-secondary font-medium text-center">
+                      <div class="text-base text-secondary font-medium text-center mb-2 sm:mb-3">
                         <?= implode(' / ', getFilmCategories($movie)) ?>
                       </div>
 

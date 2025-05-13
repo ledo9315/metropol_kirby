@@ -6,6 +6,7 @@
 
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/tailwind.css">
+  <link rel="stylesheet" href="/assets/css/spielzeiten.css">
   <link rel="preload" href="/assets/fonts/FuturaStdBook.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/FuturaStdMedium.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/FuturaStdBold.woff2" as="font" type="font/woff2" crossorigin>
@@ -130,7 +131,7 @@
               <form action="javascript:void(0);" class="flex items-center" role="search">
                 <div class="relative">
                   <input type="search" name="q" id="search-input"
-                    class="text-primary bg-white border-2 border-primary/20 focus:border-primary rounded-full py-2 px-4 pr-10 text-sm w-[200px] md:w-[240px] transition-all duration-300 focus:outline-none focus:shadow-md placeholder-primary/50 appearance-none"
+                    class="text-primary bg-white border-2 border-primary/20 focus:border-primary py-2 px-4 pr-10 text-sm w-[200px] md:w-[240px] transition-all duration-300 focus:outline-none focus:shadow-md placeholder-primary/50 appearance-none"
                     placeholder="Film suchen..." aria-label="Film suchen" autocomplete="off" spellcheck="false">
                   <button type="submit" id="search-submit"
                     class="absolute right-1 top-1/2 -translate-y-1/2 text-primary p-1.5 rounded-full hover:bg-primary/10 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/30"
