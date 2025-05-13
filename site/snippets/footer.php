@@ -7,7 +7,7 @@
 
       <!-- Theater-Informationen & Kontakt -->
       <div class="justify-self-start lg:justify-self-center">
-        <h2 class="text-sm font-bold tracking-wider mb-4 uppercase">Metropol-Theater</h2>
+        <h2 class="text-sm font-bold tracking-[0.12em] mb-2 uppercase">Metropol-Theater</h2>
         <div class="text-white">
           <meta itemprop="name" content="Metropol-Theater Brunsbüttel">
           <p class="mb-2" itemprop="openingHours" content="Mo-Su 19:00">
@@ -36,7 +36,7 @@
       </div>
 
       <div class="justify-self-start lg:justify-self-center">
-        <h2 class="text-sm font-bold tracking-wider mb-4 uppercase">Adresse</h2>
+        <h2 class="text-sm font-bold tracking-[0.12em] mb-2 uppercase">Adresse</h2>
         <address class="text-white not-italic" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
           <p itemprop="streetAddress">Posadowskystraße 2A</p>
           <p class="mb-2">
@@ -58,7 +58,7 @@
 
       <!-- Navigation -->
       <div class="justify-self-start lg:justify-self-center">
-        <h2 class="text-sm font-bold tracking-wider mb-4 uppercase">Navigation</h2>
+        <h2 class="text-sm font-bold tracking-[0.12em] mb-2 uppercase">Navigation</h2>
         <nav aria-label="Footer-Navigation">
           <ul class="space-y-2">
             <li>
@@ -95,7 +95,7 @@
 
       <!-- Dokumentation -->
       <div class="justify-self-start lg:justify-self-center">
-        <h2 class="text-sm font-bold tracking-wider mb-4 uppercase">Rechtliches</h2>
+        <h2 class="text-sm font-bold tracking-[0.12em] mb-2 uppercase">Rechtliches</h2>
         <nav aria-label="Rechtliche Links">
           <ul class="space-y-2">
             <li>
@@ -117,11 +117,13 @@
       </div>
     </div>
 
-    <!-- Copyright -->
+    <!-- Copyright
+     Anmerkung: sollte gelöscht werden, erstmal nur auskommentiert, falls man den Whitespace doch benutzen möchte
     <div class="text-center mt-8 pt-8 border-t border-white/20 text-white text-sm">
       <p><?= date('Y') ?> <span itemprop="legalName">Metropol-Theater Brunsbüttel</span>. Alle Rechte
         vorbehalten.</p>
     </div>
+    -->
   </div>
 </footer>
 </body>

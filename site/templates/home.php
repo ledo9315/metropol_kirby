@@ -79,8 +79,6 @@
                     ]) ?>
                   </div>
 
-
-
                   <?php
                   $spielzeiten = $movie->spielzeiten()->toStructure();
                   if ($spielzeiten->count() > 0):
@@ -132,11 +130,11 @@
                   <article itemscope itemtype="http://schema.org/Movie">
                     <a href="<?= $movie->url() ?>" class="block group" aria-label="Details zu <?= $movie->title() ?>">
                       <?php if ($movieImage = $movie->cover()->toFile()): ?>
-                        <div class="overflow-hidden mb-2 sm:mb-4 border-[4px] border-green-500 rounded">
+                        <div class="overflow-hidden mb-2 sm:mb-4 border rounded">
                           <img src="<?= $movieImage->thumb(['width' => 400, 'height' => 600, 'crop' => true])->url() ?>"
                             alt="<?= $movie->title() ?>"
-                            class="w-full h-[460px] rounded shadow group-hover:scale-105 transition-transform duration-300"
-                            loading="lazy" role="img">
+                            class="w-full h-[460px] shadow group-hover:scale-105 transition-transform duration-300" loading="lazy"
+                            role="img">
                         </div>
                       <?php else: ?>
                         <div

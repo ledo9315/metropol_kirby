@@ -3,7 +3,7 @@
  * @module search/ui
  */
 
-import { SecurityUtils, DOMUtils, createPlaceholderImage } from "./utils.js";
+import { SecurityUtils, DOMUtils, createPlaceholderImage } from './utils.js';
 
 /**
  * UI-Komponenten für die Suchfunktion
@@ -19,54 +19,54 @@ export const SearchUI = {
     // Daten extrahieren, validieren und escapen
     const data = {
       title: SecurityUtils.escapeHTML(
-        typeof film.title === "string" ? film.title : ""
+        typeof film.title === 'string' ? film.title : ''
       ),
       year: SecurityUtils.escapeHTML(
-        typeof film.year === "string" ? film.year : ""
+        typeof film.year === 'string' ? film.year : ''
       ),
       category: SecurityUtils.escapeHTML(
-        typeof film.category === "string" ? film.category : ""
+        typeof film.category === 'string' ? film.category : ''
       ),
       fsk: SecurityUtils.escapeHTML(
-        typeof film.fsk === "string" ? film.fsk : ""
+        typeof film.fsk === 'string' ? film.fsk : ''
       ),
       url: SecurityUtils.sanitizeUrl(
-        typeof film.url === "string" ? film.url : "#"
+        typeof film.url === 'string' ? film.url : '#'
       ),
-      cover: typeof film.cover === "string" ? film.cover : "",
+      cover: typeof film.cover === 'string' ? film.cover : '',
     };
 
     // Element erstellen
-    const li = DOMUtils.createElement("li", {
+    const li = DOMUtils.createElement('li', {
       className:
-        "mb-6 last:mb-0 border-b border-gray-200 last:border-0 pb-5 last:pb-0",
-      role: "option",
+        'mb-6 last:mb-0 border-b border-gray-200 last:border-0 pb-5 last:pb-0',
+      role: 'option',
     });
 
     // Link erstellen
-    const a = DOMUtils.createElement("a", {
+    const a = DOMUtils.createElement('a', {
       href: data.url,
       className:
-        "block hover:bg-gray-50 transition-all duration-200 rounded-lg hover:shadow-md overflow-hidden",
+        'block hover:bg-gray-50 transition-all duration-200 rounded-lg hover:shadow-md overflow-hidden',
       onClick: clickHandler,
     });
 
     // Container erstellen
-    const flexContainer = DOMUtils.createElement("div", {
-      className: "flex p-0",
+    const flexContainer = DOMUtils.createElement('div', {
+      className: 'flex p-0',
     });
 
     // Bildbehälter erstellen
-    const imageContainer = DOMUtils.createElement("div", {
-      className: "w-32 h-44 flex-shrink-0 bg-gray-100 overflow-hidden",
+    const imageContainer = DOMUtils.createElement('div', {
+      className: 'w-32 h-44 flex-shrink-0 bg-gray-100 overflow-hidden',
     });
 
     // Bild oder Placeholder einfügen
     if (data.cover) {
-      const img = DOMUtils.createElement("img", {
+      const img = DOMUtils.createElement('img', {
         src: data.cover, // Cover-URL sollte vom Backend validiert sein
-        alt: "",
-        className: "w-full h-full object-cover",
+        alt: '',
+        className: 'w-full h-full object-cover',
       });
       imageContainer.appendChild(img);
     } else {
@@ -74,26 +74,26 @@ export const SearchUI = {
     }
 
     // Textbehälter erstellen
-    const textContainer = DOMUtils.createElement("div", {
-      className: "flex-grow p-5",
+    const textContainer = DOMUtils.createElement('div', {
+      className: 'flex-grow p-5',
     });
 
     // Titel einfügen
-    const title = DOMUtils.createElement("h4", {
-      className: "font-medium text-primary text-xl mb-3",
+    const title = DOMUtils.createElement('h4', {
+      className: 'font-medium text-primary text-xl mb-3',
       textContent: data.title,
     });
     textContainer.appendChild(title);
 
     // Details-Container
-    const detailsContainer = DOMUtils.createElement("div", {
-      className: "flex flex-col space-y-2",
+    const detailsContainer = DOMUtils.createElement('div', {
+      className: 'flex flex-col space-y-2',
     });
 
     // Jahr hinzufügen (wenn vorhanden)
     if (data.year) {
-      const yearDiv = DOMUtils.createElement("div", {
-        className: "font-medium text-base",
+      const yearDiv = DOMUtils.createElement('div', {
+        className: 'font-medium text-base',
         textContent: data.year,
       });
       detailsContainer.appendChild(yearDiv);
@@ -101,10 +101,10 @@ export const SearchUI = {
 
     // Kategorie hinzufügen (wenn vorhanden)
     if (data.category) {
-      const categoryDiv = DOMUtils.createElement("div");
-      const categorySpan = DOMUtils.createElement("span", {
+      const categoryDiv = DOMUtils.createElement('div');
+      const categorySpan = DOMUtils.createElement('span', {
         className:
-          "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary",
+          'inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary',
         textContent: data.category,
       });
       categoryDiv.appendChild(categorySpan);
@@ -113,8 +113,8 @@ export const SearchUI = {
 
     // FSK hinzufügen (wenn vorhanden)
     if (data.fsk) {
-      const fskDiv = DOMUtils.createElement("div", {
-        className: "text-sm text-gray-600",
+      const fskDiv = DOMUtils.createElement('div', {
+        className: 'text-sm text-gray-600',
         textContent: `FSK ${data.fsk}`,
       });
       detailsContainer.appendChild(fskDiv);
@@ -149,7 +149,7 @@ export const SearchUI = {
         const listItem = this.createResultItem(film, clickHandler);
         fragment.appendChild(listItem);
       } catch (error) {
-        console.error("Fehler beim Rendern eines Suchergebnisses:", error);
+        console.error('Fehler beim Rendern eines Suchergebnisses:', error);
       }
     });
 
@@ -168,17 +168,17 @@ export const OverlayManager = {
    * @returns {HTMLElement} Das Overlay-Element
    */
   show(clickHandler) {
-    let overlay = document.getElementById("search-overlay");
+    let overlay = document.getElementById('search-overlay');
 
     if (!overlay) {
-      overlay = DOMUtils.createElement("div", {
-        id: "search-overlay",
-        className: "fixed inset-0 bg-black bg-opacity-30 z-[90]",
+      overlay = DOMUtils.createElement('div', {
+        id: 'search-overlay',
+        className: 'fixed inset-0 bg-black bg-opacity-30 z-[90]',
         onClick: clickHandler,
       });
       document.body.appendChild(overlay);
     } else {
-      overlay.classList.remove("hidden");
+      overlay.classList.remove('hidden');
     }
 
     return overlay;
@@ -188,8 +188,8 @@ export const OverlayManager = {
    * Versteckt das Overlay
    */
   hide() {
-    const overlay = document.getElementById("search-overlay");
-    if (overlay) overlay.classList.add("hidden");
+    const overlay = document.getElementById('search-overlay');
+    if (overlay) overlay.classList.add('hidden');
   },
 };
 
@@ -203,18 +203,18 @@ export const FormStyles = {
    */
   applyMobileStyles(form) {
     const mobileClasses = [
-      "flex",
-      "items-center",
-      "fixed",
-      "top-[70px]",
-      "right-4",
-      "bg-white",
-      "p-3",
-      "rounded-xl",
-      "shadow-lg",
-      "z-[200]",
-      "w-[calc(100vw-2rem)]",
-      "max-w-[320px]",
+      'flex',
+      'items-center',
+      'fixed',
+      'top-[70px]',
+      'right-4',
+      'bg-white',
+      'p-3',
+      'rounded-xl',
+      'shadow-lg',
+      'z-[200]',
+      'w-[calc(100vw-2rem)]',
+      'max-w-[320px]',
     ];
 
     DOMUtils.addClass(form, mobileClasses);
@@ -226,20 +226,20 @@ export const FormStyles = {
    */
   removeMobileStyles(form) {
     const mobileClasses = [
-      "fixed",
-      "top-[70px]",
-      "right-4",
-      "bg-white",
-      "p-3",
-      "rounded-xl",
-      "shadow-lg",
-      "z-[200]",
-      "w-[calc(100vw-2rem)]",
-      "max-w-[320px]",
+      'fixed',
+      'top-[70px]',
+      'right-4',
+      'bg-white',
+      'p-3',
+      'rounded-xl',
+      'shadow-lg',
+      'z-[200]',
+      'w-[calc(100vw-2rem)]',
+      'max-w-[320px]',
     ];
 
     DOMUtils.removeClass(form, mobileClasses);
-    DOMUtils.addClass(form, ["flex", "items-center", "ml-2", "z-[100]"]);
+    DOMUtils.addClass(form, ['flex', 'items-center', 'ml-2', 'z-[100]']);
   },
 
   /**
@@ -247,9 +247,9 @@ export const FormStyles = {
    * @param {HTMLElement} form - Das Formular-Element
    */
   resetStyles(form) {
-    form.style.transition = "";
-    form.style.width = "";
-    form.style.opacity = "";
+    form.style.transition = '';
+    form.style.width = '';
+    form.style.opacity = '';
   },
 
   /**
@@ -259,12 +259,12 @@ export const FormStyles = {
    */
   animateFormIn(form, callback) {
     form.style.cssText =
-      "width:0; opacity:0; transition:width 0.3s ease-out, opacity 0.2s ease-out";
+      'width:0; opacity:0; transition:width 0.3s ease-out, opacity 0.2s ease-out';
 
     // Animation in zwei Schritten
     requestAnimationFrame(() => {
-      form.style.width = "200px";
-      form.style.opacity = "1";
+      form.style.width = '200px';
+      form.style.opacity = '1';
 
       if (callback) {
         setTimeout(callback, 300);
@@ -278,8 +278,8 @@ export const FormStyles = {
    * @param {Function} callback - Callback nach Abschluss der Animation
    */
   animateFormOut(form, callback) {
-    form.style.width = "0";
-    form.style.opacity = "0";
+    form.style.width = '0';
+    form.style.opacity = '0';
 
     if (callback) {
       setTimeout(callback, 300);

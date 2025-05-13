@@ -14,7 +14,7 @@ ksort($spielzeitenByDate);
 $spielzeitenId = "spielzeiten-" . uniqid();
 ?>
 
-<div class="spielzeiten-container" role="region" aria-labelledby="<?= $spielzeitenId ?>">
+<div class="lg:max-w-xl 2xl:max-w-2xl" role="region" aria-labelledby="<?= $spielzeitenId ?>">
     <?php if (isset($showHeading) && $showHeading): ?>
         <h2 id="<?= $spielzeitenId ?>" class="text-5xl font-[300] text-primary mb-6">Spielzeiten</h2>
     <?php else: ?>
@@ -31,9 +31,9 @@ $spielzeitenId = "spielzeiten-" . uniqid();
         $subtitleDisplay = $dateInfo['isToday'] ? '<div class="text-sm text-gray-500">HEUTE</div>' : '';
         $dateId = "date-" . md5($dateKey);
         ?>
-        <div class="flex justify-between items-center py-3 border-b border-primary" role="group"
+        <div class="flex justify-between items-center py-3 border-b border-primary pt-[1em] pb-[4em]" role="group"
             aria-labelledby="<?= $dateId ?>">
-            <div>
+            <div class="w-max">
                 <div id="<?= $dateId ?>" class="text-xl text-secondary"><?= $dateInfo['display'] ?></div>
                 <?= $subtitleDisplay ?>
             </div>

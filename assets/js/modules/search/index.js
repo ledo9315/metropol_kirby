@@ -8,10 +8,10 @@ const DEBOUNCE_DELAY = 300;
 const MOBILE_BREAKPOINT = 768;
 
 // Submodule importieren
-import { SecurityUtils, BrowserUtils, DOMUtils } from "./utils.js";
-import { createSearchState } from "./state.js";
-import { SearchUI, OverlayManager, FormStyles } from "./ui.js";
-import { SearchAPI } from "./api.js";
+import { SecurityUtils, BrowserUtils, DOMUtils } from './utils.js';
+import { createSearchState } from './state.js';
+import { SearchUI, OverlayManager, FormStyles } from './ui.js';
+import { SearchAPI } from './api.js';
 
 // DOM-Elemente Cache
 let elements = {
@@ -53,23 +53,23 @@ export function initSearch() {
  */
 function cacheElements() {
   const selectors = {
-    searchInput: "#search-input",
-    searchForm: "#search-form",
-    searchContainer: "#search-container",
-    searchToggle: "#search-toggle",
-    searchClose: "#search-close",
-    resultsDropdown: "#search-results-dropdown",
-    resultsCount: "#search-results-count",
-    resultsList: "#search-results-list",
-    loadingState: ".search-loading-state",
-    emptyState: ".search-empty-state",
-    errorState: ".search-error-state",
-    errorMessage: "#search-error-message",
+    searchInput: '#search-input',
+    searchForm: '#search-form',
+    searchContainer: '#search-container',
+    searchToggle: '#search-toggle',
+    searchClose: '#search-close',
+    resultsDropdown: '#search-results-dropdown',
+    resultsCount: '#search-results-count',
+    resultsList: '#search-results-list',
+    loadingState: '.search-loading-state',
+    emptyState: '.search-empty-state',
+    errorState: '.search-error-state',
+    errorMessage: '#search-error-message',
   };
 
   // Alle Elemente in einem Durchgang sammeln
   for (const [key, selector] of Object.entries(selectors)) {
-    elements[key] = selector.startsWith("#")
+    elements[key] = selector.startsWith('#')
       ? document.getElementById(selector.substring(1))
       : document.querySelector(selector);
   }
@@ -83,10 +83,10 @@ function cacheElements() {
  */
 function validateRequiredElements() {
   const requiredElements = [
-    "searchInput",
-    "searchForm",
-    "searchContainer",
-    "resultsDropdown",
+    'searchInput',
+    'searchForm',
+    'searchContainer',
+    'resultsDropdown',
   ];
   return requiredElements.every((key) => elements[key]);
 }
@@ -99,32 +99,32 @@ function attachEventListeners() {
   const events = [
     {
       element: elements.searchInput,
-      event: "input",
+      event: 'input',
       handler: handleSearchInput,
     },
     {
       element: elements.searchInput,
-      event: "focus",
+      event: 'focus',
       handler: handleInputFocus,
     },
     {
       element: elements.searchForm,
-      event: "submit",
+      event: 'submit',
       handler: handleFormSubmit,
     },
     {
       element: elements.searchToggle,
-      event: "click",
+      event: 'click',
       handler: handleSearchToggle,
     },
     {
       element: elements.searchClose,
-      event: "click",
+      event: 'click',
       handler: handleSearchClose,
     },
-    { element: document, event: "click", handler: handleOutsideClick },
-    { element: document, event: "keydown", handler: handleKeyDown },
-    { element: window, event: "resize", handler: handleResize },
+    { element: document, event: 'click', handler: handleOutsideClick },
+    { element: document, event: 'keydown', handler: handleKeyDown },
+    { element: window, event: 'resize', handler: handleResize },
   ];
 
   // Event-Listener hinzufügen
@@ -149,7 +149,7 @@ function handleSearchInput(e) {
 
   searchState.setLoading();
   if (BrowserUtils.isMobile(MOBILE_BREAKPOINT)) {
-    document.body.classList.add("search-results-open");
+    document.body.classList.add('search-results-open');
   }
 
   debounceTimer = setTimeout(() => fetchSearchResults(query), DEBOUNCE_DELAY);
@@ -163,10 +163,10 @@ function handleInputFocus() {
   const hasExistingResults =
     query.length >= 1 &&
     elements.resultsList.children.length > 0 &&
-    !elements.resultsDropdown.classList.contains("hidden");
+    !elements.resultsDropdown.classList.contains('hidden');
 
   if (!hasExistingResults && query.length >= 1) {
-    elements.searchInput.dispatchEvent(new Event("input", { bubbles: true }));
+    elements.searchInput.dispatchEvent(new Event('input', { bubbles: true }));
   }
 }
 
@@ -184,7 +184,7 @@ function handleFormSubmit(event) {
 
   searchState.setLoading();
   if (BrowserUtils.isMobile(MOBILE_BREAKPOINT)) {
-    document.body.classList.add("search-results-open");
+    document.body.classList.add('search-results-open');
   }
 
   fetchSearchResults(query, true);
@@ -195,8 +195,8 @@ function handleFormSubmit(event) {
  */
 function handleSearchToggle() {
   toggleSearch();
-  const isExpanded = !elements.searchForm.classList.contains("hidden");
-  elements.searchToggle.setAttribute("aria-expanded", String(isExpanded));
+  const isExpanded = !elements.searchForm.classList.contains('hidden');
+  elements.searchToggle.setAttribute('aria-expanded', String(isExpanded));
 }
 
 /**
@@ -204,14 +204,14 @@ function handleSearchToggle() {
  */
 function handleSearchClose() {
   toggleSearch(false);
-  elements.searchToggle.setAttribute("aria-expanded", "false");
+  elements.searchToggle.setAttribute('aria-expanded', 'false');
 }
 
 /**
  * Behandelt Klicks außerhalb des Suchbereichs
  */
 function handleOutsideClick(event) {
-  const overlay = document.getElementById("search-overlay");
+  const overlay = document.getElementById('search-overlay');
   const isOutside =
     !elements.searchContainer.contains(event.target) &&
     event.target !== overlay;
@@ -219,9 +219,9 @@ function handleOutsideClick(event) {
   if (isOutside) {
     searchState.reset();
 
-    if (!elements.searchForm.classList.contains("hidden")) {
+    if (!elements.searchForm.classList.contains('hidden')) {
       toggleSearch(false);
-      elements.searchToggle.setAttribute("aria-expanded", "false");
+      elements.searchToggle.setAttribute('aria-expanded', 'false');
     }
   }
 }
@@ -230,10 +230,10 @@ function handleOutsideClick(event) {
  * Behandelt Tastatureingaben (Escape)
  */
 function handleKeyDown(event) {
-  if (event.key === "Escape") {
-    if (!elements.searchForm.classList.contains("hidden")) {
+  if (event.key === 'Escape') {
+    if (!elements.searchForm.classList.contains('hidden')) {
       toggleSearch(false);
-      elements.searchToggle.setAttribute("aria-expanded", "false");
+      elements.searchToggle.setAttribute('aria-expanded', 'false');
     }
 
     searchState.reset();
@@ -244,10 +244,10 @@ function handleKeyDown(event) {
  * Behandelt Änderungen der Fenstergröße
  */
 function handleResize() {
-  if (elements.searchForm.classList.contains("hidden")) return;
+  if (elements.searchForm.classList.contains('hidden')) return;
 
   const isMobileView = BrowserUtils.isMobile(MOBILE_BREAKPOINT);
-  const isCurrentlyMobile = elements.searchForm.classList.contains("fixed");
+  const isCurrentlyMobile = elements.searchForm.classList.contains('fixed');
 
   if (isMobileView === isCurrentlyMobile) return;
 
@@ -256,15 +256,15 @@ function handleResize() {
     FormStyles.resetStyles(elements.searchForm);
     FormStyles.applyMobileStyles(elements.searchForm);
     showOverlay();
-    document.body.classList.add("overflow-hidden");
+    document.body.classList.add('overflow-hidden');
   } else {
     // Mobile -> Desktop
     FormStyles.removeMobileStyles(elements.searchForm);
 
-    const overlay = document.getElementById("search-overlay");
-    overlay?.classList.add("hidden");
+    const overlay = document.getElementById('search-overlay');
+    overlay?.classList.add('hidden');
 
-    document.body.classList.remove("overflow-hidden");
+    document.body.classList.remove('overflow-hidden');
   }
 }
 
@@ -272,8 +272,8 @@ function handleResize() {
  * Behandelt Klicks auf ein Suchergebnis
  */
 function handleResultClick(event) {
-  const url = this.getAttribute("href");
-  if (url && url !== "#") {
+  const url = this.getAttribute('href');
+  if (url && url !== '#') {
     event.preventDefault();
     SearchAPI.navigateToFilm(url);
   }
@@ -296,7 +296,7 @@ async function fetchSearchResults(query, isFormSubmit = false) {
 
     updateSearchResults(data);
   } catch (error) {
-    console.error("Fehler bei der Filmsuche:", error);
+    console.error('Fehler bei der Filmsuche:', error);
     searchState.setError(error.message);
   }
 }
@@ -314,7 +314,7 @@ function updateSearchResults(data) {
 
   // Ergebniszähler aktualisieren
   elements.resultsCount.textContent = `${data.length} Film${
-    data.length !== 1 ? "e" : ""
+    data.length !== 1 ? 'e' : ''
   } gefunden`;
 
   // Ergebnisse rendern
@@ -330,7 +330,7 @@ function updateSearchResults(data) {
 function ensureDropdownScrollable() {
   if (elements.resultsDropdown) {
     // Stelle sicher, dass das Dropdown-Menü scrollbar ist
-    elements.resultsDropdown.style.overflowY = "auto";
+    elements.resultsDropdown.style.overflowY = 'auto';
 
     // Scroll zum Anfang zurücksetzen
     elements.resultsDropdown.scrollTop = 0;
@@ -344,25 +344,22 @@ function ensureDropdownScrollable() {
  */
 function toggleSearch(show = null) {
   const shouldShow =
-    show === null ? elements.searchForm.classList.contains("hidden") : show;
+    show === null ? elements.searchForm.classList.contains('hidden') : show;
 
-  if (shouldShow) {
-    showSearchForm();
-  } else {
-    hideSearchForm();
-  }
+  shouldShow ? showSearchForm() : hideSearchForm();
 }
 
 /**
  * Zeigt das Suchformular an
  */
 function showSearchForm() {
-  elements.searchForm.classList.remove("hidden");
+  elements.searchForm.classList.remove('hidden');
+  elements.searchToggle.classList.add('hidden');
 
   if (BrowserUtils.isMobile(MOBILE_BREAKPOINT)) {
     showOverlay();
     FormStyles.applyMobileStyles(elements.searchForm);
-    document.body.classList.add("overflow-hidden");
+    document.body.classList.add('overflow-hidden');
 
     setTimeout(() => elements.searchInput.focus(), 100);
   } else {
@@ -377,21 +374,23 @@ function showSearchForm() {
  * Versteckt das Suchformular
  */
 function hideSearchForm() {
+  elements.searchToggle.classList.remove('hidden');
+
   if (BrowserUtils.isMobile(MOBILE_BREAKPOINT)) {
     hideOverlay();
-    elements.searchForm.classList.add("hidden");
+    elements.searchForm.classList.add('hidden');
     searchState.reset();
-    document.body.classList.remove("overflow-hidden", "search-results-open");
+    document.body.classList.remove('overflow-hidden', 'search-results-open');
   } else {
     // Desktop-Animation
     FormStyles.animateFormOut(elements.searchForm, () => {
-      elements.searchForm.classList.add("hidden");
+      elements.searchForm.classList.add('hidden');
       FormStyles.resetStyles(elements.searchForm);
       searchState.reset();
     });
   }
 
-  elements.searchInput.value = "";
+  elements.searchInput.value = '';
 }
 
 /**
@@ -400,7 +399,7 @@ function hideSearchForm() {
 function showOverlay() {
   OverlayManager.show(() => {
     toggleSearch(false);
-    elements.searchToggle?.setAttribute("aria-expanded", "false");
+    elements.searchToggle?.setAttribute('aria-expanded', 'false');
   });
 }
 

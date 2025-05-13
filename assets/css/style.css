@@ -1,38 +1,38 @@
 @font-face {
-  font-family: "Futura Std";
-  src: url("/assets/fonts/FuturaStdBook.woff2") format("woff2");
+  font-family: 'Futura Std';
+  src: url('/assets/fonts/FuturaStdBook.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Futura Std";
-  src: url("/assets/fonts/FuturaStdMedium.woff2") format("woff2");
+  font-family: 'Futura Std';
+  src: url('/assets/fonts/FuturaStdMedium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Futura Std";
-  src: url("/assets/fonts/FuturaStdBold.woff2") format("woff2");
+  font-family: 'Futura Std';
+  src: url('/assets/fonts/FuturaStdBold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Futura Std";
-  src: url("/assets/fonts/FuturaStdLight.woff2") format("woff2");
+  font-family: 'Futura Std';
+  src: url('/assets/fonts/FuturaStdLight.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Futura Std";
-  src: url("/assets/fonts/FuturaStdLightOblique.woff2") format("woff2");
+  font-family: 'Futura Std';
+  src: url('/assets/fonts/FuturaStdLightOblique.woff2') format('woff2');
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -50,7 +50,7 @@ body {
   color: var(--color-secondary);
   overflow-x: hidden;
   background-color: #fff;
-  font-family: "Futura Std", Arial, Helvetica, sans-serif !important;
+  font-family: 'Futura Std', Arial, Helvetica, sans-serif !important;
   isolation: isolate;
 }
 
@@ -132,7 +132,9 @@ th {
 }
 
 .search-results-list li a {
-  transition: transform 0.2s ease, box-shadow 0.2s ease,
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
     background-color 0.2s ease;
 }
 
