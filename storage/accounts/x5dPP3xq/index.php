@@ -3,6 +3,6 @@
 return [
     'email' => 'leonid.domahalskyy@icloud.com',
     'language' => 'de',
-    'name' => '',
+    'name' => 'Leonid',
     'role' => 'admin'
 ];

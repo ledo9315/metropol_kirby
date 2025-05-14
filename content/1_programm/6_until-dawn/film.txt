@@ -128,7 +128,7 @@ Spielzeiten:
   date: 2025-05-14
   time: 20:00:00
   format: 2D
-  - 
+- 
   date: 2025-05-15
   time: 20:00:00
   format: 2D

@@ -42,7 +42,7 @@ class Api extends BaseApi
 
 		$allowImpersonation = $this->kirby()->option('api.allowImpersonation', false);
 
-		$translation = $this->kirby->user(null, $allowImpersonation)?->language();
+		$translation   = $this->kirby->user(null, $allowImpersonation)?->language();
 		$translation ??= $this->kirby->panelLanguage();
 		$this->kirby->setCurrentTranslation($translation);
 
@@ -71,7 +71,7 @@ class Api extends BaseApi
 		$field = Form::for($model)->field($name);
 
 		$fieldApi = $this->clone([
-			'data' => [...$this->data(), 'field' => $field],
+			'data'   => [...$this->data(), 'field' => $field],
 			'routes' => $field->api(),
 		]);
 
@@ -158,13 +158,13 @@ class Api extends BaseApi
 		string|null $status = null
 	): Pages {
 		$parent = $parentId === null ? $this->site() : $this->page($parentId);
-		$pages = match ($status) {
-			'all' => $parent->childrenAndDrafts(),
+		$pages  = match ($status) {
+			'all'             => $parent->childrenAndDrafts(),
 			'draft', 'drafts' => $parent->drafts(),
-			'listed' => $parent->children()->listed(),
-			'unlisted' => $parent->children()->unlisted(),
-			'published' => $parent->children(),
-			default => $parent->children()
+			'listed'          => $parent->children()->listed(),
+			'unlisted'        => $parent->children()->unlisted(),
+			'published'       => $parent->children(),
+			default           => $parent->children()
 		};
 
 		return $pages->filter('isAccessible', true);
@@ -198,7 +198,7 @@ class Api extends BaseApi
 		}
 
 		$sectionApi = $this->clone([
-			'data' => [...$this->data(), 'section' => $section],
+			'data'   => [...$this->data(), 'section' => $section],
 			'routes' => $section->api(),
 		]);
 

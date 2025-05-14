@@ -10,7 +10,6 @@ if (!isset($spielzeiten) || !$spielzeiten->count()) {
 
 $spielzeitenByDate = formatSpielzeiten($spielzeiten);
 ksort($spielzeitenByDate);
-
 $spielzeitenId = "spielzeiten-" . uniqid();
 ?>
 
@@ -22,11 +21,11 @@ $spielzeitenId = "spielzeiten-" . uniqid();
     <?php endif; ?>
 
     <?php
+
     foreach ($spielzeitenByDate as $dateKey => $dateTimes):
         usort($dateTimes, function ($a, $b) {
             return strtotime($a->time()) - strtotime($b->time());
         });
-
         // Angepasstes Datumsformat für die Anzeige
         $today = date('Y-m-d');
         $tomorrow = date('Y-m-d', strtotime('+1 day'));
@@ -38,7 +37,6 @@ $spielzeitenId = "spielzeiten-" . uniqid();
         } else {
             $displayDate = date('d.m.', strtotime($dateKey));
         }
-
         $dateId = "date-" . md5($dateKey);
 
         foreach ($dateTimes as $spielzeit):

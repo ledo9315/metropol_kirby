@@ -89,9 +89,9 @@ class Api
 	public function __construct(array $props)
 	{
 		$this->authentication = $props['authentication'] ?? null;
-		$this->data = $props['data'] ?? [];
-		$this->routes = $props['routes'] ?? [];
-		$this->debug = $props['debug'] ?? false;
+		$this->data           = $props['data'] ?? [];
+		$this->routes         = $props['routes'] ?? [];
+		$this->debug  		  = $props['debug'] ?? false;
 
 		if ($collections = $props['collections'] ?? null) {
 			$this->collections = array_change_key_case($collections);
@@ -150,7 +150,7 @@ class Api
 		$this->setRequestData($requestData);
 
 		$this->router = new Router($this->routes());
-		$this->route = $this->router->find($path, $method);
+		$this->route  = $this->router->find($path, $method);
 		$auth = $this->route?->attributes()['auth'] ?? true;
 
 		if ($auth !== false) {
@@ -214,12 +214,12 @@ class Api
 	{
 		return new static(array_merge([
 			'autentication' => $this->authentication,
-			'data' => $this->data,
-			'routes' => $this->routes,
-			'debug' => $this->debug,
-			'collections' => $this->collections,
-			'models' => $this->models,
-			'requestData' => $this->requestData,
+			'data'			=> $this->data,
+			'routes'		=> $this->routes,
+			'debug'			=> $this->debug,
+			'collections'   => $this->collections,
+			'models'		=> $this->models,
+			'requestData'   => $this->requestData,
 			'requestMethod' => $this->requestMethod
 		], $props));
 	}
@@ -355,7 +355,7 @@ class Api
 		}
 
 		$data = array_change_key_case($this->requestData($type));
-		$key = strtolower($key);
+		$key  = strtolower($key);
 
 		return $data[$key] ?? $default;
 	}
@@ -457,9 +457,9 @@ class Api
 		}
 
 		$result = match ($result) {
-			null => $this->responseFor404(),
-			false => $this->responseFor400(),
-			true => $this->responseFor200(),
+			null    => $this->responseFor404(),
+			false   => $this->responseFor400(),
+			true    => $this->responseFor200(),
 			default => $result
 		};
 
@@ -468,7 +468,7 @@ class Api
 		}
 
 		// pretty print json data
-		$pretty = (bool) ($requestData['query']['pretty'] ?? false) === true;
+		$pretty = (bool)($requestData['query']['pretty'] ?? false) === true;
 
 		if (($result['status'] ?? 'ok') === 'error') {
 			$code = $result['code'] ?? 400;
@@ -491,9 +491,9 @@ class Api
 	public function responseFor200(): array
 	{
 		return [
-			'status' => 'ok',
+			'status'  => 'ok',
 			'message' => 'ok',
-			'code' => 200
+			'code'    => 200
 		];
 	}
 
@@ -504,9 +504,9 @@ class Api
 	public function responseFor400(): array
 	{
 		return [
-			'status' => 'error',
+			'status'  => 'error',
 			'message' => 'bad request',
-			'code' => 400,
+			'code'    => 400,
 		];
 	}
 
@@ -517,9 +517,9 @@ class Api
 	public function responseFor404(): array
 	{
 		return [
-			'status' => 'error',
+			'status'  => 'error',
 			'message' => 'not found',
-			'code' => 404,
+			'code'    => 404,
 		];
 	}
 
@@ -538,22 +538,22 @@ class Api
 
 		// prepare the result array for all exception types
 		$result = [
-			'status' => 'error',
-			'message' => $e->getMessage(),
-			'code' => empty($e->getCode()) === true ? 500 : $e->getCode(),
+			'status'    => 'error',
+			'message'   => $e->getMessage(),
+			'code'      => empty($e->getCode()) === true ? 500 : $e->getCode(),
 			'exception' => get_class($e),
-			'key' => null,
-			'file' => F::relativepath($e->getFile(), $docRoot),
-			'line' => $e->getLine(),
-			'details' => [],
-			'route' => $this->route?->pattern()
+			'key'       => null,
+			'file'      => F::relativepath($e->getFile(), $docRoot),
+			'line'      => $e->getLine(),
+			'details'   => [],
+			'route'     => $this->route?->pattern()
 		];
 
 		// extend the information for Kirby Exceptions
 		if ($e instanceof ExceptionException) {
-			$result['key'] = $e->getKey();
+			$result['key']     = $e->getKey();
 			$result['details'] = $e->getDetails();
-			$result['code'] = $e->getHttpCode();
+			$result['code']    = $e->getHttpCode();
 		}
 
 		// remove critical info from the result set if
@@ -579,11 +579,11 @@ class Api
 	): static {
 		$defaults = [
 			'query' => [],
-			'body' => [],
+			'body'  => [],
 			'files' => []
 		];
 
-		$this->requestData = array_merge($defaults, (array) $requestData);
+		$this->requestData = array_merge($defaults, (array)$requestData);
 		return $this;
 	}
 
@@ -611,24 +611,24 @@ class Api
 		bool $single = false,
 		bool $debug = false
 	): array {
-		$trials = 0;
+		$trials  = 0;
 		$uploads = [];
-		$errors = [];
-		$files = $this->requestFiles();
+		$errors  = [];
+		$files   = $this->requestFiles();
 
 		// get error messages from translation
 		$errorMessages = [
-			UPLOAD_ERR_INI_SIZE => I18n::translate('upload.error.iniSize'),
-			UPLOAD_ERR_FORM_SIZE => I18n::translate('upload.error.formSize'),
-			UPLOAD_ERR_PARTIAL => I18n::translate('upload.error.partial'),
-			UPLOAD_ERR_NO_FILE => I18n::translate('upload.error.noFile'),
+			UPLOAD_ERR_INI_SIZE   => I18n::translate('upload.error.iniSize'),
+			UPLOAD_ERR_FORM_SIZE  => I18n::translate('upload.error.formSize'),
+			UPLOAD_ERR_PARTIAL    => I18n::translate('upload.error.partial'),
+			UPLOAD_ERR_NO_FILE    => I18n::translate('upload.error.noFile'),
 			UPLOAD_ERR_NO_TMP_DIR => I18n::translate('upload.error.tmpDir'),
 			UPLOAD_ERR_CANT_WRITE => I18n::translate('upload.error.cantWrite'),
-			UPLOAD_ERR_EXTENSION => I18n::translate('upload.error.extension')
+			UPLOAD_ERR_EXTENSION  => I18n::translate('upload.error.extension')
 		];
 
 		if (empty($files) === true) {
-			$postMaxSize = Str::toBytes(ini_get('post_max_size'));
+			$postMaxSize       = Str::toBytes(ini_get('post_max_size'));
 			$uploadMaxFileSize = Str::toBytes(ini_get('upload_max_filesize'));
 
 			if ($postMaxSize < $uploadMaxFileSize) {
@@ -675,9 +675,9 @@ class Api
 					empty($extension) === true ||
 					in_array($extension, ['tmp', 'temp']) === true
 				) {
-					$mime = F::mime($upload['tmp_name']);
+					$mime      = F::mime($upload['tmp_name']);
 					$extension = F::mimeToExtension($mime);
-					$filename = F::name($upload['name']) . '.' . $extension;
+					$filename  = F::name($upload['name']) . '.' . $extension;
 				} else {
 					$filename = basename($upload['name']);
 				}
@@ -715,14 +715,14 @@ class Api
 		if ($trials === 1) {
 			if (empty($errors) === false) {
 				return [
-					'status' => 'error',
+					'status'  => 'error',
 					'message' => current($errors)
 				];
 			}
 
 			return [
 				'status' => 'ok',
-				'data' => current($uploads)
+				'data'   => current($uploads)
 			];
 		}
 
@@ -735,7 +735,7 @@ class Api
 
 		return [
 			'status' => 'ok',
-			'data' => $uploads
+			'data'   => $uploads
 		];
 	}
 }
