@@ -25,7 +25,7 @@
               <div class="<?= $isEven ? 'md:pr-24 md:mr-auto md:ml-0' : 'md:pl-24 md:ml-auto md:mr-0' ?> md:w-[45%]">
                 <?php if ($isEven): ?>
                   <!-- Inhalt für linke Seite (gerade Indices) -->
-                  <div class="bg-white rounded-xl p-6 shadow-md">
+                  <div class="bg-white p-6 shadow-md">
                     <h2 id="<?= $milestoneId ?>"
                       class="text-3xl md:text-4xl font-light text-primary mb-6 border-b border-primary/20 pb-3">
                       <?= $milestone->title() ?>
@@ -39,7 +39,7 @@
                 <?php if (!$isEven && $milestone->image()->isNotEmpty() && ($image = $milestone->image()->toFile())): ?>
                   <!-- Bild für linke Seite (ungerade Indices) -->
                   <div>
-                    <div class="overflow-hidden rounded-md shadow-xl">
+                    <div class="overflow-hidden shadow-xl">
                       <img src="<?= $image->url() ?>" alt="<?= $milestone->title() ?> - <?= $milestone->year() ?>"
                         class="w-full h-auto object-cover" role="img">
                     </div>
@@ -58,7 +58,7 @@
                 <?php if ($isEven && $milestone->image()->isNotEmpty() && ($image = $milestone->image()->toFile())): ?>
                   <!-- Bild für rechte Seite (gerade Indices) -->
                   <div>
-                    <div class="overflow-hidden rounded-md shadow-xl">
+                    <div class="overflow-hidden shadow-xl">
                       <img src="<?= $image->url() ?>" alt="<?= $milestone->title() ?> - <?= $milestone->year() ?>"
                         class="w-full h-auto object-cover" role="img">
                     </div>
@@ -67,7 +67,7 @@
 
                 <?php if (!$isEven): ?>
                   <!-- Inhalt für rechte Seite (ungerade Indices) -->
-                  <div class="bg-white rounded-xl p-6 shadow-md">
+                  <div class="bg-white p-6 shadow-md">
                     <h2 id="<?= $milestoneId ?>"
                       class="text-3xl md:text-4xl font-light text-primary mb-6 border-b border-primary/20 pb-3">
                       <?= $milestone->title() ?>

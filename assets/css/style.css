@@ -297,11 +297,28 @@ th {
   will-change: transform !important;
   isolation: isolate;
   top: 80px !important;
+  border: 2px solid var(--color-primary) !important;
 }
 
+/* Anpassung für mobile und mittlere Auflösungen */
+@media (max-width: 768px) {
+  #search-results-dropdown {
+    left: 5vw !important;
+    right: 5vw !important;
+    top: 150px !important; /* Nach unten verschieben, damit das Eingabefeld nicht verdeckt wird */
+    z-index: 1000000 !important;
+    overflow-y: auto !important;
+    max-height: 60vh !important;
+    background-color: white !important;
+  }
+}
+
+/* Noch kleinere Bildschirme */
 @media (max-width: 640px) {
   #search-results-dropdown {
     left: 5vw !important; /* Auf kleineren Bildschirmen nur 5% Abstand links */
     right: 5vw !important; /* Auf kleineren Bildschirmen nur 5% Abstand rechts */
+    top: 160px !important; /* Noch weiter nach unten verschieben */
+    max-height: 50vh !important;
   }
 }

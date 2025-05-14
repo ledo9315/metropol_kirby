@@ -37,14 +37,25 @@ let debounceTimer = null;
  * Initialisiert die Suchfunktionalität
  */
 export function initSearch() {
+  console.log('Debug: initSearch in index.js aufgerufen');
+
   // DOM-Elemente abrufen und Event-Listener hinzufügen
-  if (!cacheElements() || !validateRequiredElements()) return;
+  if (!cacheElements() || !validateRequiredElements()) {
+    console.error('Debug: Erforderliche DOM-Elemente nicht gefunden');
+    return;
+  }
+
+  console.log('Debug: Alle DOM-Elemente gefunden:', elements);
 
   // Status-Objekt erstellen
   searchState = createSearchState(elements);
 
   // Event-Listener hinzufügen
   attachEventListeners();
+
+  console.log(
+    'Debug: Initialisierung abgeschlossen, Event-Listener hinzugefügt'
+  );
 }
 
 /**
@@ -67,11 +78,18 @@ function cacheElements() {
     errorMessage: '#search-error-message',
   };
 
+  console.log('Debug: Suche nach DOM-Elementen mit Selektoren:', selectors);
+
   // Alle Elemente in einem Durchgang sammeln
   for (const [key, selector] of Object.entries(selectors)) {
     elements[key] = selector.startsWith('#')
       ? document.getElementById(selector.substring(1))
       : document.querySelector(selector);
+
+    console.log(
+      `Debug: Element '${key}' mit Selektor '${selector}':`,
+      elements[key]
+    );
   }
 
   return true;
@@ -87,8 +105,20 @@ function validateRequiredElements() {
     'searchForm',
     'searchContainer',
     'resultsDropdown',
+    'searchToggle',
   ];
-  return requiredElements.every((key) => elements[key]);
+
+  const hasAllElements = requiredElements.every((key) => elements[key]);
+
+  if (!hasAllElements) {
+    const missingElements = requiredElements.filter((key) => !elements[key]);
+    console.error(
+      'Debug: Folgende erforderliche Elemente fehlen:',
+      missingElements
+    );
+  }
+
+  return hasAllElements;
 }
 
 /**
@@ -127,9 +157,21 @@ function attachEventListeners() {
     { element: window, event: 'resize', handler: handleResize },
   ];
 
+  console.log(
+    'Debug: Füge Event-Listener hinzu:',
+    events.map((e) => `${e.element?.tagName || 'Document/Window'}.${e.event}`)
+  );
+
   // Event-Listener hinzufügen
   events.forEach(({ element, event, handler }) => {
-    element?.addEventListener(event, handler);
+    if (element) {
+      console.log(
+        `Debug: Füge Event-Listener '${event}' zu ${element.tagName || 'Document/Window'} hinzu`
+      );
+      element.addEventListener(event, handler);
+    } else {
+      console.error(`Debug: Element für Event '${event}' nicht gefunden`);
+    }
   });
 }
 
@@ -150,6 +192,18 @@ function handleSearchInput(e) {
   searchState.setLoading();
   if (BrowserUtils.isMobile(MOBILE_BREAKPOINT)) {
     document.body.classList.add('search-results-open');
+    // Sicherstellen, dass das Dropdown-Menü korrekt positioniert ist
+    setTimeout(() => {
+      if (elements.resultsDropdown) {
+        elements.resultsDropdown.style.zIndex = '1000000';
+        // Auf mobilen Geräten mehr Abstand nach oben
+        if (window.innerWidth < 640) {
+          elements.resultsDropdown.style.top = '160px';
+        } else if (window.innerWidth < 768) {
+          elements.resultsDropdown.style.top = '150px';
+        }
+      }
+    }, 100);
   }
 
   debounceTimer = setTimeout(() => fetchSearchResults(query), DEBOUNCE_DELAY);
@@ -185,6 +239,18 @@ function handleFormSubmit(event) {
   searchState.setLoading();
   if (BrowserUtils.isMobile(MOBILE_BREAKPOINT)) {
     document.body.classList.add('search-results-open');
+    // Sicherstellen, dass das Dropdown-Menü korrekt positioniert ist
+    setTimeout(() => {
+      if (elements.resultsDropdown) {
+        elements.resultsDropdown.style.zIndex = '1000000';
+        // Auf mobilen Geräten mehr Abstand nach oben
+        if (window.innerWidth < 640) {
+          elements.resultsDropdown.style.top = '160px';
+        } else if (window.innerWidth < 768) {
+          elements.resultsDropdown.style.top = '150px';
+        }
+      }
+    }, 100);
   }
 
   fetchSearchResults(query, true);
@@ -255,7 +321,6 @@ function handleResize() {
     // Desktop -> Mobile
     FormStyles.resetStyles(elements.searchForm);
     FormStyles.applyMobileStyles(elements.searchForm);
-    showOverlay();
     document.body.classList.add('overflow-hidden');
   } else {
     // Mobile -> Desktop
@@ -397,6 +462,21 @@ function hideSearchForm() {
  * Zeigt das Overlay für die mobile Ansicht an
  */
 function showOverlay() {
+  // Zuerst sicherstellen, dass das Container-Element einen hohen z-index hat
+  if (elements.searchContainer) {
+    elements.searchContainer.style.zIndex = '500';
+  }
+
+  // Formular und Dropdown sollen über dem Overlay sein
+  if (elements.searchForm) {
+    elements.searchForm.style.zIndex = '500';
+  }
+
+  if (elements.resultsDropdown) {
+    elements.resultsDropdown.style.zIndex = '1000000';
+  }
+
+  // Overlay anzeigen mit OverlayManager
   OverlayManager.show(() => {
     toggleSearch(false);
     elements.searchToggle?.setAttribute('aria-expanded', 'false');
@@ -407,5 +487,14 @@ function showOverlay() {
  * Versteckt das Overlay
  */
 function hideOverlay() {
+  // Zurücksetzen der z-index-Werte
+  if (elements.searchContainer) {
+    elements.searchContainer.style.zIndex = '';
+  }
+
+  if (elements.searchForm) {
+    elements.searchForm.style.zIndex = '';
+  }
+
   OverlayManager.hide();
 }

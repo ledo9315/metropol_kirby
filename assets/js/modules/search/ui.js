@@ -48,8 +48,10 @@ export const SearchUI = {
       href: data.url,
       className:
         'block hover:bg-gray-50 transition-all duration-200 rounded-lg hover:shadow-md overflow-hidden',
-      onClick: clickHandler,
     });
+
+    // Event-Listener für Klicks hinzufügen
+    a.addEventListener('click', clickHandler);
 
     // Container erstellen
     const flexContainer = DOMUtils.createElement('div', {
@@ -173,12 +175,17 @@ export const OverlayManager = {
     if (!overlay) {
       overlay = DOMUtils.createElement('div', {
         id: 'search-overlay',
-        className: 'fixed inset-0 bg-black bg-opacity-30 z-[90]',
-        onClick: clickHandler,
+        className: 'fixed inset-0 bg-black bg-opacity-10 z-[30]',
       });
       document.body.appendChild(overlay);
+
+      // Event-Listener manuell hinzufügen
+      overlay.addEventListener('click', clickHandler);
     } else {
       overlay.classList.remove('hidden');
+
+      // Sicherstellen, dass der Event-Listener auch nach einem Verstecken/Zeigen noch aktiv ist
+      overlay.addEventListener('click', clickHandler);
     }
 
     return overlay;
@@ -208,11 +215,8 @@ export const FormStyles = {
       'fixed',
       'top-[70px]',
       'right-4',
-      'bg-white',
       'p-3',
-      'rounded-xl',
-      'shadow-lg',
-      'z-[200]',
+      'z-[500]',
       'w-[calc(100vw-2rem)]',
       'max-w-[320px]',
     ];
@@ -229,10 +233,7 @@ export const FormStyles = {
       'fixed',
       'top-[70px]',
       'right-4',
-      'bg-white',
       'p-3',
-      'rounded-xl',
-      'shadow-lg',
       'z-[200]',
       'w-[calc(100vw-2rem)]',
       'max-w-[320px]',

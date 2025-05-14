@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 
+
 <head>
   <?php snippet('layouts/meta') ?>
 
@@ -17,23 +18,25 @@
 </head>
 
 <body class="font-sans text-secondary bg-white">
-  <a href="#main-content" class="skip-link focus:outline-none focus:ring-2 focus:ring-primary">Zum Hauptinhalt
-    springen</a>
+  <a href="#main-content"
+    class="skip-link sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-white focus:z-50 focus:outline-none focus:ring-2 focus:ring-primary">Zum
+    Hauptinhalt springen</a>
 
-  <header class="bg-white z-10 relative" role="banner">
-    <div class="container mx-auto px-4 py-4">
+  <header class="sticky top-0 bg-white shadow-sm z-40" role="banner">
+    <div class="container mx-auto px-4 py-3">
       <div class="flex justify-between items-center">
-        <a href="<?= $site->url() ?>" class="mb-4 md:mb-0" aria-label="<?= $site->title() ?> - Zur Startseite">
+        <a href="<?= $site->url() ?>" class="flex-shrink-0 mr-4" aria-label="<?= $site->title() ?> - Zur Startseite">
           <img src="/assets/images/metropol-logo.svg" alt="Logo <?= $site->title() ?>" class="h-12" width="150"
-            height="48" role="img">
+            height="48" fetchpriority="high">
         </a>
 
         <nav class="flex-1" aria-label="Hauptnavigation" role="navigation">
           <ul id="menu"
-            class="hidden fixed left-0 top-0 w-full h-full bg-white bg-opacity-95 shadow-2xl z-50 flex-col items-center space-y-8 pt-24 text-center transition-all duration-300 xl:static xl:flex xl:flex-row xl:justify-center xl:space-y-0 xl:space-x-6 xl:bg-transparent xl:shadow-none xl:pt-0"
+            class="hidden fixed inset-0 bg-white bg-opacity-98 shadow-2xl z-50 flex-col items-center space-y-8 pt-24 text-center transition-all duration-300 xl:static xl:flex xl:flex-row xl:justify-center xl:space-y-0 xl:space-x-2 xl:bg-transparent xl:shadow-none xl:pt-0"
             role="menubar">
             <li class="absolute top-4 right-4 xl:hidden">
-              <button id="menu-close" class="text-primary p-2 focus:outline-none" aria-label="Menü schließen">
+              <button id="menu-close" class="text-primary p-2 focus:outline-none focus:ring-2 focus:ring-primary"
+                aria-label="Menü schließen">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                   stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -42,29 +45,29 @@
             </li>
             <li role="none">
               <a href="<?= $site->url() ?>"
-                class="text-primary px-3 py-2 text-[1.2rem] <?= $page->id() === $site->homePage()->id() ? 'border-b-2 border-primary font-medium' : '' ?>"
+                class="text-primary px-3 py-2 text-[1.2rem] hover:text-primary/80 transition-colors <?= $page->id() === $site->homePage()->id() ? ' font-medium' : '' ?>"
                 <?= $page->id() === $site->homePage()->id() ? 'aria-current="page"' : '' ?> role="menuitem">
                 Startseite
               </a>
             </li>
 
             <li role="none">
-              <a href="<?= url('home#programm') ?>" class="text-primary px-3 py-2 text-[1.2rem] scroll-smooth"
-                role="menuitem">
+              <a href="<?= url('home#programm') ?>"
+                class="text-primary px-3 py-2 text-[1.2rem] hover:text-primary/80 transition-colors" role="menuitem">
                 Programm
               </a>
             </li>
 
             <li role="none">
-              <a href="<?= url('home#demnaechst') ?>" class="text-primary px-3 py-2 text-[1.2rem] scroll-smooth"
-                role="menuitem">
+              <a href="<?= url('home#demnaechst') ?>"
+                class="text-primary px-3 py-2 text-[1.2rem] hover:text-primary/80 transition-colors" role="menuitem">
                 Demnächst
               </a>
             </li>
 
             <li role="none">
               <a href="<?= url('preise') ?>"
-                class="text-primary px-3 py-2 text-[1.2rem] <?= $page->is('preise') ? 'border-b-2 border-primary font-medium' : '' ?>"
+                class="text-primary px-3 py-2 text-[1.2rem] hover:text-primary/80 transition-colors <?= $page->is('preise') ? 'font-medium' : '' ?>"
                 <?= $page->is('preise') ? 'aria-current="page"' : '' ?> role="menuitem">
                 Preise
               </a>
@@ -72,7 +75,7 @@
 
             <li class="relative group xl:block hidden" role="none">
               <button
-                class="text-primary px-3 py-2 text-[1.2rem] flex items-center gap-1 focus:outline-none group-hover:text-primary <?= ($page->is('ausstattung') || $page->is('geschichte')) ? 'border-b-2 border-primary font-medium' : '' ?>"
+                class="text-primary px-3 py-2 text-[1.2rem] flex items-center gap-1 focus:outline-none group-hover:text-primary <?= ($page->is('ausstattung') || $page->is('geschichte')) ? 'font-medium' : '' ?>"
                 aria-expanded="false" aria-haspopup="true" aria-controls="dropdown-menu" role="menuitem">
                 Über uns
                 <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor"
@@ -155,7 +158,7 @@
             </div>
           </div>
           <div id="search-results-dropdown"
-            class="hidden fixed top-40 md:right-4 right-[50%] z-[999999] w-[800px] max-w-[85vw] translate-x-[50%] md:translate-x-0 bg-white border-2 border-primary rounded-lg shadow-2xl overflow-y-auto max-h-[70vh]"
+            class="hidden fixed md:top-40 top-[160px] md:right-4 right-[50%] z-[999999] w-[800px] max-w-[85vw] translate-x-[50%] md:translate-x-0 bg-white border-2 border-primary rounded-lg shadow-2xl overflow-y-auto max-h-[70vh]"
             role="region" aria-live="polite" aria-label="Suchergebnisse">
             <div
               class="search-results-header sticky top-0 z-[200] px-5 py-4 text-sm text-gray-600 border-b border-gray-200 flex justify-between items-center bg-white">
@@ -187,7 +190,7 @@
         </div>
         <button id="menu-button"
           class="xl:hidden text-primary p-2 rounded-full hover:bg-primary/10 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/30 ml-1"
-          aria-label="Menü öffnen">
+          aria-label="Menü öffnen" aria-haspopup="true" aria-expanded="false" aria-controls="menu">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
