@@ -18,5 +18,5 @@ if ($film->fsk()->isNotEmpty())
 if ($film->produktionsland()->isNotEmpty() && isset($showProductionCountry) && $showProductionCountry)
     $details[] = $film->produktionsland();
 
-echo implode(' / ', $details);
+echo implode('<span class="text-primary "> | </span>', $details);
 ?>

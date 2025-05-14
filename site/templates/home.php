@@ -150,7 +150,7 @@
                       </h3>
 
                       <div class="text-base text-secondary font-medium text-center mb-2 sm:mb-3">
-                        <?= implode(' / ', getFilmCategories($movie)) ?>
+                        <?= implode(' <span class="text-primary"> | </span> ', getFilmCategories($movie)) ?>
                       </div>
 
                       <div class="text-lg text-gray-500 text-center">
