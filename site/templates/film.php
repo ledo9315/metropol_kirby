@@ -11,36 +11,39 @@
         <div class="w-full lg:w-1/2 mb-12 lg:mb-0">
           <?php snippet('components/back-to-home') ?>
 
-          <div style="position: -webkit-sticky; position: sticky; top: 120px;">
+          <div style="position: -webkit-sticky; position: sticky; top: 120px;" class="flex justify-center">
             <!-- Filmposter -->
-            <div class="flex justify-center">
-              <?php snippet('components/film-poster', [
-                'film' => $page,
-                'width' => 320,
-                'height' => 480,
-                'class' => 'w-[320px] h-auto shadow-lg'
-              ]); ?>
-            </div>
-
-            <!-- Filmtitel und Metadaten -->
-            <div class="text-center mt-6">
-              <h1 class="text-4xl font-[300] text-primary mb-2" itemprop="name"><?= $page->title() ?></h1>
-
-              <?php snippet('components/film-categories', [
-                'film' => $page,
-                'className' => 'text-secondary text-lg font-medium mb-2',
-                'useAriaLabel' => true
-              ]); ?>
-
-              <div class="text-gray-500 text-md mt-2" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                <?php snippet('components/film-details', [
+            <div>
+              <div class="flex justify-center">
+                <?php snippet('components/film-poster', [
                   'film' => $page,
-                  'showProductionCountry' => true
+                  'width' => 384,
+                  'height' => 576,
+                  'class' => 'w-[384px] h-auto shadow-lg'
                 ]); ?>
-                <meta itemprop="price" content="0" />
-                <meta itemprop="priceCurrency" content="EUR" />
-                <meta itemprop="availability" content="https://schema.org/InStock" />
               </div>
+
+              <!-- Filmtitel und Metadaten -->
+              <div class="text-start mt-6">
+                <h1 class="text-4xl font-[300] text-primary mb-2" itemprop="name"><?= $page->title() ?></h1>
+
+                <?php snippet('components/film-categories', [
+                  'film' => $page,
+                  'className' => 'text-secondary text-lg font-medium mb-2',
+                  'useAriaLabel' => true
+                ]); ?>
+
+                <div class="text-gray-500 text-md mt-2" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <?php snippet('components/film-details', [
+                    'film' => $page,
+                    'showProductionCountry' => true
+                  ]); ?>
+                  <meta itemprop="price" content="0" />
+                  <meta itemprop="priceCurrency" content="EUR" />
+                  <meta itemprop="availability" content="https://schema.org/InStock" />
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
