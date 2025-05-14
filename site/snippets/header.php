@@ -24,7 +24,7 @@
 
   <header class="sticky top-0 bg-white shadow-sm z-40" role="banner">
     <div class="container mx-auto px-4 py-3">
-      <div class="flex justify-between items-center">
+      <div class="flex justify-between items-center xl:[justify-start] xl:[items-start]">
         <a href="<?= $site->url() ?>" class="flex-shrink-0 mr-4" aria-label="<?= $site->title() ?> - Zur Startseite">
           <img src="/assets/images/metropol-logo.svg" alt="Logo <?= $site->title() ?>" class="h-12" width="150"
             height="48" fetchpriority="high">
@@ -32,7 +32,7 @@
 
         <nav class="flex-1" aria-label="Hauptnavigation" role="navigation">
           <ul id="menu"
-            class="hidden fixed inset-0 bg-white bg-opacity-98 shadow-2xl z-50 flex-col items-center space-y-8 pt-24 text-center transition-all duration-300 xl:static xl:flex xl:flex-row xl:justify-center xl:space-y-0 xl:space-x-2 xl:bg-transparent xl:shadow-none xl:pt-0"
+            class="hidden xl:w-min fixed inset-0 bg-white bg-opacity-98 shadow-2xl z-50 flex-col items-center space-y-8 pt-24 text-center transition-all duration-300 xl:static xl:flex xl:flex-row xl:justify-center xl:space-y-0 xl:space-x-2 xl:bg-transparent xl:shadow-none xl:pt-0"
             role="menubar">
             <li class="absolute top-4 right-4 xl:hidden">
               <button id="menu-close" class="text-primary p-2 focus:outline-none focus:ring-2 focus:ring-primary"
@@ -75,7 +75,7 @@
 
             <li class="relative group xl:block hidden" role="none">
               <button
-                class="text-primary px-3 py-2 text-[1.2rem] flex items-center gap-1 focus:outline-none group-hover:text-primary <?= ($page->is('ausstattung') || $page->is('geschichte')) ? 'font-medium' : '' ?>"
+                class="text-primary w-max px-3 py-2 text-[1.2rem] flex items-center gap-1 focus:outline-none group-hover:text-primary <?= ($page->is('ausstattung') || $page->is('geschichte')) ? 'font-medium' : '' ?>"
                 aria-expanded="false" aria-haspopup="true" aria-controls="dropdown-menu" role="menuitem">
                 Über uns
                 <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor"
