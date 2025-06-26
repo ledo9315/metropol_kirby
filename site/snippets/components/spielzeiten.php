@@ -52,7 +52,7 @@ $spielzeitenId = "spielzeiten-" . uniqid();
                     </span>
                 </div>
                 <div>
-                    <span class="px-3 rounded-2xl py-0.5 mr-2 border border-gray-500 text-secondary text-sm font-medium"
+                    <span class="px-3.5 rounded-2xl py-1 mr-2 border border-gray-500 text-secondary text-sm font-medium"
                         aria-labelledby="<?= $spielzeitId ?>">
                         <?= $spielzeit->format() ?>
                     </span>

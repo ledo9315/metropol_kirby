@@ -101,19 +101,19 @@ Hauptbesetzung:
 Spielzeiten:
 
 - 
-  date: 2025-05-08
+  date: 2025-06-27
   time: 20:00:00
   format: 2D
 - 
-  date: 2025-05-09
+  date: 2025-06-28
   time: 20:00:00
   format: 2D
 - 
-  date: 2025-05-10
+  date: 2025-06-29
   time: 20:00:00
   format: 2D
 - 
-  date: 2025-05-11
+  date: 2025-06-30
   time: 20:00:00
   format: 2D
 - 
