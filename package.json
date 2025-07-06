@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "npx tailwindcss -i ./src/css/main.css -o ./assets/css/tailwind.css --watch",
     "build": "npx tailwindcss -i ./src/css/main.css -o ./assets/css/tailwind.css --minify",
-    "lint": "prettier --write 'src/**/*.{css,js}'"
+    "lint": "prettier --write 'src/**/*.{css,js}'",
+    "serve": "php -S localhost:8000 kirby/router.php",
+    "start": "php -S localhost:8000 kirby/router.php"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.10",

@@ -24,37 +24,64 @@ Milestones:
     - file://AxrqUPbZ9uxXaoMr
 - 
   year: 1976
-  title: Verzehrkino und Modernisierung
+  title: Das Verzehrkino entsteht
   description: >
-    Nach einem umfassenden Umbau wurde das
-    Metropol-Theater 1976 als modernes
-    Verzehrkino wiedereröffnet. Die
-    Sitzplatzkapazität wurde reduziert
-    zugunsten von mehr Komfort, und erstmals
-    konnten Gäste während der
-    Filmvorführung Speisen und Getränke
-    genießen.
+    1976 verpachtete Maria Sievers das Kino an Uwe Bernhard (Ulli) Meppen, 
+    der es zu einem Verzehrkino umbaute. Die Sitzplatzkapazität wurde 
+    zugunsten von mehr Komfort reduziert, und erstmals konnten Gäste 
+    während der Filmvorführung Speisen und Getränke genießen. Das Kino 
+    wurde bis 1986 als Verzehrkino betrieben und etablierte sich als 
+    gemütlicher Treffpunkt für Filmliebhaber.
   image:
     - file://ahnc3h4ISBsroITA
 - 
-  year: 1930
-  title: Die Fernsicht Lichtspiele
+  year: 1959
+  title: Johann Jens übernimmt das Metropol
   description: >
-    1930 wurde das Kino neu eröffnet und in
-    "Fernsicht Lichtspiele" umbenannt. Mit
-    der Einführung des Tonfilms begann eine
-    neue Ära für das Kino in Brunsbüttel.
+    Am 1. Juli 1959 übernahm Johann Jens das Metropol-Theater von 
+    Hertha Wolkau. In den 1960er- und 1970er Jahren war es noch 
+    möglich, dass Firmen Werbung auf der Leinwand zeigten - meist 
+    Standbilder, aber auch kurze Werbefilme, die vor Beginn des 
+    Hauptfilms projiziert wurden. Eine Besonderheit war der 
+    Platzanweiser Jonny Köhler, der eine Mütze mit der 
+    Stirnbandaufschrift "Metropol" trug.
+  image:
+    - file://DDkiuqauyE0xi2q2
+- 
+  year: 1948
+  title: Gustav Wolkau modernisiert das Kino
+  description: >
+    Am 1. März 1948 übernahm Gustav Wolkau das Lichtspieltheater 
+    und ließ es 1952 umfassend renovieren. Unter seiner Führung 
+    wurde das Metropol zu einem modernen Kino ausgebaut. Die Kasse 
+    befand sich ursprünglich vom Eingang aus gesehen auf der linken 
+    Seite und wechselte erst später auf die andere Seite, als für 
+    die neue Abspieltechnik nicht mehr so viel Raum benötigt wurde.
+  image:
+    - file://Qf2jGhO6kvOHHbAy
+- 
+  year: 1931
+  title: Der Tonfilm hält Einzug
+  description: >
+    1931 kehrte unter dem Besitzer Gerard Reynaerts der Tonfilm 
+    ins Metropol ein. 1930 erfolgte der entsprechende Umbau der 
+    Technik. Der erste Tonfilm war "Die drei von der Tankstelle", 
+    gefolgt von Klassikern wie "Im Westen nichts Neues" und 
+    "Der Kongress tanzt". Diese technische Revolution veränderte 
+    das Kinoerlebnis für die Brunsbütteler grundlegend.
   image:
     - file://DDkiuqauyE0xi2q2
 - 
   year: 1909
-  title: Die Anfänge im Metropol-Theater
+  title: Die Geburtsstunde des Metropol-Theaters
   description: >
-    Das Gebäude in Brunsbüttel wurde im
-    Jahr 1909 errichtet und diente zunächst
-    als kleines Theater mit
-    Stummfilmvorführungen. Der erste
-    Kinobetreiber war Otto Leopold.
+    Das Gebäude wurde 1909 errichtet und diente zunächst als 
+    kleines Theater mit Stummfilmvorführungen. Der erste 
+    Kinobetreiber war Otto Leopold. Die Eröffnung erfolgte am 
+    29. Mai 1909 nach einer kurzen Verschiebung. Für die 
+    Brunsbütteler war das Kino eine Sensation - endlich gab es 
+    Unterhaltung vor Ort, denn andere Zerstreuungsmöglichkeiten 
+    waren rar und teuer.
   image:
     - file://Qf2jGhO6kvOHHbAy
 

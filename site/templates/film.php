@@ -102,7 +102,7 @@
           $spielzeiten = $page->spielzeiten()->toStructure();
           if ($spielzeiten->count()):
             ?>
-            <div class="pt-20">
+            <div class="pt-20 w-3/4">
               <?php snippet('components/spielzeiten', [
                 'spielzeiten' => $spielzeiten,
                 'showHeading' => true

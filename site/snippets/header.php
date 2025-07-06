@@ -18,10 +18,6 @@
 </head>
 
 <body class="font-sans text-secondary bg-white">
-  <a href="#main-content"
-    class="skip-link sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-white focus:z-50 focus:outline-none focus:ring-2 focus:ring-primary">Zum
-    Hauptinhalt springen</a>
-
   <header class="sticky top-0 bg-white shadow-sm z-40" role="banner">
     <div class="container mx-auto px-4 py-3">
       <div class="flex justify-between items-center xl:[justify-start] xl:[items-start]">

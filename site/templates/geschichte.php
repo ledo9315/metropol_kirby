@@ -4,91 +4,140 @@
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <?php snippet('components/back-to-home') ?>
 
-    <div class="text-center mb-16">
-      <h1 class="text-5xl font-light text-primary mb-4">Geschichte des Metropol</h1>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Eine Reise durch die Zeit - Entdecken Sie die bewegte
-        Geschichte unseres Kinos.</p>
-    </div>
+    <!-- Hero Section -->
+    <section class="text-center mb-20">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-[300] text-primary mb-6">
+        Geschichte des Metropol
+      </h1>
+      <p class="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+        Seit 1909 ein Ort der Unterhaltung und des kulturellen Lebens in Brunsbüttel
+      </p>
+    </section>
 
-    <div class="timeline relative" role="feed" aria-label="Chronik der Kino-Geschichte">
-      <?php if ($milestones = $page->milestones()->toStructure()): ?>
-        <!-- Vertikale Zeitleiste -->
-        <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 transform -translate-x-1/2 z-0">
-        </div>
+    <?php if ($milestones = $page->milestones()->toStructure()): ?>
+      <?php foreach ($milestones->sortBy('year', 'asc') as $index => $milestone):
+        $milestoneId = 'milestone-' . uniqid();
+        $layoutType = $index % 4; // 4 verschiedene Layout-Typen
+        ?>
 
-        <?php foreach ($milestones->sortBy('year', 'asc') as $index => $milestone):
-          $milestoneId = 'milestone-' . uniqid();
-          $isEven = $index % 2 === 0;
-          ?>
-          <article class="relative z-10 mb-24 last:mb-0" aria-labelledby="<?= $milestoneId ?>">
-            <div class="md:flex md:items-center">
-              <div class="<?= $isEven ? 'md:pr-24 md:mr-auto md:ml-0' : 'md:pl-24 md:ml-auto md:mr-0' ?> md:w-[45%]">
-                <?php if ($isEven): ?>
-                  <!-- Inhalt für linke Seite (gerade Indices) -->
-                  <div class="bg-white p-6 shadow-md">
-                    <h2 id="<?= $milestoneId ?>"
-                      class="text-3xl md:text-4xl font-light text-primary mb-6 border-b border-primary/20 pb-3">
-                      <?= $milestone->title() ?>
-                    </h2>
-                    <div class="prose prose-lg max-w-none prose-headings:text-primary prose-p:text-gray-700">
-                      <?= $milestone->description()->kirbytext() ?>
-                    </div>
+        <?php if ($layoutType === 0): ?>
+          <!-- Layout 1: Großes Bild mit Text-Overlay -->
+          <section class="mb-32" aria-labelledby="<?= $milestoneId ?>">
+            <?php if ($milestone->image()->isNotEmpty() && ($image = $milestone->image()->toFile())): ?>
+              <div class="relative overflow-hidden rounded bg-gray-100 mb-8">
+                <img src="<?= $image->url() ?>" alt="<?= $milestone->title() ?> - <?= $milestone->year() ?>"
+                  class="w-full h-64 sm:h-80 md:h-96 object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8 md:p-12 text-white">
+                  <div class="bg-primary text-white py-2 px-4 rounded-full text-sm font-medium inline-block mb-4">
+                    <?= $milestone->year() ?>
                   </div>
-                <?php endif ?>
-
-                <?php if (!$isEven && $milestone->image()->isNotEmpty() && ($image = $milestone->image()->toFile())): ?>
-                  <!-- Bild für linke Seite (ungerade Indices) -->
-                  <div>
-                    <div class="overflow-hidden shadow-xl">
-                      <img src="<?= $image->url() ?>" alt="<?= $milestone->title() ?> - <?= $milestone->year() ?>"
-                        class="w-full h-auto object-cover" role="img">
-                    </div>
-                  </div>
-                <?php endif ?>
-              </div>
-
-              <!-- Jahr-Indikator - mittig vertikal zwischen Bild und Text -->
-              <div class="hidden md:flex md:items-center md:justify-center md:w-[10%] relative z-20">
-                <div class="bg-primary text-white py-2 px-6 rounded-full text-xl font-medium shadow-lg inline-block">
-                  <?= $milestone->year() ?>
+                  <h2 id="<?= $milestoneId ?>" class="text-2xl sm:text-3xl md:text-4xl font-[300] mb-4">
+                    <?= $milestone->title() ?>
+                  </h2>
                 </div>
               </div>
-
-              <div class="<?= $isEven ? 'md:pl-24 md:ml-auto md:mr-0' : 'md:pr-24 md:mr-auto md:ml-0' ?> md:w-[45%]">
-                <?php if ($isEven && $milestone->image()->isNotEmpty() && ($image = $milestone->image()->toFile())): ?>
-                  <!-- Bild für rechte Seite (gerade Indices) -->
-                  <div>
-                    <div class="overflow-hidden shadow-xl">
-                      <img src="<?= $image->url() ?>" alt="<?= $milestone->title() ?> - <?= $milestone->year() ?>"
-                        class="w-full h-auto object-cover" role="img">
-                    </div>
-                  </div>
-                <?php endif ?>
-
-                <?php if (!$isEven): ?>
-                  <!-- Inhalt für rechte Seite (ungerade Indices) -->
-                  <div class="bg-white p-6 shadow-md">
-                    <h2 id="<?= $milestoneId ?>"
-                      class="text-3xl md:text-4xl font-light text-primary mb-6 border-b border-primary/20 pb-3">
-                      <?= $milestone->title() ?>
-                    </h2>
-                    <div class="prose prose-lg max-w-none prose-headings:text-primary prose-p:text-gray-700">
-                      <?= $milestone->description()->kirbytext() ?>
-                    </div>
-                  </div>
-                <?php endif ?>
-              </div>
-
-              <!-- Mobile Anzeige des Jahres -->
-              <div
-                class="md:hidden bg-primary text-white py-2 px-6 rounded-full text-xl font-medium shadow-lg mx-auto mt-8 mb-4 inline-block">
-                <?= $milestone->year() ?>
+            <?php endif ?>
+            <div class="max-w-4xl mx-auto">
+              <div class="prose prose-lg sm:prose-xl max-w-none text-gray-700 leading-relaxed">
+                <?= $milestone->description()->kirbytext() ?>
               </div>
             </div>
-          </article>
-        <?php endforeach ?>
-      <?php endif ?>
-    </div>
+          </section>
+
+        <?php elseif ($layoutType === 1): ?>
+          <!-- Layout 2: Zweispaltiges Layout mit Text links -->
+          <section class="mb-32" aria-labelledby="<?= $milestoneId ?>">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+              <div class="order-2 lg:order-1">
+                <div class="bg-primary text-white py-2 px-4 rounded-full text-sm font-medium inline-block mb-6">
+                  <?= $milestone->year() ?>
+                </div>
+                <h2 id="<?= $milestoneId ?>" class="text-3xl sm:text-4xl md:text-5xl font-[300] text-primary mb-6">
+                  <?= $milestone->title() ?>
+                </h2>
+                <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                  <?= $milestone->description()->kirbytext() ?>
+                </div>
+              </div>
+              <?php if ($milestone->image()->isNotEmpty() && ($image = $milestone->image()->toFile())): ?>
+                <div class="order-1 lg:order-2">
+                  <div class="overflow-hidden rounded border border-gray-200">
+                    <img src="<?= $image->url() ?>" alt="<?= $milestone->title() ?> - <?= $milestone->year() ?>"
+                      class="w-full h-auto object-cover" loading="lazy">
+                  </div>
+                </div>
+              <?php endif ?>
+            </div>
+          </section>
+
+        <?php elseif ($layoutType === 2): ?>
+          <!-- Layout 3: Zentrierte Karte mit Bild oben -->
+          <section class="mb-32" aria-labelledby="<?= $milestoneId ?>">
+            <div class="max-w-3xl mx-auto text-center">
+              <div class="bg-primary text-white py-2 px-4 rounded-full text-sm font-medium inline-block mb-6">
+                <?= $milestone->year() ?>
+              </div>
+              <h2 id="<?= $milestoneId ?>" class="text-3xl sm:text-4xl md:text-5xl font-[300] text-primary mb-8">
+                <?= $milestone->title() ?>
+              </h2>
+              <?php if ($milestone->image()->isNotEmpty() && ($image = $milestone->image()->toFile())): ?>
+                <div class="overflow-hidden rounded border border-gray-200 mb-8">
+                  <img src="<?= $image->url() ?>" alt="<?= $milestone->title() ?> - <?= $milestone->year() ?>"
+                    class="w-full h-64 sm:h-80 object-cover" loading="lazy">
+                </div>
+              <?php endif ?>
+              <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed text-left">
+                <?= $milestone->description()->kirbytext() ?>
+              </div>
+            </div>
+          </section>
+
+        <?php else: ?>
+          <!-- Layout 4: Zweispaltiges Layout mit Text rechts -->
+          <section class="mb-32" aria-labelledby="<?= $milestoneId ?>">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+              <?php if ($milestone->image()->isNotEmpty() && ($image = $milestone->image()->toFile())): ?>
+                <div>
+                  <div class="overflow-hidden rounded border border-gray-200">
+                    <img src="<?= $image->url() ?>" alt="<?= $milestone->title() ?> - <?= $milestone->year() ?>"
+                      class="w-full h-auto object-cover" loading="lazy">
+                  </div>
+                </div>
+              <?php endif ?>
+              <div>
+                <div class="bg-primary text-white py-2 px-4 rounded-full text-sm font-medium inline-block mb-6">
+                  <?= $milestone->year() ?>
+                </div>
+                <h2 id="<?= $milestoneId ?>" class="text-3xl sm:text-4xl md:text-5xl font-[300] text-primary mb-6">
+                  <?= $milestone->title() ?>
+                </h2>
+                <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                  <?= $milestone->description()->kirbytext() ?>
+                </div>
+              </div>
+            </div>
+          </section>
+        <?php endif ?>
+
+      <?php endforeach ?>
+
+      <!-- Abschluss-Sektion -->
+      <section class="text-center mt-32 py-16 bg-gradient-to-b from-gray-50 to-white rounded-lg">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-[300] text-primary mb-6">
+          Werden Sie Teil unserer Geschichte
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          Das Metropol ist mehr als nur ein Kino – es ist ein lebendiger Teil der Brunsbütteler Stadtgeschichte.
+          Erleben Sie mit uns die Magie des Kinos und schreiben Sie Ihre eigene Geschichte.
+        </p>
+        <a href="<?= $site->url() ?>/#programm"
+          class="inline-flex items-center text-primary hover:opacity-80 transition-opacity text-lg">
+          Aktuelles Programm entdecken &rarr;
+        </a>
+      </section>
+
+    <?php endif ?>
   </div>
 </main>
 
