@@ -54,6 +54,11 @@ body {
   isolation: isolate;
 }
 
+/* Typografie Utilities */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
 p,
 li,
 span,
@@ -77,7 +82,7 @@ th {
   transition: top 0.2s;
 }
 
-.skip-link:focus {
+.skip-link:focus-visible {
   top: 0;
 }
 
@@ -97,8 +102,14 @@ th {
   background-color: #891819 !important;
 }
 
-.focus\:ring-primary:focus {
+.focus\:ring-primary:focus-visible {
   --tw-ring-color: #891819 !important;
+}
+
+/* Globale Regel: Fokus-Stile nur bei :focus-visible anzeigen */
+:focus:not(:focus-visible) {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 /* Benutzerdefinierte Scrollbar für Suchergebnisse */

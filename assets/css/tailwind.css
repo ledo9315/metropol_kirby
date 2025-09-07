@@ -2122,6 +2122,10 @@ h1,
   display: inline-flex;
 }
 
+.table {
+  display: table;
+}
+
 .grid {
   display: grid;
 }
@@ -2222,8 +2226,8 @@ h1,
   width: 200px;
 }
 
-.w-\[320px\] {
-  width: 320px;
+.w-\[384px\] {
+  width: 384px;
 }
 
 .w-\[800px\] {
@@ -2241,14 +2245,6 @@ h1,
 .w-max {
   width: -moz-max-content;
   width: max-content;
-}
-
-.w-\[320\] {
-  width: 320;
-}
-
-.w-\[384px\] {
-  width: 384px;
 }
 
 .max-w-3xl {
@@ -2277,6 +2273,22 @@ h1,
 
 .max-w-none {
   max-width: none;
+}
+
+.max-w-\[550px\] {
+  max-width: 550px;
+}
+
+.max-w-\[500px\] {
+  max-width: 500px;
+}
+
+.max-w-\[450px\] {
+  max-width: 450px;
+}
+
+.max-w-\[480px\] {
+  max-width: 480px;
 }
 
 .flex-1 {
@@ -2424,6 +2436,10 @@ h1,
 
 .overflow-y-visible {
   overflow-y: visible;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
 }
 
 .rounded {
@@ -2731,6 +2747,22 @@ h1,
   padding-top: 2rem;
 }
 
+.pr-4 {
+  padding-right: 1rem;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
+.pl-3 {
+  padding-left: 0.75rem;
+}
+
+.pr-3 {
+  padding-right: 0.75rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -2741,6 +2773,10 @@ h1,
 
 .text-start {
   text-align: start;
+}
+
+.align-top {
+  vertical-align: top;
 }
 
 .font-sans {
@@ -2816,6 +2852,10 @@ h1,
   font-weight: 500;
 }
 
+.font-thin {
+  font-weight: 100;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -2826,6 +2866,11 @@ h1,
 
 .not-italic {
   font-style: normal;
+}
+
+.tabular-nums {
+  --tw-numeric-spacing: tabular-nums;
+  font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
 }
 
 .leading-none {
