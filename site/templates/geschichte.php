@@ -6,14 +6,12 @@
 
     <?php
     $intro = $page->intro()->or('');
-    // Wähle ein Hero-Bild: bevorzugt "metropol-verzehrkino", dann "metropol-theater-foto1",
-    // dann "aktuell.jpg", sonst erstes Seitenbild
+
     $preferredHero = $page->images()->filterBy('name', 'metropol-verzehrkino')->first()
       ?? $page->images()->filterBy('name', 'metropol-theater-foto1')->first();
     $hero = $preferredHero ?? ($page->image('aktuell.jpg') ?? $page->images()->sortBy('sort', 'asc')->first());
     ?>
 
-    <!-- Hero: großformatiges Bild mit Overlay-Intro (ohne Schatten/Radius) -->
     <?php if ($hero): ?>
       <section class="relative mb-16" aria-label="Historisches Titelbild">
         <div class="relative h-[42vh] md:h-[56vh] w-full"
@@ -42,7 +40,6 @@
       </div>
     <?php endif ?>
 
-    <!-- Faktenzeile: Abwechslung durch dichte, typografische Elemente -->
     <section class="mb-14" aria-label="Meilensteine in Zahlen">
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-10">
         <div class="pt-6 border-t border-primary">
@@ -64,11 +61,9 @@
       </div>
     </section>
 
-    <!-- Chronik mit variablen Layouts je Abschnitt (ohne Hover, Schatten, Radius) -->
     <section role="feed" aria-label="Chronik der Kino-Geschichte">
       <?php if ($milestones = $page->milestones()->toStructure()): ?>
         <?php foreach ($milestones->sortBy('year', 'asc') as $index => $milestone):
-          // Bilder sammeln und Fallback definieren, falls im Milestone nichts hinterlegt ist
           $images = $milestone->image()->isNotEmpty() ? $milestone->image()->toFiles() : new Kirby\Cms\Files([]);
           $firstImage = $images->first();
           if (!$firstImage) {
@@ -79,7 +74,6 @@
               $firstImage = $fallback;
             }
           }
-          // Layout-Variante abhängig davon, ob ein Bild vorhanden ist
           $hasImage = $firstImage !== null;
           $variant = $hasImage ? ($index % 2 === 0 ? 0 : 1) : 2; // 0 Collage, 1 Bild-oben, 2 Text-only
           $yearValue = $milestone->year()->value();
@@ -88,7 +82,6 @@
           $forceImageLeftTextRight = ($yearInt === 1976);
           ?>
 
-          <!-- Jahrzehnt/Year Trenner -->
           <div class="flex items-center gap-4 mt-10 mb-6 py-20" aria-hidden="true">
             <div class="h-px bg-gray-300 flex-1"></div>
             <div class="text-primary text-2xl md:text-3xl font-light tracking-widest"><?= $milestone->year() ?></div>
@@ -96,10 +89,8 @@
           </div>
 
           <?php if ($variant === 0): ?>
-            <!-- Variante A: Text und Bildcollage im zweispaltigen Layout -->
             <article class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-14" aria-labelledby="<?= $titleId ?>">
               <?php if ($forceImageLeftTextRight): ?>
-                <!-- Bild links -->
                 <div class="md:col-span-3">
                   <?php if ($images->isNotEmpty()): ?>
                     <?php $collage = $images->limit(4);
@@ -254,15 +245,7 @@
       <?php endif ?>
     </section>
 
-    <!-- Abschluss: Quellenhinweis -->
-    <section class="mt-20" aria-label="Quellenhinweis">
-      <div class="border-t border-gray-300 pt-6 text-sm text-gray-700">
-        <p>Teile der Inhalte und Bildmotive basieren auf Recherchen aus dem lokalen Wiki zu den Kinos in Brunsbüttel.
-          Quelle: <a class="text-primary underline"
-            href="https://brunsbuettel-wiki.de/index.php?title=Kinos_in_Brunsb%C3%BCttel" rel="noopener noreferrer"
-            target="_blank">brunsbuettel-wiki.de – Kinos in Brunsbüttel</a>.</p>
-      </div>
-    </section>
+
   </div>
 </main>
 

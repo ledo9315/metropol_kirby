@@ -103,10 +103,12 @@
           if ($spielzeiten->count()):
             ?>
             <div class="pt-20">
-              <?php snippet('components/spielzeiten', [
-                'spielzeiten' => $spielzeiten,
-                'showHeading' => true
-              ]); ?>
+              <div class="w-full lg:max-w-md">
+                <?php snippet('components/spielzeiten', [
+                  'spielzeiten' => $spielzeiten,
+                  'showHeading' => true
+                ]); ?>
+              </div>
             </div>
           <?php endif ?>
         </div>
