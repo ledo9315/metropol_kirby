@@ -333,3 +333,23 @@ th {
     max-height: 50vh !important;
   }
 }
+
+/* Demnächst-Grid: beim Hover andere Karten leicht ausgrauen/aufhellen */
+#demnaechst .grid article {
+  transition:
+    opacity 0.25s ease,
+    filter 0.25s ease;
+}
+
+/* Wenn der Grid-Bereich fokussiert/hovered ist: alle Karten leicht abdunkeln/entsättigen */
+#demnaechst .grid:hover article,
+#demnaechst .grid:focus-within article {
+  filter: contrast(0.5) brightness(1.4);
+}
+
+/* Die tatsächlich gehoverte/gefokusste Karte bleibt normal */
+#demnaechst .grid:hover article:hover,
+#demnaechst .grid:focus-within article:focus-within {
+  opacity: 1;
+  filter: none;
+}

@@ -2,22 +2,22 @@
 
 <main>
   <div class="container mx-auto px-4">
-    <section class="pt-20 pb-20" aria-labelledby="main-heading">
+    <section class="sm:pt-14 pt-0 pb-20" aria-labelledby="main-heading">
       <div class="relative overflow-hidden">
         <div class="py-12">
-          <div class="flex flex-col xl:flex-row items-start mx-4 gap-6 lg:gap-10">
+          <div class="flex flex-col xl:flex-row items-start gap-6 lg:gap-10">
             <?php if ($image = $page->image()): ?>
               <div class="w-full xl:w-7/12 mb-6 xl:mb-0">
                 <div class="overflow-hidden">
                   <?php $thumb = $image->thumb(['width' => 700, 'height' => 700, 'crop' => true]); ?>
                   <img src="<?= $thumb->url() ?>" alt="<?= $image->alt()->or($page->title()) ?>"
-                    class="w-full h-auto object-cover rounded shadow" width="<?= $thumb->width() ?>"
+                    class="w-full max-h-[620px] object-cover rounded shadow" width="<?= $thumb->width() ?>"
                     height="<?= $thumb->height() ?>" loading="eager" role="img" />
                 </div>
               </div>
             <?php endif ?>
 
-            <div class="w-full xl:w-[550px] px-4">
+            <div class="w-full xl:w-[550px] xl:px-4">
               <div class="h-full flex flex-col justify-start">
                 <h1 id="main-heading"
                   class="text-3xl sm:text-5xl md:text-[4rem] lg:text-[5rem] leading-none font-[300] text-primary mb-6 sm:mb-8">
@@ -125,7 +125,7 @@
           if ($upcoming = $programmPage->children()->listed()->filterBy('programm_status', 'upcoming')):
             if ($upcoming->count() > 0):
               ?>
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-12 lg:gap-16">
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-20 md:gap-12 lg:gap-16">
                 <?php foreach ($upcoming as $movie): ?>
                   <article itemscope itemtype="http://schema.org/Movie">
                     <a href="<?= $movie->url() ?>" class="block group" aria-label="Details zu <?= $movie->title() ?>">
