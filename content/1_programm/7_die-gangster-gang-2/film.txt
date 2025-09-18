@@ -1,0 +1,122 @@
+Title: Die Gangster Gang 2
+
+----
+
+Programm-status: current
+
+----
+
+Cover: - file://qT1p1fpzMAYXd3Ll
+
+----
+
+Action: false
+
+----
+
+Abenteuer: true
+
+----
+
+Familienfilm: true
+
+----
+
+Animation: false
+
+----
+
+Fantasy: false
+
+----
+
+Liebesfilm: false
+
+----
+
+Maerchenfilm: false
+
+----
+
+Musical: false
+
+----
+
+Kinderfilm: true
+
+----
+
+Drama: false
+
+----
+
+Komoedie: false
+
+----
+
+Horror: false
+
+----
+
+Year: 2025
+
+----
+
+Runtime: 105
+
+----
+
+Fsk: 6
+
+----
+
+Description: Im brandneuen, actiongeladenen Abenteuer der gefeierten Antihelden von DreamWorks Animation steht die chaotische, nun geläuterte Gangster Gang endlich auf der guten Seite - wirklich, sie versuchen es! Doch landen die tierischen Langfinger kopfüber im kriminellen Chaos eines weltweiten Mega-Coups, ausgeklügelt von einer höchst gerissenen Truppe von Ganovinnen, mit denen niemand gerechnet hat: den Gangster Girls.
+
+----
+
+Video: 
+
+----
+
+Trailer: https://www.youtube.com/embed/TnFX7fAPK58?si=Y-jefKCcggZhcXNd
+
+----
+
+Regisseur: JP SansPierre / Perifel
+
+----
+
+Produktionsland: USA
+
+----
+
+Produktionsfirma: Universal Pictures
+
+----
+
+Hauptbesetzung: Sam Rockwell / Marc Maron / Awkwafina
+
+----
+
+Spielzeiten:
+
+- 
+  date: 2025-09-18
+  time: 16:00:00
+  format: 2D
+- 
+  date: 2025-09-19
+  time: 16:00:00
+  format: 2D
+- 
+  date: 2025-09-20
+  time: 16:00:00
+  format: 2D
+- 
+  date: 2025-09-21
+  time: 16:00:00
+  format: 3D
+
+----
+
+Uuid: GYDYI1QMqucW7qQp
