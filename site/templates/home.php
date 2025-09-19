@@ -11,7 +11,7 @@
                 <div class="overflow-hidden">
                   <?php $thumb = $image->thumb(['width' => 700, 'height' => 700, 'crop' => true]); ?>
                   <img src="<?= $thumb->url() ?>" alt="<?= $image->alt()->or($page->title()) ?>"
-                    class="w-full max-h-[620px] object-cover rounded shadow" width="<?= $thumb->width() ?>"
+                    class="w-full max-h-[620px] object-cover shadow" width="<?= $thumb->width() ?>"
                     height="<?= $thumb->height() ?>" loading="eager" role="img" />
                 </div>
               </div>
@@ -101,7 +101,7 @@
             endforeach;
           else:
             ?>
-            <div class="bg-red-100 text-red-800 p-4 rounded" role="status" aria-live="polite">
+            <div class="bg-red-100 text-red-800 p-4" role="status" aria-live="polite">
               Aktuell keine Filme im Programm.
             </div>
             <?php
@@ -125,12 +125,12 @@
           if ($upcoming = $programmPage->children()->listed()->filterBy('programm_status', 'upcoming')):
             if ($upcoming->count() > 0):
               ?>
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-20 md:gap-12 lg:gap-16">
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-20 md:gap-12 lg:gap-16">
                 <?php foreach ($upcoming as $movie): ?>
                   <article itemscope itemtype="http://schema.org/Movie">
                     <a href="<?= $movie->url() ?>" class="block group" aria-label="Details zu <?= $movie->title() ?>">
                       <?php if ($movieImage = $movie->cover()->toFile()): ?>
-                        <div class="overflow-hidden mb-2 sm:mb-4 border border-secondary rounded">
+                        <div class="overflow-hidden mb-2 sm:mb-4 border border-secondary">
                           <img src="<?= $movieImage->thumb(['width' => 400, 'height' => 600, 'crop' => true])->url() ?>"
                             alt="<?= $movie->title() ?>"
                             class="w-full aspect-[2/3] object-cover shadow group-hover:scale-105 transition-transform duration-300"
@@ -166,13 +166,13 @@
               <?php
             else:
               ?>
-              <div class="bg-blue-100 text-blue-800 p-4 rounded" role="status" aria-live="polite">Keine kommenden Filme im
+              <div class="bg-blue-100 text-blue-800 p-4" role="status" aria-live="polite">Keine kommenden Filme im
                 Programm.</div>
               <?php
             endif;
           else:
             ?>
-            <div class="bg-blue-100 text-blue-800 p-4 rounded" role="status" aria-live="polite">Keine kommenden Filme im
+            <div class="bg-blue-100 text-blue-800 p-4" role="status" aria-live="polite">Keine kommenden Filme im
               Programm.</div>
             <?php
           endif;

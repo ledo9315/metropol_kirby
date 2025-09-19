@@ -17,11 +17,11 @@ $effect = isset($effect) && $effect ? 'group-hover:scale-105 transition-transfor
 if ($cover = $film->cover()->toFile()):
     $thumb = isset($useThumb) && $useThumb ? $cover->thumb(['width' => $width, 'height' => $height]) : $cover;
     ?>
-    <img src="<?= $thumb->url() ?>" alt="<?= $film->title() ?>" class="<?= $class ?> <?= $effect ?> rounded shadow"
+    <img src="<?= $thumb->url() ?>" alt="<?= $film->title() ?>" class="<?= $class ?> <?= $effect ?> shadow"
         loading="<?= $lazy ?>" width="<?= $thumb->width() ?>" height="<?= $thumb->height() ?>" role="img">
 <?php else: ?>
-    <div class="w-full aspect-[2/3] bg-gray-200 flex items-center justify-center text-sm sm:text-base rounded shadow"
-        role="img" aria-label="Kein Filmposter für <?= $film->title() ?> verfügbar">
+    <div class="w-full aspect-[2/3] bg-gray-200 flex items-center justify-center text-sm sm:text-base shadow" role="img"
+        aria-label="Kein Filmposter für <?= $film->title() ?> verfügbar">
         <span class="text-gray-500">Kein Filmposter</span>
     </div>
 <?php endif; ?>

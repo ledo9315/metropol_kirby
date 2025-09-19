@@ -53,7 +53,7 @@
           <!-- Video/Trailer -->
           <?php if ($page->video()->toFiles()->first()): ?>
             <div class="aspect-video w-full mb-8">
-              <video class="w-full rounded shadow" controls
+              <video class="w-full shadow" controls
                 poster="<?= $page->cover()->toFile() ? $page->cover()->toFile()->crop(1280, 720)->url() : '' ?>"
                 aria-label="Video für <?= $page->title() ?>">
                 <source src="<?= $page->video()->toFiles()->first()->url() ?>" type="video/mp4">
@@ -62,8 +62,8 @@
             </div>
           <?php elseif ($page->trailer()->isNotEmpty()): ?>
             <div class="aspect-video w-full mb-8">
-              <iframe class="w-full h-full rounded shadow" src="<?= $page->trailer() ?>"
-                title="Trailer für <?= $page->title() ?>" frameborder="0" allowfullscreen></iframe>
+              <iframe class="w-full h-full shadow" src="<?= $page->trailer() ?>" title="Trailer für <?= $page->title() ?>"
+                frameborder="0" allowfullscreen></iframe>
             </div>
           <?php endif ?>
 
