@@ -33,7 +33,7 @@
     </section>
 
     <!-- Kartenpreise im Geschichte-Stil -->
-    <section class="mb-20" aria-label="Kartenpreise">
+    <section class="mb-40" aria-label="Kartenpreise">
       <div class="mx-auto">
         <?php if ($prices = $page->prices()->toStructure()): ?>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -99,7 +99,7 @@
         <div class="flex flex-wrap justify-center gap-8">
           <button type="button" id="tab-nicht-alkoholisch" data-speisekarte-button data-target="panel-nicht-alkoholisch"
             class="text-sm tracking-[0.2em] uppercase transition-all duration-200 pb-2 border-b
-            <?= $activeTab === 'nicht-alkoholisch' ? 'text-black border-black' : 'text-gray-500 border-transparent hover:text-gray-700' ?>"
+            <?= $activeTab === 'nicht-alkoholisch' ? 'text-black border-primary' : 'text-gray-500 border-transparent hover:text-gray-700' ?>"
             role="tab" aria-controls="panel-nicht-alkoholisch"
             aria-selected="<?= $activeTab === 'nicht-alkoholisch' ? 'true' : 'false' ?>">
             Alkoholfreie Getränke
@@ -107,21 +107,21 @@
 
           <button type="button" id="tab-biere" data-speisekarte-button data-target="panel-biere"
             class="text-sm tracking-[0.2em] uppercase transition-all duration-200 pb-2 border-b
-            <?= $activeTab === 'biere' ? 'text-black border-black' : 'text-gray-500 border-transparent hover:text-gray-700' ?>" role="tab" aria-controls="panel-biere"
+            <?= $activeTab === 'biere' ? 'text-black border-primary' : 'text-gray-500 border-transparent hover:text-gray-700' ?>" role="tab" aria-controls="panel-biere"
             aria-selected="<?= $activeTab === 'biere' ? 'true' : 'false' ?>">
             Biere
           </button>
 
           <button type="button" id="tab-longdrinks" data-speisekarte-button data-target="panel-longdrinks"
             class="text-sm tracking-[0.2em] uppercase transition-all duration-200 pb-2 border-b
-            <?= $activeTab === 'longdrinks' ? 'text-black border-black' : 'text-gray-500 border-transparent hover:text-gray-700' ?>" role="tab" aria-controls="panel-longdrinks"
+            <?= $activeTab === 'longdrinks' ? 'text-black border-primary' : 'text-gray-500 border-transparent hover:text-gray-700' ?>" role="tab" aria-controls="panel-longdrinks"
             aria-selected="<?= $activeTab === 'longdrinks' ? 'true' : 'false' ?>">
             Longdrinks
           </button>
 
           <button type="button" id="tab-verschiedenes" data-speisekarte-button data-target="panel-verschiedenes"
             class="text-sm tracking-[0.2em] uppercase transition-all duration-200 pb-2 border-b
-            <?= $activeTab === 'verschiedenes' ? 'text-black border-black' : 'text-gray-500 border-transparent hover:text-gray-700' ?>" role="tab" aria-controls="panel-verschiedenes"
+            <?= $activeTab === 'verschiedenes' ? 'text-black border-primary' : 'text-gray-500 border-transparent hover:text-gray-700' ?>" role="tab" aria-controls="panel-verschiedenes"
             aria-selected="<?= $activeTab === 'verschiedenes' ? 'true' : 'false' ?>">
             Verschiedenes
           </button>
@@ -148,7 +148,7 @@
               return $s;
             }; ?>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
               <?php foreach ($page->non_alcoholic()->toStructure() as $drink): ?>
                 <div class="pt-6 border-t border-primary">
                   <?php if ($drink->description()->isNotEmpty()): ?>
@@ -167,7 +167,7 @@
                       </div>
                     </div>
                     <div class="mt-2 text-2xl md:text-3xl font-light">
-                      <?= number_format($drink->price()->toFloat(), 2, ',', '.') ?> €
+                      <?= number_format($drink->price()->toFloat(), 2, ',', '.') ?>&#8239;€
                     </div>
                     <p class="text-gray-800 mt-3 leading-relaxed">
                       <?= $drink->description()->escape() ?>
@@ -177,7 +177,7 @@
                       <?= $drink->name() ?>
                     </div>
                     <div class="mt-2 text-2xl md:text-3xl font-light">
-                      <?= number_format($drink->price()->toFloat(), 2, ',', '.') ?> €
+                      <?= number_format($drink->price()->toFloat(), 2, ',', '.') ?>&#8239;€
                     </div>
                     <p class="text-gray-800 mt-3 leading-relaxed">
                       <?= $drink->type() ?>
@@ -202,14 +202,14 @@
           role="tabpanel" aria-labelledby="tab-biere" <?= $activeTab !== 'biere' ? 'aria-hidden="true"' : '' ?>>
 
           <?php if ($page->beers()->isNotEmpty()): ?>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
               <?php foreach ($page->beers()->toStructure() as $beer): ?>
                 <div class="pt-6 border-t border-primary">
                   <div class="text-xs tracking-[0.2em] uppercase text-black/70">
                     <?= $beer->name() ?>
                   </div>
                   <div class="mt-2 text-2xl md:text-3xl font-light">
-                    <?= number_format($beer->price()->toFloat(), 2, ',', '.') ?> €
+                    <?= number_format($beer->price()->toFloat(), 2, ',', '.') ?>&#8239;€
                   </div>
                   <p class="text-gray-800 mt-3 leading-relaxed">
                     <?php if ($beer->description()->isNotEmpty()): ?>
@@ -230,14 +230,14 @@
           role="tabpanel" aria-labelledby="tab-longdrinks" <?= $activeTab !== 'longdrinks' ? 'aria-hidden="true"' : '' ?>>
 
           <?php if ($page->longdrinks()->isNotEmpty()): ?>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
               <?php foreach ($page->longdrinks()->toStructure() as $drink): ?>
                 <div class="pt-6 border-t border-primary">
                   <div class="text-xs tracking-[0.2em] uppercase text-black/70">
                     <?= $drink->name() ?>
                   </div>
                   <div class="mt-2 text-2xl md:text-3xl font-light">
-                    <?= number_format($drink->price()->toFloat(), 2, ',', '.') ?> €
+                    <?= number_format($drink->price()->toFloat(), 2, ',', '.') ?>&#8239;€
                   </div>
                   <p class="text-gray-800 mt-3 leading-relaxed">
                     <?php if ($drink->description()->isNotEmpty()): ?>
@@ -259,14 +259,14 @@
           aria-labelledby="tab-verschiedenes" <?= $activeTab !== 'verschiedenes' ? 'aria-hidden="true"' : '' ?>>
 
           <?php if ($page->misc()->isNotEmpty()): ?>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
               <?php foreach ($page->misc()->toStructure() as $item): ?>
                 <div class="pt-6 border-t border-primary">
                   <div class="text-xs tracking-[0.2em] uppercase text-black/70">
                     <?= $item->name() ?>
                   </div>
                   <div class="mt-2 text-2xl md:text-3xl font-light">
-                    <?= number_format($item->price()->toFloat(), 2, ',', '.') ?> €
+                    <?= number_format($item->price()->toFloat(), 2, ',', '.') ?>&#8239;€
                   </div>
                   <p class="text-gray-800 mt-3 leading-relaxed">
                     <?php if ($item->description()->isNotEmpty()): ?>

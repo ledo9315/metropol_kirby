@@ -22,7 +22,7 @@
     class="skip-link sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-white focus:z-50 focus:outline-none focus:ring-2 focus:ring-primary">Zum
     Hauptinhalt springen</a>
 
-  <header class="sticky top-0 bg-white shadow-sm z-40" role="banner">
+  <header class="bg-white shadow-sm z-40" role="banner">
     <div class="container mx-auto px-4 py-3">
       <div class="flex justify-between items-center xl:[justify-start] xl:[items-start]">
         <a href="<?= $site->url() ?>" class="flex-shrink-0 mr-4" aria-label="<?= $site->title() ?> - Zur Startseite">

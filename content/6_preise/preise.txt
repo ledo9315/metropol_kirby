@@ -6,7 +6,7 @@ Intro: Hier finden Sie unsere Preise.
 
 ----
 
-Hero-image: - file://BtJbmAaYHonWRtDu
+Hero-image: - file://CTMfPIVvBvJs6MTZ
 
 ----
 

@@ -40,19 +40,26 @@ Key-milestones:
 Milestones:
 
 - 
-  year: 2025
-  title: 'Heute: Ein kulturelles Zentrum'
+  year: 1909
+  title: Die Anfänge im Metropol-Theater
   description: >
-    Heute sind die Kinos in Brunsbüttel
-    nicht nur Orte der Unterhaltung, sondern
-    auch kulturelle Treffpunkte, die die
-    Geschichte und die Gemeinschaft der
-    Stadt widerspiegeln. Wir laden Sie ein,
-    Teil unserer Geschichte zu werden und
-    unvergessliche Momente bei uns zu
-    erleben.
+    Das Gebäude in Brunsbüttel wurde im
+    Jahr 1909 errichtet und diente zunächst
+    als kleines Theater mit
+    Stummfilmvorführungen. Der erste
+    Kinobetreiber war Otto Leopold.
   image:
-    - file://AxrqUPbZ9uxXaoMr
+    - file://Qf2jGhO6kvOHHbAy
+- 
+  year: 1930
+  title: Die Fernsicht Lichtspiele
+  description: >
+    1930 wurde das Kino neu eröffnet und in
+    "Fernsicht Lichtspiele" umbenannt. Mit
+    der Einführung des Tonfilms begann eine
+    neue Ära für das Kino in Brunsbüttel.
+  image:
+    - file://DDkiuqauyE0xi2q2
 - 
   year: 1976
   title: Verzehrkino und Modernisierung
@@ -68,26 +75,19 @@ Milestones:
   image:
     - file://ahnc3h4ISBsroITA
 - 
-  year: 1930
-  title: Die Fernsicht Lichtspiele
+  year: 2025
+  title: 'Heute: Ein kulturelles Zentrum'
   description: >
-    1930 wurde das Kino neu eröffnet und in
-    "Fernsicht Lichtspiele" umbenannt. Mit
-    der Einführung des Tonfilms begann eine
-    neue Ära für das Kino in Brunsbüttel.
+    Heute sind die Kinos in Brunsbüttel
+    nicht nur Orte der Unterhaltung, sondern
+    auch kulturelle Treffpunkte, die die
+    Geschichte und die Gemeinschaft der
+    Stadt widerspiegeln. Wir laden Sie ein,
+    Teil unserer Geschichte zu werden und
+    unvergessliche Momente bei uns zu
+    erleben.
   image:
-    - file://DDkiuqauyE0xi2q2
-- 
-  year: 1909
-  title: Die Anfänge im Metropol-Theater
-  description: >
-    Das Gebäude in Brunsbüttel wurde im
-    Jahr 1909 errichtet und diente zunächst
-    als kleines Theater mit
-    Stummfilmvorführungen. Der erste
-    Kinobetreiber war Otto Leopold.
-  image:
-    - file://Qf2jGhO6kvOHHbAy
+    - file://sZchZIbPmx36OK3n
 
 ----
 

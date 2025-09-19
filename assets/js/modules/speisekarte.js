@@ -22,13 +22,13 @@ export function initSpeisekarte() {
 
       // Entferne aktive Klassen von allen Tabs
       tabButtons.forEach((btn) => {
-        btn.classList.remove('text-black', 'border-black');
+        btn.classList.remove('text-black', 'border-primary');
         btn.classList.add('text-gray-500', 'border-transparent');
       });
 
       // Füge aktive Klassen zum geklickten Tab hinzu
       this.classList.remove('text-gray-500', 'border-transparent');
-      this.classList.add('text-black', 'border-black');
+      this.classList.add('text-black', 'border-primary');
     });
   });
 
