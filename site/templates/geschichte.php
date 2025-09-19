@@ -5,11 +5,18 @@
     <?php snippet('components/back-to-home') ?>
 
     <?php
-    $intro = $page->intro()->or('');
+    // Hero-Inhalte aus Panel
+    $heroTitle = $page->hero_title()->or('Geschichte des Metropol');
+    $intro = $page->intro()->or('Das Metropol-Theater blickt auf eine lange und bewegte Geschichte zurück. Von seinen Anfängen bis zur Gegenwart hat sich vieles verändert, aber die Leidenschaft für das Kino ist geblieben.');
 
-    $preferredHero = $page->images()->filterBy('name', 'metropol-verzehrkino')->first()
-      ?? $page->images()->filterBy('name', 'metropol-theater-foto1')->first();
-    $hero = $preferredHero ?? ($page->image('aktuell.jpg') ?? $page->images()->sortBy('sort', 'asc')->first());
+    // Hero-Bild aus Panel oder Fallback
+    $heroImage = $page->hero_image()->toFile();
+    if (!$heroImage) {
+      $preferredHero = $page->images()->filterBy('name', 'metropol-verzehrkino')->first()
+        ?? $page->images()->filterBy('name', 'metropol-theater-foto1')->first();
+      $heroImage = $preferredHero ?? ($page->image('aktuell.jpg') ?? $page->images()->sortBy('sort', 'asc')->first());
+    }
+    $hero = $heroImage;
     ?>
 
     <?php if ($hero): ?>
@@ -20,7 +27,7 @@
           <div class="absolute inset-0 flex items-end">
             <div class="w-full">
               <div class="max-w-4xl text-white px-6 py-10">
-                <h1 class="text-4xl md:text-6xl font-light tracking-tight">Geschichte des Metropol</h1>
+                <h1 class="text-4xl md:text-6xl font-light tracking-tight"><?= $heroTitle->escape() ?></h1>
                 <?php if ($intro->isNotEmpty()): ?>
                   <p class="mt-4 text-lg md:text-xl leading-relaxed">
                     <?= $intro->escape() ?>
@@ -33,7 +40,7 @@
       </section>
     <?php else: ?>
       <div class="text-center mb-12">
-        <h1 class="text-5xl font-light text-primary mb-4">Geschichte des Metropol</h1>
+        <h1 class="text-5xl font-light text-primary mb-4"><?= $heroTitle->escape() ?></h1>
         <?php if ($intro->isNotEmpty()): ?>
           <p class="text-xl text-gray-700 max-w-3xl mx-auto"><?= $intro->escape() ?></p>
         <?php endif ?>
@@ -41,26 +48,37 @@
     <?php endif ?>
 
     <section class="mb-14" aria-label="Meilensteine in Zahlen">
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-10">
-        <div class="pt-6 border-t border-primary">
-          <div class="text-xs tracking-[0.2em] uppercase text-black/70">Eröffnung</div>
-          <div class="mt-2 text-2xl md:text-3xl font-light">1909 – Metropol-Theater</div>
-          <p class="text-pri mt-3 leading-relaxed">Erste Vorstellung am 29.05.1909 in der heutigen
-            Posadowskystraße.</p>
+      <?php if ($keyMilestones = $page->key_milestones()->toStructure()): ?>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-10">
+          <?php foreach ($keyMilestones as $milestone): ?>
+            <div class="pt-6 border-t border-primary">
+              <div class="text-xs tracking-[0.2em] uppercase text-black/70"><?= $milestone->label()->escape() ?></div>
+              <div class="mt-2 text-2xl md:text-3xl font-light"><?= $milestone->year_title()->escape() ?></div>
+              <p class="text-gray-800 mt-3 leading-relaxed"><?= $milestone->description()->escape() ?></p>
+            </div>
+          <?php endforeach ?>
         </div>
-        <div class="pt-6 border-t border-primary">
-          <div class="text-xs tracking-[0.2em] uppercase text-black/70">Tonfilm</div>
-          <div class="mt-2 text-2xl md:text-3xl font-light">ab 1931</div>
-          <p class="text-gray-800 mt-3 leading-relaxed">Beginn der Tonfilmzeit – neue Ära des Kinobetriebs.</p>
+      <?php else: ?>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-10">
+          <div class="pt-6 border-t border-primary">
+            <div class="text-xs tracking-[0.2em] uppercase text-black/70">Eröffnung</div>
+            <div class="mt-2 text-2xl md:text-3xl font-light">1909 – Metropol-Theater</div>
+            <p class="text-gray-800 mt-3 leading-relaxed">Erste Vorstellung am 29.05.1909 in der heutigen
+              Posadowskystraße.</p>
+          </div>
+          <div class="pt-6 border-t border-primary">
+            <div class="text-xs tracking-[0.2em] uppercase text-black/70">Tonfilm</div>
+            <div class="mt-2 text-2xl md:text-3xl font-light">ab 1931</div>
+            <p class="text-gray-800 mt-3 leading-relaxed">Beginn der Tonfilmzeit – neue Ära des Kinobetriebs.</p>
+          </div>
+          <div class="pt-6 border-t border-primary">
+            <div class="text-xs tracking-[0.2em] uppercase text-black/70">Drittes Kino</div>
+            <div class="mt-2 text-2xl md:text-3xl font-light">1951 – Film-Eck</div>
+            <p class="text-gray-800 mt-3 leading-relaxed">Eröffnung im „Dithmarscher Hof", Betrieb bis 1970.</p>
+          </div>
         </div>
-        <div class="pt-6 border-t border-primary">
-          <div class="text-xs tracking-[0.2em] uppercase text-black/70">Drittes Kino</div>
-          <div class="mt-2 text-2xl md:text-3xl font-light">1951 – Film-Eck</div>
-          <p class="text-gray-800 mt-3 leading-relaxed">Eröffnung im „Dithmarscher Hof“, Betrieb bis 1970.</p>
-        </div>
-      </div>
+      <?php endif ?>
     </section>
-
     <section role="feed" aria-label="Chronik der Kino-Geschichte">
       <?php if ($milestones = $page->milestones()->toStructure()): ?>
         <?php foreach ($milestones->sortBy('year', 'asc') as $index => $milestone):

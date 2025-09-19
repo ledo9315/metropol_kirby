@@ -97,20 +97,29 @@ export function initScrollAnimations() {
   // Ausstattung-Seite: sanfte Reveals
   const ausstattungMain = document.querySelector('main .container');
   const ausstattungHero = document.querySelector(
-    'section[aria-labelledby="kinosaal-heading"]'
+    'section[aria-label="Ausstattung Titelbild"]'
+  );
+  const ausstattungUebersicht = document.querySelector(
+    'section[aria-label="Kinosaal und Technik Übersicht"]'
   );
   const ausstattungTech = document.querySelector(
     'section[aria-labelledby="kinotechnik-heading"]'
   );
 
   if (ausstattungHero) {
-    // Bild, H1 und Beschreibung
-    reveal('section[aria-labelledby="kinosaal-heading"] img', {
+    // Hero-Titel und Intro einblenden
+    reveal('section[aria-label="Ausstattung Titelbild"] h1', {
+      props: { y: 20, duration: 0.6 },
+    });
+    reveal('section[aria-label="Ausstattung Titelbild"] p', {
       props: { y: 16, duration: 0.55 },
     });
-    reveal('#kinosaal-heading', { props: { y: 12, duration: 0.5 } });
-    reveal('section[aria-labelledby="kinosaal-heading"] .text-sm', {
-      props: { y: 14, duration: 0.5 },
+  }
+
+  if (ausstattungUebersicht) {
+    // Kinosaal und Technik Übersicht Grid-Elemente
+    reveal('section[aria-label="Kinosaal und Technik Übersicht"] .grid > div', {
+      props: { y: 22, duration: 0.6 },
     });
   }
 
@@ -133,5 +142,54 @@ export function initScrollAnimations() {
       'section[aria-labelledby="kinotechnik-heading"] .border-t.pt-8.mt-8 .text-sm',
       { props: { y: 14, duration: 0.5 } }
     );
+  }
+
+  // Preise-Seite: sanfte Reveals
+  const preiseHero = document.querySelector(
+    'section[aria-label="Preise Titelbild"]'
+  );
+  const preiseKarten = document.querySelector(
+    'section[aria-label="Kartenpreise"]'
+  );
+  const speisekarteSection = document.querySelector('section .text-center h2');
+
+  if (preiseHero) {
+    // Hero-Titel und Intro einblenden
+    reveal('section[aria-label="Preise Titelbild"] h1', {
+      props: { y: 20, duration: 0.6 },
+    });
+    reveal('section[aria-label="Preise Titelbild"] p', {
+      props: { y: 16, duration: 0.55 },
+    });
+  }
+
+  if (preiseKarten) {
+    // Kartenpreis-Grid-Elemente
+    reveal('section[aria-label="Kartenpreise"] .grid > div', {
+      props: { y: 22, duration: 0.6 },
+    });
+
+    // Hinweis-Text unten
+    reveal('section[aria-label="Kartenpreise"] .text-center.mt-12', {
+      props: { y: 12, duration: 0.45 },
+    });
+  }
+
+  // Speisekarte-Bereich
+  if (speisekarteSection) {
+    // Speisekarte-Überschrift
+    reveal('section .text-center h2', {
+      props: { y: 16, duration: 0.55 },
+    });
+
+    // Tab-Navigation
+    reveal('[data-speisekarte-button]', {
+      props: { y: 14, duration: 0.5 },
+    });
+
+    // Speisekarte-Panel-Inhalte
+    reveal('[data-speisekarte-panel] .grid > div', {
+      props: { y: 18, duration: 0.55 },
+    });
   }
 }

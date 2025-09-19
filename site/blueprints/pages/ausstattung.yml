@@ -3,6 +3,81 @@ title: Ausstattung
 icon: 🎞️
 
 sections:
+  hero:
+    type: fields
+    fields:
+      hero_headline:
+        type: headline
+        label: Hero-Bereich
+
+      hero_title:
+        label: Hero-Titel
+        type: text
+        placeholder: Unser Kinosaal
+        help: Der Haupttitel im Hero-Bereich
+
+      hero_intro:
+        label: Hero-Intro
+        type: textarea
+        size: small
+        placeholder: Moderne Technik trifft auf gemütliche Atmosphäre. Entdecken Sie die technische Ausstattung unseres Kinos, die für ein optimales Filmerlebnis sorgt.
+        help: Der Intro-Text unter dem Hero-Titel
+
+      hero_image:
+        label: Hero-Bild
+        type: files
+        layout: cards
+        template: image
+        max: 1
+        help: Das Hintergrundbild für den Hero-Bereich
+
+  overview:
+    type: fields
+    fields:
+      overview_headline:
+        type: headline
+        label: Kinosaal & Technik Übersicht
+
+      hall_title:
+        label: Kinosaal Titel
+        type: text
+        placeholder: Unser Kinosaal
+        help: Der Titel für den Kinosaal-Bereich
+
+      hall_subtitle:
+        label: Kinosaal Untertitel
+        type: text
+        placeholder: 118 Plätze
+        help: Der Untertitel/Kennzahl für den Kinosaal
+
+      hall_description:
+        label: Beschreibung Kinosaal
+        type: textarea
+        size: medium
+        buttons: true
+        placeholder: 110 Sitzplätze und 8 Plätze direkt an der Bar...
+        help: Die Beschreibung des Kinosaal-Bereichs
+
+      tech_title:
+        label: Kinotechnik Titel
+        type: text
+        placeholder: Unsere Kinotechnik
+        help: Der Titel für den Kinotechnik-Bereich
+
+      tech_subtitle:
+        label: Kinotechnik Untertitel
+        type: text
+        placeholder: Christie CP4420 4K
+        help: Der Untertitel/Kennzahl für die Kinotechnik
+
+      tech_description:
+        label: Beschreibung Kinotechnik
+        type: textarea
+        size: medium
+        buttons: true
+        placeholder: Unsere Installation geht über den DCI-Standard hinaus...
+        help: Die Beschreibung des Kinotechnik-Bereichs
+
   content:
     type: fields
     fields:
@@ -10,18 +85,6 @@ sections:
         label: Titel
         type: text
         required: true
-
-      hall_description:
-        label: Beschreibung Kinosaal
-        type: textarea
-        size: medium
-        buttons: true
-
-      tech_description:
-        label: Beschreibung Kinotechnik
-        type: textarea
-        size: medium
-        buttons: true
 
       tech_specs:
         type: headline
@@ -62,4 +125,4 @@ sections:
     headline: Bilder
     layout: cards
     template: image
-    info: "{{ file.dimensions }}"
+    info: '{{ file.dimensions }}'

@@ -11,7 +11,7 @@
         <div class="text-white">
           <meta itemprop="name" content="Metropol-Theater Brunsbüttel">
           <p class="mb-2" itemprop="openingHours" content="Mo-Su 19:00">
-            <strong>Kartenvorbestellungen</strong><br />täglich ab 19:00 Uhr
+            <?= $site->opening_hours()->isNotEmpty() ? $site->opening_hours() : 'Geöffnet täglich ab 19:00 Uhr' ?>
           </p>
           <div class="flex items-start lg:items-center space-x-2 mb-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"

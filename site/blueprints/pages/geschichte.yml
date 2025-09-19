@@ -3,6 +3,66 @@ title: Geschichte
 icon: 📜
 
 sections:
+  hero:
+    type: fields
+    fields:
+      hero_title:
+        label: Hero-Titel
+        type: text
+        required: true
+        default: 'Geschichte des Metropol'
+        help: Hauptüberschrift im Hero-Bereich
+
+      intro:
+        label: Einführungstext
+        type: textarea
+        required: true
+        default: 'Das Metropol-Theater blickt auf eine lange und bewegte Geschichte zurück. Von seinen Anfängen bis zur Gegenwart hat sich vieles verändert, aber die Leidenschaft für das Kino ist geblieben.'
+        help: Beschreibungstext unter der Hauptüberschrift
+
+      hero_image:
+        label: Hero-Bild
+        type: files
+        max: 1
+        layout: cards
+        template: image
+        help: Hintergrundbild für den Hero-Bereich
+
+  key_milestones:
+    type: fields
+    fields:
+      key_milestones:
+        label: Wichtige Meilensteine (Kartenansicht)
+        type: structure
+        help: Die drei Hauptmeilensteine, die als Karten oben angezeigt werden
+        max: 3
+        columns:
+          label:
+            width: 1/4
+          year_title:
+            width: 2/4
+          description:
+            width: 1/4
+        fields:
+          label:
+            label: Kategorie-Label
+            type: text
+            required: true
+            placeholder: z.B. "Eröffnung"
+
+          year_title:
+            label: Jahr & Titel
+            type: text
+            required: true
+            placeholder: z.B. "1909 – Metropol-Theater"
+
+          description:
+            label: Beschreibung
+            type: textarea
+            required: true
+            size: small
+            placeholder: z.B. "Erste Vorstellung am 29.05.1909..."
+
   content:
     type: fields
     fields:
@@ -12,8 +72,9 @@ sections:
         required: true
 
       milestones:
-        label: Historische Meilensteine
+        label: Detaillierte Chronik
         type: structure
+        help: Ausführliche historische Meilensteine für die Timeline
         sortBy: year asc
         columns:
           year:
@@ -51,4 +112,4 @@ sections:
     headline: Bilder
     template: image
     layout: cards
-    info: "{{ file.dimensions }}"
+    info: '{{ file.dimensions }}'

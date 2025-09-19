@@ -5,10 +5,13 @@
     <?php snippet('components/back-to-home') ?>
 
     <?php
-    $intro = $page->intro()->or('Hier finden Sie unsere aktuellen Preise für Kinokarten und unser gastronomisches Angebot.');
+    // Titel und Intro aus Panel-Feldern
+    $title = $page->title()->or('Ticketpreise & Gastronomie');
+    $intro = $page->intro()->or('Hier finden Sie unsere Preise.');
 
-    // Hero-Bild aus assets/images verwenden
-    $heroUrl = url('assets/images/kino_01_scharf.jpg');
+    // Hero-Bild aus Panel oder Fallback
+    $heroImage = $page->hero_image()->toFile();
+    $heroUrl = $heroImage ? $heroImage->url() : url('assets/images/kino_01_scharf.jpg');
     ?>
 
     <!-- Hero-Bereich -->
@@ -19,7 +22,7 @@
         <div class="absolute inset-0 flex items-end">
           <div class="w-full">
             <div class="max-w-4xl text-white px-6 py-10">
-              <h1 class="text-4xl md:text-6xl font-light tracking-tight">Preise & Angebot</h1>
+              <h1 class="text-4xl md:text-6xl font-light tracking-tight"><?= $title->escape() ?></h1>
               <p class="mt-4 text-lg md:text-xl leading-relaxed">
                 <?= $intro->escape() ?>
               </p>
@@ -67,9 +70,9 @@
     </section>
 
     <!-- Speisekarte -->
-    <section class="mb-20">
+    <section class="mb-40">
       <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-light text-gray-900 tracking-tight">Speisekarte</h2>
+        <h2 class="text-4xl md:text-5xl font-light text-primary tracking-tight">Speisekarte</h2>
       </div>
 
       <?php
@@ -95,7 +98,7 @@
 
         <div class="flex flex-wrap justify-center gap-8">
           <button type="button" id="tab-nicht-alkoholisch" data-speisekarte-button data-target="panel-nicht-alkoholisch"
-            class="text-sm tracking-[0.2em] uppercase transition-all duration-200 pb-2 border-b-2
+            class="text-sm tracking-[0.2em] uppercase transition-all duration-200 pb-2 border-b
             <?= $activeTab === 'nicht-alkoholisch' ? 'text-black border-black' : 'text-gray-500 border-transparent hover:text-gray-700' ?>"
             role="tab" aria-controls="panel-nicht-alkoholisch"
             aria-selected="<?= $activeTab === 'nicht-alkoholisch' ? 'true' : 'false' ?>">
@@ -103,21 +106,21 @@
           </button>
 
           <button type="button" id="tab-biere" data-speisekarte-button data-target="panel-biere"
-            class="text-sm tracking-[0.2em] uppercase transition-all duration-200 pb-2 border-b-2
+            class="text-sm tracking-[0.2em] uppercase transition-all duration-200 pb-2 border-b
             <?= $activeTab === 'biere' ? 'text-black border-black' : 'text-gray-500 border-transparent hover:text-gray-700' ?>" role="tab" aria-controls="panel-biere"
             aria-selected="<?= $activeTab === 'biere' ? 'true' : 'false' ?>">
             Biere
           </button>
 
           <button type="button" id="tab-longdrinks" data-speisekarte-button data-target="panel-longdrinks"
-            class="text-sm tracking-[0.2em] uppercase transition-all duration-200 pb-2 border-b-2
+            class="text-sm tracking-[0.2em] uppercase transition-all duration-200 pb-2 border-b
             <?= $activeTab === 'longdrinks' ? 'text-black border-black' : 'text-gray-500 border-transparent hover:text-gray-700' ?>" role="tab" aria-controls="panel-longdrinks"
             aria-selected="<?= $activeTab === 'longdrinks' ? 'true' : 'false' ?>">
             Longdrinks
           </button>
 
           <button type="button" id="tab-verschiedenes" data-speisekarte-button data-target="panel-verschiedenes"
-            class="text-sm tracking-[0.2em] uppercase transition-all duration-200 pb-2 border-b-2
+            class="text-sm tracking-[0.2em] uppercase transition-all duration-200 pb-2 border-b
             <?= $activeTab === 'verschiedenes' ? 'text-black border-black' : 'text-gray-500 border-transparent hover:text-gray-700' ?>" role="tab" aria-controls="panel-verschiedenes"
             aria-selected="<?= $activeTab === 'verschiedenes' ? 'true' : 'false' ?>">
             Verschiedenes
@@ -125,8 +128,8 @@
         </div>
       </div>
 
-      <!-- Tab-Panels mit minimalistischem Design -->
-      <div class="max-w-xl mx-auto">
+      <!-- Tab-Panels im Geschichte-Stil -->
+      <div class="mx-auto">
 
         <!-- Alkoholfreie Getränke -->
         <div id="panel-nicht-alkoholisch" data-speisekarte-panel
@@ -145,21 +148,47 @@
               return $s;
             }; ?>
 
-            <div class="space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
               <?php foreach ($page->non_alcoholic()->toStructure() as $drink): ?>
-                <div class="flex items-center justify-between py-4 border-b border-gray-100 last:border-b-0">
-                  <div class="flex-1">
-                    <div class="font-medium text-gray-900"><?= $drink->name() ?></div>
-                    <div class="text-sm text-gray-500 mt-1">
-                      <?= $drink->type() ?>
-                      <?php if ($drink->size()->isNotEmpty() && $drink->size() !== '-'): ?>
-                        · <?= $formatSize($drink->size()) ?>
-                      <?php endif ?>
+                <div class="pt-6 border-t border-primary">
+                  <?php if ($drink->description()->isNotEmpty()): ?>
+                    <div class="flex items-center justify-between">
+                      <div class="text-xs tracking-[0.2em] uppercase text-black/70">
+                        <?= $drink->name() ?>
+                      </div>
+                      <div class="text-sm text-gray-500">
+                        <?= $drink->type() ?>
+                        <?php
+                        $formattedSize = $formatSize($drink->size());
+                        if ($formattedSize && $formattedSize !== '-' && $formattedSize !== ''):
+                          ?>
+                          · <?= $formattedSize ?>
+                        <?php endif ?>
+                      </div>
                     </div>
-                  </div>
-                  <div class="text-lg font-light text-gray-900 tabular-nums">
-                    <?= number_format($drink->price()->toFloat(), 2, ',', '.') ?>&#8239;€
-                  </div>
+                    <div class="mt-2 text-2xl md:text-3xl font-light">
+                      <?= number_format($drink->price()->toFloat(), 2, ',', '.') ?> €
+                    </div>
+                    <p class="text-gray-800 mt-3 leading-relaxed">
+                      <?= $drink->description()->escape() ?>
+                    </p>
+                  <?php else: ?>
+                    <div class="text-xs tracking-[0.2em] uppercase text-black/70">
+                      <?= $drink->name() ?>
+                    </div>
+                    <div class="mt-2 text-2xl md:text-3xl font-light">
+                      <?= number_format($drink->price()->toFloat(), 2, ',', '.') ?> €
+                    </div>
+                    <p class="text-gray-800 mt-3 leading-relaxed">
+                      <?= $drink->type() ?>
+                      <?php
+                      $formattedSize = $formatSize($drink->size());
+                      if ($formattedSize && $formattedSize !== '-' && $formattedSize !== ''):
+                        ?>
+                        · <?= $formattedSize ?>
+                      <?php endif ?>
+                    </p>
+                  <?php endif ?>
                 </div>
               <?php endforeach ?>
             </div>
@@ -173,15 +202,21 @@
           role="tabpanel" aria-labelledby="tab-biere" <?= $activeTab !== 'biere' ? 'aria-hidden="true"' : '' ?>>
 
           <?php if ($page->beers()->isNotEmpty()): ?>
-            <div class="space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
               <?php foreach ($page->beers()->toStructure() as $beer): ?>
-                <div class="flex items-center justify-between py-4 border-b border-gray-100 last:border-b-0">
-                  <div class="flex-1">
-                    <div class="font-medium text-gray-900"><?= $beer->name() ?></div>
+                <div class="pt-6 border-t border-primary">
+                  <div class="text-xs tracking-[0.2em] uppercase text-black/70">
+                    <?= $beer->name() ?>
                   </div>
-                  <div class="text-lg font-light text-gray-900 tabular-nums">
-                    <?= number_format($beer->price()->toFloat(), 2, ',', '.') ?>&#8239;€
+                  <div class="mt-2 text-2xl md:text-3xl font-light">
+                    <?= number_format($beer->price()->toFloat(), 2, ',', '.') ?> €
                   </div>
+                  <p class="text-gray-800 mt-3 leading-relaxed">
+                    <?php if ($beer->description()->isNotEmpty()): ?>
+                      <?= $beer->description()->escape() ?>
+                    <?php else: ?>
+                    <?php endif ?>
+                  </p>
                 </div>
               <?php endforeach ?>
             </div>
@@ -195,15 +230,21 @@
           role="tabpanel" aria-labelledby="tab-longdrinks" <?= $activeTab !== 'longdrinks' ? 'aria-hidden="true"' : '' ?>>
 
           <?php if ($page->longdrinks()->isNotEmpty()): ?>
-            <div class="space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
               <?php foreach ($page->longdrinks()->toStructure() as $drink): ?>
-                <div class="flex items-center justify-between py-4 border-b border-gray-100 last:border-b-0">
-                  <div class="flex-1">
-                    <div class="font-medium text-gray-900"><?= $drink->name() ?></div>
+                <div class="pt-6 border-t border-primary">
+                  <div class="text-xs tracking-[0.2em] uppercase text-black/70">
+                    <?= $drink->name() ?>
                   </div>
-                  <div class="text-lg font-light text-gray-900 tabular-nums">
-                    <?= number_format($drink->price()->toFloat(), 2, ',', '.') ?>&#8239;€
+                  <div class="mt-2 text-2xl md:text-3xl font-light">
+                    <?= number_format($drink->price()->toFloat(), 2, ',', '.') ?> €
                   </div>
+                  <p class="text-gray-800 mt-3 leading-relaxed">
+                    <?php if ($drink->description()->isNotEmpty()): ?>
+                      <?= $drink->description()->escape() ?>
+                    <?php else: ?>
+                    <?php endif ?>
+                  </p>
                 </div>
               <?php endforeach ?>
             </div>
@@ -218,15 +259,21 @@
           aria-labelledby="tab-verschiedenes" <?= $activeTab !== 'verschiedenes' ? 'aria-hidden="true"' : '' ?>>
 
           <?php if ($page->misc()->isNotEmpty()): ?>
-            <div class="space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
               <?php foreach ($page->misc()->toStructure() as $item): ?>
-                <div class="flex items-center justify-between py-4 border-b border-gray-100 last:border-b-0">
-                  <div class="flex-1">
-                    <div class="font-medium text-gray-900"><?= $item->name() ?></div>
+                <div class="pt-6 border-t border-primary">
+                  <div class="text-xs tracking-[0.2em] uppercase text-black/70">
+                    <?= $item->name() ?>
                   </div>
-                  <div class="text-lg font-light text-gray-900 tabular-nums">
-                    <?= number_format($item->price()->toFloat(), 2, ',', '.') ?>&#8239;€
+                  <div class="mt-2 text-2xl md:text-3xl font-light">
+                    <?= number_format($item->price()->toFloat(), 2, ',', '.') ?> €
                   </div>
+                  <p class="text-gray-800 mt-3 leading-relaxed">
+                    <?php if ($item->description()->isNotEmpty()): ?>
+                      <?= $item->description()->escape() ?>
+                    <?php else: ?>
+                    <?php endif ?>
+                  </p>
                 </div>
               <?php endforeach ?>
             </div>
@@ -239,11 +286,10 @@
 
     <!-- Kinovermietung -->
     <?php if ($page->rental_title()->isNotEmpty()): ?>
-      <section class="mb-20">
+      <section class="mb-10">
         <div class="max-w-4xl mx-auto text-center">
-          <div class="h-px bg-primary mb-12"></div>
 
-          <h2 class="text-3xl md:text-4xl font-light text-gray-900 mb-8 tracking-tight">
+          <h2 class="text-3xl md:text-4xl font-light text-primary mb-8 tracking-tight">
             <?= $page->rental_title() ?>
           </h2>
 

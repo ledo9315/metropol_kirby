@@ -101,16 +101,19 @@
           <?php
           $spielzeiten = $page->spielzeiten()->toStructure();
           if ($spielzeiten->count()):
-            ?>
-            <div class="pt-20">
-              <div class="w-full lg:max-w-md">
-                <?php snippet('components/spielzeiten', [
-                  'spielzeiten' => $spielzeiten,
-                  'showHeading' => true
-                ]); ?>
+            $futureSpielzeiten = formatSpielzeiten($spielzeiten);
+            if (count($futureSpielzeiten) > 0):
+              ?>
+              <div class="pt-20">
+                <div class="w-full lg:max-w-md">
+                  <?php snippet('components/spielzeiten', [
+                    'spielzeiten' => $spielzeiten,
+                    'showHeading' => true
+                  ]); ?>
+                </div>
               </div>
-            </div>
-          <?php endif ?>
+            <?php endif;
+          endif ?>
         </div>
       </div>
     </article>

@@ -45,7 +45,7 @@
             </li>
             <li role="none">
               <a href="<?= $site->url() ?>"
-                class="text-primary px-3 py-2 text-[1.2rem] hover:text-primary/80 transition-colors <?= $page->id() === $site->homePage()->id() ? ' font-medium' : '' ?>"
+                class="text-primary px-3 py-2 text-[1.2rem] hover:text-primary/80 transition-colors <?= $page->id() === $site->homePage()->id() ? ' border-b border-primary' : '' ?>"
                 <?= $page->id() === $site->homePage()->id() ? 'aria-current="page"' : '' ?> role="menuitem">
                 Startseite
               </a>
@@ -67,7 +67,7 @@
 
             <li role="none">
               <a href="<?= url('preise') ?>"
-                class="text-primary px-3 py-2 text-[1.2rem] hover:text-primary/80 transition-colors <?= $page->is('preise') ? 'font-medium' : '' ?>"
+                class="text-primary px-3 py-2 text-[1.2rem] hover:text-primary/80 transition-colors <?= $page->is('preise') ? 'border-b border-primary' : '' ?>"
                 <?= $page->is('preise') ? 'aria-current="page"' : '' ?> role="menuitem">
                 Preise
               </a>
@@ -75,7 +75,7 @@
 
             <li class="relative group xl:block hidden" role="none">
               <button
-                class="text-primary w-max px-3 py-2 text-[1.2rem] flex items-center gap-1 focus:outline-none group-hover:text-primary <?= ($page->is('ausstattung') || $page->is('geschichte')) ? 'font-medium' : '' ?>"
+                class="text-primary w-max px-3 py-2 text-[1.2rem] flex items-center gap-1 focus:outline-none group-hover:text-primary <?= ($page->is('ausstattung') || $page->is('geschichte')) ? 'border-b border-primary' : '' ?>"
                 aria-expanded="false" aria-haspopup="true" aria-controls="dropdown-menu" role="menuitem">
                 Über uns
                 <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor"

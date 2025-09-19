@@ -142,10 +142,10 @@ function updateActiveNavOnScroll() {
 
     // Aktuell aktiven Link entfernen
     const activeLinks = document.querySelectorAll(
-      'nav a.font-medium[role="menuitem"]'
+      'nav a.border-primary[role="menuitem"]'
     );
     activeLinks.forEach((link) => {
-      link.classList.remove('font-medium');
+      link.classList.remove('border-b', 'border-primary');
       if (link.hasAttribute('aria-current')) {
         link.removeAttribute('aria-current');
       }
@@ -158,18 +158,18 @@ function updateActiveNavOnScroll() {
         scrollPosition
     ) {
       // Demnächst ist aktiv
-      demnaechstLink.classList.add('font-medium');
+      demnaechstLink.classList.add('border-b', 'border-primary');
       demnaechstLink.setAttribute('aria-current', 'page');
     } else if (
       programSection.offsetTop <= scrollPosition &&
       programSection.offsetTop + programSection.offsetHeight > scrollPosition
     ) {
       // Programm ist aktiv
-      programLink.classList.add('font-medium');
+      programLink.classList.add('border-b', 'border-primary');
       programLink.setAttribute('aria-current', 'page');
     } else if (scrollPosition < programSection.offsetTop) {
       // Startseite ist aktiv (wenn wir über allen Abschnitten sind)
-      startseiteLink.classList.add('font-medium');
+      startseiteLink.classList.add('border-b', 'border-primary');
       startseiteLink.setAttribute('aria-current', 'page');
     }
   });

@@ -2,6 +2,26 @@ Title: Ausstattung
 
 ----
 
+Hero-title: Unser Kinosaal
+
+----
+
+Hero-intro: Moderne Technik trifft auf gemütliche Atmosphäre. Entdecken Sie die technische Ausstattung unseres Kinos, die für ein optimales Filmerlebnis sorgt.
+
+----
+
+Hero-image: - file://2Rksf8rIerLHWSDZ
+
+----
+
+Hall-title: Unser Kinosaal
+
+----
+
+Hall-subtitle: 118 Plätze
+
+----
+
 Hall-description:
 
 110 Sitzplätze und 8 Plätze direkt an der Bar stehen Ihnen für Ihren Besuch in unserem Hause zur Verfügung. Die Leinwandhöhe beträgt 20 m² und sorgt für ein optimales Seherlebnis. Die moderne 7.4 Digital Tonanlage liefert Ihnen den Raum zum guten Ton.
@@ -9,6 +29,14 @@ Hall-description:
 Unsere Sitzplätze sind mit einem Tisch ausgestattet, der eine Kinogleichlage vereinfacht. Sie brauchen sich auch während der Vorstellung nicht auf Getränke zu verzichten. Unser Servicepersonal erfüllt Ihre Getränkewünsche umgehend.
 
 Genießen Sie in der perfekten Abstimmung die Mischung aus traditionell familiär geführtem Kino und modernster Technik. Sehen Sie sich das laufende Programm hier an und freuen Sie sich auf Ihren Besuch in unserem Haus.
+
+----
+
+Tech-title: Unsere Kinotechnik
+
+----
+
+Tech-subtitle: Christie CP4420 4K
 
 ----
 

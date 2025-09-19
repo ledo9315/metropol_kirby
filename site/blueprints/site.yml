@@ -12,19 +12,28 @@ sections:
         label: Hinweis Titel
         type: text
         width: 1/1
+        help: Im Hero-Bereich
 
       hint_text:
         label: Hinweis Text
         type: textarea
         buttons: true
         width: 1/1
+        help: Im Hero-Bereich
 
       phone:
         label: Telefonnummer
         type: tel
+        help: Für den Footer
       email:
         label: E-Mail
         type: email
+        help: Für den Footer
+      opening_hours:
+        label: Öffnungszeiten
+        type: textarea
+        buttons: true
+        help: Für den Footer
 
   pages:
     type: pages

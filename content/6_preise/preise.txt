@@ -1,8 +1,12 @@
-Title: Preise
+Title: Ticketpreise und Gastronomie
 
 ----
 
 Intro: Hier finden Sie unsere Preise.
+
+----
+
+Hero-image: - file://BtJbmAaYHonWRtDu
 
 ----
 
@@ -34,61 +38,93 @@ Non-alcoholic:
   type: Glas
   size: 0,2l
   price: 1.5
+  description: >
+    Der klassische Cola-Geschmack –
+    prickelnd und erfrischend.
 - 
   name: Fanta
   type: Glas
   size: 0,2l
   price: 1.5
+  description: >
+    Spritzige Orangenlimonade mit fruchtigem
+    Aroma.
 - 
   name: Spezi
   type: Glas
   size: 0,2l
   price: 1.5
+  description: >
+    Cola-Orangenmix mit süß-herber
+    Frische.
 - 
   name: O-Saft
   type: Glas
   size: 0,2l
   price: 2.2
+  description: >
+    Fruchtiger Orangensaft – pur und
+    vitaminreich.
 - 
   name: O-Saft
   type: Glas
   size: 0,4l
   price: 3.9
+  description: >
+    Doppelte Portion frischer
+    Orangengeschmack.
 - 
   name: Apfelsaft
   type: Glas
   size: 0,2l
   price: 2.2
+  description: >
+    Süßer Apfelsaft mit natürlicher
+    Fruchtigkeit.
 - 
   name: Apfelschorle
   type: Glas
   size: 0,4l
   price: 3
+  description: >
+    Erfrischender Mix aus Apfelsaft und
+    Sprudelwasser.
 - 
   name: Mineralwasser
   type: Glas
   size: 0,4l
   price: 2
+  description: Klares Wasser mit feiner Kohlensäure.
 - 
   name: Bitter Lemon
   type: Flasche
   size: 0,2l
   price: 2.2
+  description: Herb-süße Zitronenlimonade mit Chinin.
 - 
   name: Tonic Water
   type: Flasche
   size: 0,2l
   price: 2.2
+  description: >
+    Bittersüße Limonade mit Chinin –
+    klassischer Mixer.
 - 
   name: Coca-Cola
   type: Flasche
   size: 0,2l
   price: 3
+  description: >
+    Cola-Genuss aus der Flasche, besonders
+    spritzig.
 - 
   name: Kaffe
   type: Tasse
   size: -
   price: 1.5
+  description: >
+    Frisch gebrühter, aromatischer
+    Bohnenkaffee.
 
 ----
 
@@ -97,27 +133,35 @@ Beers:
 - 
   name: Holsten Edel
   price: 2.2
+  description: 'Helles Pils mit ca. 4,9 % vol., mild im Geschmack und erfrischend.'
 - 
   name: Flensburger
   price: 2.5
+  description: 'Norddeutsches Pils mit ca. 4,8 % vol., herb und charaktervoll.'
 - 
   name: "Beck's"
   price: 2.5
+  description: 'Bremer Pils mit ca. 4,9 % vol., hopfig-frisch und schlank.'
 - 
   name: "Beck's Gold"
   price: 2.5
+  description: 'Mildes Pils mit ca. 4,9 % vol., goldfarben und ausgewogen.'
 - 
   name: "Beck's Green Lemon"
   price: 2.5
+  description: 'Erfrischender Mix mit ca. 2,5 % vol., Bier und Zitrone, leicht und spritzig.'
 - 
   name: Erdinger Weißbier 0,5l
   price: 3.5
+  description: 'Bayerisches Weizen mit ca. 5,3 % vol., fruchtig und vollmundig.'
 - 
   name: Alster (Holsten) 0,4l
   price: 3
+  description: 'Mix aus Holsten Pils und Limonade mit ca. 2,5 % vol., süffig und erfrischend.'
 - 
   name: Clasthaler Alkoholfrei
   price: 2.5
+  description: 'Alkoholfreies Bier (unter 0,5 % vol.) mit vollem Geschmack.'
 
 ----
 
@@ -126,33 +170,65 @@ Longdrinks:
 - 
   name: Wodka Lemon
   price: 3.5
+  description: >
+    Klarer Wodka mit spritziger
+    Zitronenlimonade – frisch und
+    belebend.
 - 
   name: Wodka O-Saft
   price: 3.5
+  description: >
+    Fruchtiger Orangensaft trifft auf milden
+    Wodka – klassisch und fruchtig.
 - 
   name: Gin Tonic
   price: 3.5
+  description: >
+    Herber Gin mit Tonic Water – bitter,
+    erfrischend und zeitlos.
 - 
   name: Gin O-Saft
   price: 3.5
+  description: >
+    Wacholderaromen des Gins kombiniert mit
+    süßem Orangensaft – ein milder
+    Genuss.
 - 
   name: Bacardi Cola
   price: 3.5
+  description: >
+    Weißer Rum und Cola – karibische
+    Leichtigkeit im Glas.
 - 
   name: Bacardi Club Cola
   price: 3.5
+  description: >
+    Rum mit koffeinhaltiger Cola-Mischung
+    – spritzig und anregend.
 - 
   name: Ballantine’s Cola
   price: 3.5
+  description: >
+    Weicher Scotch Whisky mit Cola – rund,
+    süffig und harmonisch.
 - 
   name: Jim Beam Cola
   price: 3.5
+  description: >
+    Kentucky Bourbon und Cola – kräftig,
+    süß und unverwechselbar.
 - 
   name: Pernod Cola, Wasser
   price: 3.5
+  description: >
+    Anislikör gemischt mit Cola oder Wasser
+    – aromatisch und außergewöhnlich.
 - 
   name: Campari O-Saft 4 cl
   price: 4
+  description: >
+    Bitterer Campari mit süßem Orangensaft
+    – herb-fruchtiger Aperitif.
 
 ----
 
@@ -161,27 +237,47 @@ Misc:
 - 
   name: Jägermeister
   price: 1.5
+  description: >
+    Kräuterlikör mit 56 Gewürzen und
+    Kräutern, kräftig und würzig.
 - 
   name: Jim Beam Kentucky Bourbon
   price: 2
+  description: >
+    Amerikanischer Bourbon mit
+    süß-vanilligen Noten und Eichenaroma.
 - 
   name: Ballantine’s
   price: 2
+  description: 'Milder Scotch Whisky mit weichen Malz- und Honignoten.'
 - 
   name: Sambuca
   price: 2
+  description: >
+    Italienischer Anislikör mit süßem,
+    aromatischem Geschmack.
 - 
   name: Martini weiß, rot
   price: 2.5
+  description: >
+    Aromatischer Wermut – wahlweise herb
+    (rot) oder leicht süßlich (weiß).
 - 
   name: Wein weiß, rot Schoppen
   price: 3
+  description: 'Ein Glas fein ausgewählter Weiß- oder Rotwein, angenehm rund im Geschmack.'
 - 
   name: Piccolo „Mumm“
   price: 5
+  description: >
+    Prickelnder Sekt in der kleinen Flasche
+    – ideal zum Anstoßen.
 - 
   name: Rumgrog
   price: 2
+  description: >
+    Heißes Getränk mit Rum, Wasser und
+    Zucker – wärmend und kräftig.
 
 ----
 

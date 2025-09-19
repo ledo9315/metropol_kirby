@@ -2,7 +2,38 @@ Title: Geschichte
 
 ----
 
+Hero-title: Geschichte des Metropol
+
+----
+
 Intro: Das Metropol-Theater blickt auf eine lange und bewegte Geschichte zurück. Von seinen Anfängen bis zur Gegenwart hat sich vieles verändert, aber die Leidenschaft für das Kino ist geblieben.
+
+----
+
+Hero-image: - file://9OKnW2v23cJPq5to
+
+----
+
+Key-milestones:
+
+- 
+  label: Eröffnung
+  year_title: 1909 – Metropol-Theater
+  description: >
+    Erste Vorstellung am 29.05.1909 in der
+    heutigen Posadowskystraße.
+- 
+  label: Tonfilm
+  year_title: ab 1931
+  description: >
+    Beginn der Tonfilmzeit – neue Ära des
+    Kinobetriebs.
+- 
+  label: Drittes Kino
+  year_title: 1951 – Film-Eck
+  description: >
+    Eröffnung im „Dithmarscher Hof“,
+    Betrieb bis 1970.
 
 ----
 

@@ -143,6 +143,7 @@ fields:
   spielzeiten:
     type: structure
     label: Spielzeiten
+    help: Spielzeiten werden auf der Seite nur angezeigt, wenn das Datum in der Zukunft liegt.
     fields:
       date:
         type: date
