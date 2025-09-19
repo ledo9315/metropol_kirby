@@ -20,13 +20,15 @@ export function initSpeisekarte() {
         targetPanel.classList.remove('hidden');
       }
 
+      // Entferne aktive Klassen von allen Tabs
       tabButtons.forEach((btn) => {
-        btn.classList.remove('bg-primary', 'text-white');
-        btn.classList.add('border', 'border-primary', 'text-primary');
+        btn.classList.remove('text-black', 'border-black');
+        btn.classList.add('text-gray-500', 'border-transparent');
       });
 
-      this.classList.remove('border', 'border-primary', 'text-primary');
-      this.classList.add('bg-primary', 'text-white');
+      // Füge aktive Klassen zum geklickten Tab hinzu
+      this.classList.remove('text-gray-500', 'border-transparent');
+      this.classList.add('text-black', 'border-black');
     });
   });
 
