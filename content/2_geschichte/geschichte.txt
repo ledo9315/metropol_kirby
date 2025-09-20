@@ -55,9 +55,10 @@ Milestones:
   title: Die Fernsicht Lichtspiele
   description: >
     1930 wurde das Kino neu eröffnet und in
-    "Fernsicht Lichtspiele" umbenannt. Mit
-    der Einführung des Tonfilms begann eine
-    neue Ära für das Kino in Brunsbüttel.
+    „Fernsicht Lichtspiele“ umbenannt.
+    Mit der Einführung des Tonfilms begann
+    eine neue Ära für das Kino in
+    Brunsbüttel.
   image:
     - file://DDkiuqauyE0xi2q2
 - 

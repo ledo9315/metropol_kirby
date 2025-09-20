@@ -32,7 +32,7 @@
       </div>
     </section>
 
-    <!-- Kartenpreise im Geschichte-Stil -->
+    <!-- Kartenpreise -->
     <section class="mb-40" aria-label="Kartenpreise">
       <div class="mx-auto">
         <?php if ($prices = $page->prices()->toStructure()): ?>
@@ -40,21 +40,13 @@
             <?php foreach ($prices as $price): ?>
               <div class="pt-6 border-t border-primary">
                 <div class="text-xs tracking-[0.2em] uppercase text-black/70">
-                  <?= str_replace('*', '', $price->category()) ?>
+                  <?= $price->category()->value() ?>
                 </div>
                 <div class="mt-2 text-2xl md:text-3xl font-light">
-                  <?= number_format($price->amount()->toFloat(), 2, ',', '.') ?> €
+                  <?= number_format($price->amount()->toFloat(), 2, ',', '.') ?>&#8239;€
                 </div>
                 <p class="text-gray-800 mt-3 leading-relaxed">
-                  <?php if ($price->category()->value() === 'Standard'): ?>
-                    Regulärer Eintritt für alle Altersklassen.
-                  <?php elseif ($price->category()->value() === 'Ermäßigt*'): ?>
-                    Für Kinder bis 14 Jahre und Ermäßigungsberechtigte.
-                  <?php elseif ($price->category()->value() === '3D-Kino'): ?>
-                    3D-Filme mit besonderem Kinoerlebnis.
-                  <?php elseif ($price->category()->value() === 'Überlänge'): ?>
-                    Für Filme mit einer Laufzeit über 120 Minuten.
-                  <?php endif ?>
+                  <?= $price->description()->escape() ?>
                 </p>
               </div>
             <?php endforeach ?>

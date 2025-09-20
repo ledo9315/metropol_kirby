@@ -74,7 +74,7 @@ Der Projektor befindet sich jetzt exakt in der Bildmitte in der gegenüberliegen
 
 Unsere Bildwand von Screen Research besteht aus einem weißen Gewebe, welches in einem Stück ohne störende Übergänge für uns gefertigt wurde.
 
-Dahinter befindet sich ein "Screen Research Stoplight blackbacking layer", der rückseitiges Streulicht der Bildwand reduziert und somit zum maximalen möglichen Bildkontrast beiträgt.
+Dahinter befindet sich ein „Screen Research Stoplight blackbacking layer“, der rückseitiges Streulicht der Bildwand reduziert und somit zum maximalen möglichen Bildkontrast beiträgt.
 
 ----
 

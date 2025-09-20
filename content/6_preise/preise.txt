@@ -15,15 +15,29 @@ Prices:
 - 
   category: Standard
   amount: 10
+  description: >
+    Regulärer Eintritt für alle
+    Altersklassen.
 - 
   category: 'Ermäßigt*'
   amount: 8
+  description: >
+    Für Kinder und
+    Ermäßigungsberechtigte.
 - 
   category: 3D-Kino
   amount: 13
+  description: 3D-Filme mit besonderem Kinoerlebnis.
 - 
   category: Überlänge
   amount: 11.5
+  description: >
+    Für Filme mit einer Laufzeit über 120
+    Minuten.
+
+----
+
+Show-note: true
 
 ----
 
